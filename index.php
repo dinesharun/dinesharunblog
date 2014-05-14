@@ -18,8 +18,6 @@
   Art Challenges Technology", my life follows both.  As a programmer by profession and with a passion for technology, a fascination for nature & history,
   and an artist by soul, I try to find a point where technology and art collide.
 
-
-
   </div>
   </td>
 
