@@ -5,6 +5,7 @@
   AddBody(0, 0, 0);
 
 ?>
+
   <table style="width: 100%; margin:0px; padding: 1%;"> <tr>
   <td style="width: 84%; vertical-align: top;">
   <div class="PostDataPlain" style="">
