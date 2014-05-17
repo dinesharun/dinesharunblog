@@ -9,32 +9,32 @@ handlers:
   static_files: favicon.ico
   upload: favicon\.ico
 
-- url: (.+)/
+- url: (.*)/
   script: \1/index.php
 
 - url: /(.+\.php)$
   script: \1
 
-- url: /css/(.+)
+- url: /css/(.*)
   static_files: css/\1
-  upload: css/(.+)
+  upload: css/(.*)
 
-- url: /scripts/(.+)
+- url: /scripts/(.*)
   static_files: scripts/\1
-  upload: scripts/(.+)
+  upload: scripts/(.*)
   application_readable: true
 
-- url: /images/(.+)
+- url: /images/(.*)
   static_files: images/\1
-  upload: images/(.+)
+  upload: images/(.*)
   application_readable: true
 
-- url: /art/(.+)
-  static_files: art/\1
-  upload: art/(.+)
+- url: /art
+  static_files: art
+  upload: art/(.*)
   application_readable: true
 
-- url: /tech/(.+)
-  static_files: tech/\1
-  upload: tech/(.+)
+- url: /tech
+  static_files: tech
+  upload: tech/(.*)
   application_readable: true
