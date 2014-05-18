@@ -9,11 +9,8 @@ handlers:
   static_files: favicon.ico
   upload: favicon\.ico
 
-- url: (.*)/
+- url: (.*)/$
   script: \1/index.php
-
-- url: /art/
-  script: art/index.php
 
 - url: /(.+\.php)$
   script: \1
