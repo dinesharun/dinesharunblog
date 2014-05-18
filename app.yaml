@@ -11,6 +11,9 @@ handlers:
 
 - url: (.*)/
   script: \1/index.php
+  
+  - url: /art/
+  script: art/index.php
 
 - url: /(.+\.php)$
   script: \1
