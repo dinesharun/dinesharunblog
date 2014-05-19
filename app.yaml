@@ -5,31 +5,36 @@ api_version: 1
 threadsafe: yes
 
 handlers:
-- url: /(.+\.php)$
-  script: \1
-
 - url: /favicon\.ico
   static_files: favicon.ico
   upload: favicon\.ico
 
 - url: /css/(.*)
-  static_dir: css/\1
+  static_files: css/\1
+  upload: css/(.*)
 
 - url: /scripts/(.*)
-  static_dir: scripts/\1
+  static_files: scripts/\1
+  upload: scripts/(.*)
   application_readable: true
 
 - url: /images/(.*)
-  static_dir: images/\1
+  static_files: images/\1
+  upload: images/(.*)
   application_readable: true
 
-- url: /art
-  static_dir: art
+- url: /art/(.+\.(jpg|png|swf))$
+  static_files: art/\1
+  upload: art/(.*)
   application_readable: true
 
-- url: /tech
-  static_dir: tech
+- url: /tech/(.+\.(jpg|png|swf))$
+  static_files: tech/\1
+  upload: tech/(.*)
   application_readable: true
+
+- url: /(.+\.php)$
+  script: \1
 
 - url: (.*)/
   script: \1/index.php
