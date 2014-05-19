@@ -9,6 +9,9 @@ handlers:
   static_files: favicon.ico
   upload: favicon\.ico
 
+- url: /(.+\.php)$
+  script: \1
+
 - url: /css/(.*)
   static_files: css/\1
   upload: css/(.*)
@@ -32,9 +35,6 @@ handlers:
   static_files: tech/\1
   upload: tech/(.*)
   application_readable: true
-
-- url: /(.+\.php)$
-  script: \1
 
 - url: (.*)/
   script: \1/index.php
