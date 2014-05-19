@@ -35,6 +35,3 @@ handlers:
   static_files: tech/\1
   upload: tech/(.*)
   application_readable: true
-
-- url: (.*)/
-  script: \1/index.php
