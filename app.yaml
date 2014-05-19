@@ -14,7 +14,6 @@ handlers:
 
 - url: /css/(.*)
   static_dir: css/\1
-  upload: css/(.*)
 
 - url: /scripts/(.*)
   static_dir: scripts/\1
