@@ -18,22 +18,18 @@ handlers:
 
 - url: /scripts/(.*)
   static_dir: scripts/\1
-  upload: scripts/(.*)
   application_readable: true
 
 - url: /images/(.*)
   static_dir: images/\1
-  upload: images/(.*)
   application_readable: true
 
 - url: /art
   static_dir: art
-  upload: art/(.*)
   application_readable: true
 
 - url: /tech
   static_dir: tech
-  upload: tech/(.*)
   application_readable: true
 
 - url: (.*)/
