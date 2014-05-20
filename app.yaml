@@ -1,5 +1,5 @@
 application: dinesharunblog
-version: 4
+version: 5
 runtime: php
 api_version: 1
 threadsafe: yes
@@ -8,12 +8,6 @@ handlers:
 - url: /favicon\.ico
   static_files: favicon.ico
   upload: favicon\.ico
-  
-- url: /art/
-  script: art/index.php
-
-- url: /(.+\.php)$
-  script: \1
 
 - url: /css/(.*)
   static_files: css/\1
@@ -29,15 +23,10 @@ handlers:
   upload: images/(.*)
   application_readable: true
 
-- url: /art/(.+\.(jpg|png|swf))$
-  static_files: art/\1
-  upload: art/(.*)
+- url: /post/(.*)
+  static_files: post/\1
+  upload: post/(.*)
   application_readable: true
 
-- url: /tech/(.+\.(jpg|png|swf))$
-  static_files: tech/\1
-  upload: tech/(.*)
-  application_readable: true
-
-- url: (.*)/
+- url: (.*)
   script: \1/index.php

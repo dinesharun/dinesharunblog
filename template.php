@@ -126,7 +126,11 @@
   function AddBody($cat, $idx, $post)
   {
     global $pathPrefix;
+	global $currDepth;
 	global $bgImg;
+	global $quotes;
+   	global $totalQuotes;
+	global $enableComments;	
 
     if($cat == 0)
     {
@@ -175,16 +179,6 @@
     }
 
     echo '<div class="mainPanel" id="mp">';
-  }
-
-
-  function AddFooter($cat, $idx, $post)
-  {
-    global $currDepth;
-    global $pathPrefix;
-	global $quotes;
-   	global $totalQuotes;
-	global $enableComments;
 	$rightImg = $pathPrefix . 'images/index_header_' . $cat . '_' . $idx . '_' . $post . '.png';
 
 	/* Post Specific image not present, check group specific file present */
@@ -233,11 +227,14 @@
 
     echo '</div>';
 
-
     $indx = rand(0, $totalQuotes-1);
     echo '<div class="bodyBGHeading"> "' . $quotes[$indx][0] . '" <br />';
-    echo '<span style="font-size: 69%;"> - ' . $quotes[$indx][1] .  ' </span></div>';
+    echo '<span style="font-size: 69%;"> - ' . $quotes[$indx][1] .  ' </span></div>';	
+  }
 
+
+  function AddFooter($cat, $idx, $post)
+  {
     echo '<div class="bottomBar">';
 
     echo '  <table style="width:100%;text-align:center;padding:0px;">';
