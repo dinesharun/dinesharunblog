@@ -99,5 +99,64 @@
     }
 
 	echo '</div>';
-  }  
+  }
+  
+  function countImagesInDir($firstCall, $path, $thumbDir, $imageIndx, &$selectedFile)
+  {
+    global $Debug;
+	global $totalImages;
+	$newPath = "";
+
+    if($firstCall == 1)
+    {
+      $totalImages = 0;
+    }
+
+	if(is_dir($path))
+	{
+	  if($currDir = opendir($path))
+	  {
+		while(($file = readdir($currDir)) != false)
+        {
+		  $newPath = $path . '/' . $file;
+		  if($Debug)
+		   { echo "filename:" . $file . ", filetype: " . filetype($newPath) . "<br />"; }
+
+		  if((filetype($newPath) == 'dir') && (($file != '.') && ($file != '..')))
+		  {
+		    if($file == "thumbs")
+			{
+              countImagesInDir(0, $newPath, 1, $imageIndx, $selectedFile);
+			}
+			else
+			{
+              countImagesInDir(0, $newPath, 0, $imageIndx, $selectedFile);
+			}
+		  }
+		  else
+		  {
+		    if(((filetype($newPath) == 'file')) && ($thumbDir == 1))
+			{
+			  if((substr_count($newPath, '.jpg') > 0) ||
+			     (substr_count($newPath, '.JPG') > 0))
+			  {
+		        $totalImages++;
+
+				if($totalImages == $imageIndx)
+				{
+				  $selectedFile = $newPath;
+				}
+
+				if($Debug)
+				{ echo ' Selected File : ' . $newPath . '<br />'; }
+		      }
+			}
+		  }
+		}
+	  }
+	  closedir($currDir);
+    }
+
+	return $totalImages;
+  }
 ?>
