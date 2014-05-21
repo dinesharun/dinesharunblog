@@ -1,4 +1,6 @@
-<?php include("links.php");
+<?php 
+  include("links.php");
+  include("getpage.php");
 
   $enableComments = 0;
 
@@ -134,6 +136,7 @@
 
 	echo '<div class="centerBlock">';
 	
+	/* Home section */
     if($cat == 0)
     {
       echo '<div class="header">';
@@ -142,6 +145,7 @@
       echo '  <a class="mainLinks" href="' . $pathPrefix . 'tech/"> <span class="hMenu" style="right: -2%;"> <img class="menuImg" alt="" src="' . $pathPrefix . 'images/tech.png"/> Technology </span> </a> ';
       echo '</div>';
     }
+	/* Art Section */
     else if($cat == 1)
     {
       echo '<div class="header">';
@@ -153,6 +157,7 @@
       echo '  <a class="mainLinks' . (($idx==5)?('Curr'):('')) . '" href="' . $pathPrefix . 'art/travel/"> <span class="hMenu' . (($idx==5)?('Curr'):('')) . '" style="right: 3%;"> <img class="menuImg" alt="" src="' . $pathPrefix . 'images/travel.png"/> Travel </span> </a> ';
       echo '</div>';
     }
+	/* Tech Section */
     else if($cat == 2)
     {
       echo '<div class="header">';
@@ -163,6 +168,7 @@
       echo '  <a class="mainLinks' . (($idx==4)?('Curr'):('')) . '" href="' . $pathPrefix . 'tech/web/"> <span class="hMenu' . (($idx==4)?('Curr'):('')) . '" style="right: 2%;"> <img class="menuImg" alt="" src="' . $pathPrefix . 'images/web.png"/> Webdesign </span> </a> ';
       echo '</div>';
     }
+	/* Default: Home Section */
     else
     {
       echo '<div class="header">';
@@ -172,17 +178,36 @@
       echo '</div>';
     }
 
+	/* Background thumbnail image for every category and index */
     echo'<div class="bodyBGImgDiv"><img class="bodyImg" alt="" src="' . $pathPrefix . $bgImg[$cat][$idx] . '"/> </div>';
 
+	/* Post date addition */
     if(($idx != 0) && ($post != 0))
     {
       InitLinkIdx($cat, $idx, ($post-1));
       echo '<div class="dateTimeDiv">' . GetLinkParam(6) . ' </div>';
     }
 
+	/* Main post panel */
     echo '<div class="mainPanel" id="mp">';
-	$rightImg = $pathPrefix . 'images/index_header_' . $cat . '_' . $idx . '_' . $post . '.png';
+	getPage($cat, $idx, $post); /* Get the actual post from the data file */
+	echo '</div>';
 
+	/* Recent post list for all categories except about me */
+    if(($post == 0) && (!(($cat == 3) && ($idx == 5))))
+    {
+      GetRecentPosts($cat, $idx, $currDepth, 5);
+    }
+
+	/* Comments for posts if enabled */
+    if(($post != 0) && ($enableComments != 0))
+    {
+      AddCommentSection($cat, $idx, $post);
+    }
+
+	/* Right hand side image */
+	$rightImg = $pathPrefix . 'images/index_header_' . $cat . '_' . $idx . '_' . $post . '.png';
+	
 	/* Post Specific image not present, check group specific file present */
 	if((file_exists($rightImg)) == false)
 	{
@@ -194,28 +219,15 @@
 	    $rightImg = $pathPrefix . 'images/index_header_0_0_0.png';
 	  }
 	}
-
-    if(($post == 0) && (!(($cat == 3) && ($idx == 5))))
-    {
-      GetRecentPosts($cat, $idx, $currDepth, 5);
-    }
-
-    if(($post != 0) && ($enableComments != 0))
-    {
-      AddCommentSection($cat, $idx, $post);
-    }
-
-    echo '</div>';
-
     echo '<img class="rightImg" src="' . $rightImg . '" />';
 
+	Right side list of links
     GetPostLinks($cat, $idx, $post);
 
-    if($cat != 3)
-    {
-      $idx = 0;
-    }
+	/* There is no need for fotter current link if the category is not general */
+    if($cat != 3) { $idx = 0; }
 
+	/* Fotter section (general) */
     echo '<a name="fotter"></a>';
     echo '<div class="fotter">';
     echo '   <a class="mainLinks' . (($idx==1)?('Curr'):('')) . '" href="' . $pathPrefix . 'gen/enter/#fotter"> <span class="fMenu' . (($idx==1)?('Curr'):('')) . '" style="right: -2%;"> <img class="menuImgBottom" alt="" src="' . $pathPrefix . 'images/enter.png"/> Entertainment </span> </a>';
@@ -227,18 +239,19 @@
 
     echo '<br /><br /><br /><br /><br />';
 
-    echo '</div>';
+    echo '</div>'; /* End of main panel */
 
+	/* Ramdom quation at the top */
     $indx = rand(0, $totalQuotes-1);
     echo '<div class="bodyBGHeading"> "' . $quotes[$indx][0] . '" <br />';
     echo '<span style="font-size: 69%;"> - ' . $quotes[$indx][1] .  ' </span></div>';	
   }
 
-
   function AddFooter($cat, $idx, $post)
   {
     echo '</div>'; /* End of content frame */
 	
+	/* Bottom frame */
     echo '<div class="bottomBar">';
 
     echo '  <table style="width:100%;text-align:center;padding:0px;">';
@@ -262,7 +275,7 @@
 
     echo '</html>';
   }
-
+  
   function AddCommentSection($cat, $idx, $post)
   {
     echo '<div class="CommentDIV"><h4> Comments </h4>';
