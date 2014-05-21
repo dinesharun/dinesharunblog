@@ -1,8 +1,7 @@
 <?php 
 
   include("template.php");
-  
-  $Debug  = 0;
+
   $catId  = 0;
   $idxId  = 0;
   $postId = 0;
