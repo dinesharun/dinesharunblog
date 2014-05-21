@@ -100,6 +100,7 @@ body
 .toplbLink:hover
 {
   color: rgb(210, 99, 99);
+  cursor: pointer;
 }
 
 .bodyBGImgDiv

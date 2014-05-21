@@ -400,10 +400,15 @@ function formatCodeBlock()
   }
 }
 
+function addPage(data)
+{
+  $(".contentFrame").html(data);
+}
+
 function getPage(catId, idxId, postId)
 {
   $.get( "getpage", { category: catId, index: idxId, post: postId }).done(function( data ) 
   {
-    $(".contentFrame").html(data);
+    addPage(data);
   });
 }
