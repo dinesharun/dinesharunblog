@@ -32,6 +32,8 @@
 	/* Get the file contents */
     $postData = file_get_contents($postFile);
 	
+	eval("\$postData = \"$postData\";");
+	
 	/* If got post the data */
 	if($postData != FALSE)
 	{
