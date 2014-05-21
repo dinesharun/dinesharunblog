@@ -20,6 +20,8 @@
   </tr>
 </table>
 <h3 style="text-align: center;"> A few Random Images from my <a class="InTextLink" href="art/photo/"> Photography </a> Archive <br /></h3><br />
-<div style="width: 98%; border: 0px; padding: 0%;">
-  <?php GetRandomImages(); ?>
+<div id="randImgsDiv" style="width: 98%; border: 0px; padding: 0%;">
+  <script type="text/javascript">
+    GetRandomImages();
+  </script>
 </div>

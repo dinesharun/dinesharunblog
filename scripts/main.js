@@ -405,10 +405,23 @@ function addPage(data)
   $(".contentFrame").html(data);
 }
 
+function addRandImages(data)
+{
+  $(".randImgsDiv").html(data);
+}
+
 function getPage(catId, idxId, postId)
 {
   $.get( "getpage", { category: catId, index: idxId, post: postId }).done(function( data ) 
   {
     addPage(data);
+  });
+}
+
+function GetRandomImages()
+{
+  $.get( "getpage", { randImages: true }).done(function( data ) 
+  {
+    addRandImages(data);
   });
 }

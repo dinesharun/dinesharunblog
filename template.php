@@ -72,7 +72,7 @@
 	 echo '<link href="https://fonts.googleapis.com/css?family=Emblema+One" rel="stylesheet" type="text/css">';
 	 echo '<link href="https://fonts.googleapis.com/css?family=Combo" rel="stylesheet" type="text/css">';
      echo '<script type="text/javascript" src="' . $pathPrefix . 'scripts/main.js"></script>';
-     echo '<script type="text/javascript" src="' . $pathPrefix . 'scripts/jquery-1.4.2.js"></script>';
+     echo '<script type="text/javascript" src="' . $pathPrefix . 'scripts/jquery.js"></script>';
      echo '<script type="text/javascript" src="' . $pathPrefix . 'scripts/showImage.js"></script>';
 
 	 echo '<script type="text/javascript" src="' . $pathPrefix . 'scripts/galleria.js"></script>';
@@ -572,57 +572,6 @@
 
       mysql_close($con);
     }
-  }
-
-  function GetRandomImages()
-  {
-    global $Debug;
-    $startPath = "art/photo";
-	$imgPath   = "";
-
-	$imagesCount = CountImagesInDir(1, $startPath, 0, 0, $imgPath);
-
-	if($Debug) { echo ' totalImages : ' . $imagesCount . '<br />'; }
-
-    $i = 0;
-    $selected = array();
-
-    echo '<div class="imgStrip">';
-
-    while($i < 4)
-    {
-      $currImgIndex = rand(1, $imagesCount);
-      $selectedIndx[$i] = $currImgIndex;
-
-      $j = 0;
-
-      /* Check for duplicates if there are enough to check */
-      while(($imagesCount >= 4) && ($j < $i))
-      {
-        /* If same index already selected */
-        if($selectedIndx[$j] == $currImgIndex)
-        {
-          /* Select a new one */
-          $currImgIndex = rand(1, $imagesCount);
-          $selectedIndx[$i] = $currImgIndex;
-          $j = 0;
-        }
-        else
-        {
-          $j++;
-        }
-      }
-
-      if($Debug) { echo ' currImgIndex : ' . $currImgIndex . '&nbsp;'; }
-
-      $imagesCount = CountImagesInDir(1, $startPath, 0, $currImgIndex, $imgPath);
-
-      echo '<img id="randImages' . $i .'" style="width: 21%; cursor:pointer; margin-left: 1.5%; margin-right: 1.5%; margin-top: 0%; margin-bottom: 0%; border: 2px double grey;" src="'. $imgPath .'" onLoad="ResizeImage(' . $i . ')" onClick="ShowImage(\'' . str_replace("thumbs/", "", $imgPath) . '\', \'Image of the Moment\')" />';
-
-      $i++;
-    }
-
-	echo '</div>';
   }
 
   function countImagesInDir($firstCall, $path, $thumbDir, $imageIndx, &$selectedFile)
