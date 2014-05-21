@@ -962,3 +962,10 @@ text-align:center;
   cursor: pointer;
   font-size: 270%;
 }
+
+.randImgsDiv
+{
+  width: 98%; 
+  border: 0px; 
+  padding: 0%;
+}
