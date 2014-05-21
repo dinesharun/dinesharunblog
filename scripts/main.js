@@ -399,3 +399,11 @@ function formatCodeBlock()
     c.innerHTML = ftxt;
   }
 }
+
+function getPage(catId, idxId, postId)
+{
+  $.get( "getpage", { category: catId, index: idxId, post: postId }).done(function( data ) 
+  {
+    $(".contentFrame").html(data);
+  });
+}

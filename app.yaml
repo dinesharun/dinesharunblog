@@ -28,5 +28,8 @@ handlers:
   upload: post/(.*)
   application_readable: true
 
+- url: .*getpage.*
+  script: getpage.php
+
 - url: (.*)
   script: \1/index.php

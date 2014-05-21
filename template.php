@@ -69,7 +69,7 @@
 	 echo '<link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet" type="text/css">';
 	 echo '<link href="https://fonts.googleapis.com/css?family=Emblema+One" rel="stylesheet" type="text/css">';
 	 echo '<link href="https://fonts.googleapis.com/css?family=Combo" rel="stylesheet" type="text/css">';
-     echo '<script type="text/javascript" src="' . $pathPrefix . 'scripts/main_scripts.js"></script>';
+     echo '<script type="text/javascript" src="' . $pathPrefix . 'scripts/main.js"></script>';
      echo '<script type="text/javascript" src="' . $pathPrefix . 'scripts/jquery-1.4.2.js"></script>';
      echo '<script type="text/javascript" src="' . $pathPrefix . 'scripts/showImage.js"></script>';
 
@@ -114,13 +114,13 @@
      echo '</div>';
      echo '  <table style="z-index: 15; position: fixed; top: -3px; left: 0px; margin: 0px; margin-left: 9%; padding: 0px;width: 33%;">';
      echo '    <tr style="margin: 0px; padding: 0px;">';
-     echo '      <td class="toplargeButton"> <a class="toplbLink" href="' . $pathPrefix . '"> Home </a> </td> <td> &nbsp; &nbsp; &nbsp; </td>';
-     echo '      <td class="toplargeButton"> <a class="toplbLink" href="' . $pathPrefix . 'art/"> Art </a> </td> <td> &nbsp; &nbsp; &nbsp; </td>';
-     echo '      <td class="toplargeButton"> <a class="toplbLink" href="' . $pathPrefix . 'tech/"> Technology </a> </td> <td> &nbsp; &nbsp; &nbsp; </td>';
+     echo '      <td class="toplargeButton"> <a class="toplbLink" onclick="getPage(0, 0, 0)"> Home </a> </td> <td> &nbsp; &nbsp; &nbsp; </td>';
+     echo '      <td class="toplargeButton"> <a class="toplbLink" onclick="getPage(1, 0, 0)"> Art </a> </td> <td> &nbsp; &nbsp; &nbsp; </td>';
+     echo '      <td class="toplargeButton"> <a class="toplbLink" onclick="getPage(2, 0, 0)"> Technology </a> </td> <td> &nbsp; &nbsp; &nbsp; </td>';
      echo '    </tr>';
      echo '  </table>';
-
-     echo '<div class="centerBlock">';
+	 
+	 echo '<div class="contentFrame" id="contentFrame">';
   }
 
   function AddBody($cat, $idx, $post)
@@ -132,6 +132,8 @@
    	global $totalQuotes;
 	global $enableComments;	
 
+	echo '<div class="centerBlock">';
+	
     if($cat == 0)
     {
       echo '<div class="header">';
@@ -235,6 +237,8 @@
 
   function AddFooter($cat, $idx, $post)
   {
+    echo '</div>'; /* End of content frame */
+	
     echo '<div class="bottomBar">';
 
     echo '  <table style="width:100%;text-align:center;padding:0px;">';

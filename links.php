@@ -20,7 +20,7 @@ $links = array(
                        array("sunriseset/FirstSet.php", "Sunrise Sunset Collection", 1, 1, 0, "03 July 2012", "Golden and magical moments when the sun rises or falls", 1),
                        array("trees/FirstSet.php", "Trees Collection", 1, 1, 0, "07 July 2012", "The majestic and wonderful trees around us", 1),
                        array("rain/FirstSet.php", "Rain Collection", 1, 1, 0, "07 July 2012", "Gift from the skies graces use - Rain", 1),
-					             array("seasons/autum001.php", "Seasons Collection", 1, 1, 0, "22 October 2012", "Seasons Collection - Autum in Germany 2012", 1)
+					   array("seasons/autum001.php", "Seasons Collection", 1, 1, 0, "22 October 2012", "Seasons Collection - Autum in Germany 2012", 1)
                      ),
 
                 /* 3 - Travel */
@@ -37,10 +37,10 @@ $links = array(
 					             array("EuropeOct2012/autum.php", "Autum in Germany - Oct 2012", 1, 5, 0, "10 November 2012", "Autum - Nature's Color Canvas", 0)
                      ),
 
-				        /* 4 - Animation */
-				        array( array("gallery/", "Blender - Gallery", 1, 2, 0, "27 May 2012", "A collection of my generic Blender works", 1),
-					             array("TheQuasarLink/", "The Quasar Link", 1, 2, 0, "27 May 2012", "A mysterious guest - with an unfinished bussiness - An Blender Animation - Trailer", 1)
-				             ),
+				/* 4 - Animation */
+				array( array("gallery/", "Blender - Gallery", 1, 2, 0, "27 May 2012", "A collection of my generic Blender works", 1),
+					   array("TheQuasarLink/", "The Quasar Link", 1, 2, 0, "27 May 2012", "A mysterious guest - with an unfinished bussiness - An Blender Animation - Trailer", 1)
+				     ),
 
                 /* 5 - Electronics */
                 array( array("bwlc/", "Basic Water Level Controller", 2, 2, 0, "27 May 2012", "A water motor controller that automatically switches ON/OFF the motor based on water level in tank", 1),
