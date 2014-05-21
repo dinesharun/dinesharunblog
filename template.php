@@ -221,7 +221,7 @@
 	}
     echo '<img class="rightImg" src="' . $rightImg . '" />';
 
-	Right side list of links
+	/* Right side list of links */
     GetPostLinks($cat, $idx, $post);
 
 	/* There is no need for fotter current link if the category is not general */
