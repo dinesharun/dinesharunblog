@@ -1,5 +1,7 @@
 <?php 
 
+  include("template.php");
+  
   $Debug  = 0;
   $catId  = 0;
   $idxId  = 0;
@@ -22,7 +24,7 @@
   if(isset($_GET["category"]))
   {
     /* Get the requested page */
-    getPage($catId, $idxId, $postId);
+    AddBody($catId, $idxId, $postId);
   }
   else if(isset($_GET["randImages"]))
   {

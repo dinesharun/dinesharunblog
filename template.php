@@ -1,6 +1,5 @@
 <?php 
   include("links.php");
-  include("getpage.php");
 
   $enableComments = 0;
 
