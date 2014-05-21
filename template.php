@@ -190,10 +190,11 @@
 
 	/* Main post panel */
     echo '<div class="mainPanel" id="mp">';
-	getPage($cat, $idx, $post); /* Get the actual post from the data file */
-	echo '</div>';
+	
+	/* Get the actual post from the data file */
+	getPage($cat, $idx, $post);
 
-	/* Recent post list for all categories except about me */
+	/* Recent post list for all categories in root except about me */
     if(($post == 0) && (!(($cat == 3) && ($idx == 5))))
     {
       GetRecentPosts($cat, $idx, $currDepth, 5);
@@ -204,6 +205,8 @@
     {
       AddCommentSection($cat, $idx, $post);
     }
+	
+	echo '</div>';
 
 	/* Right hand side image */
 	$rightImg = $pathPrefix . 'images/index_header_' . $cat . '_' . $idx . '_' . $post . '.png';
