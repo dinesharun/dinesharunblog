@@ -33,7 +33,7 @@
                   );
 
   $TestMode = 1;
-  $Debug = 1;
+  $Debug = 0;
   $pathPrefix;
   $currDepth;
   $totalImages;
