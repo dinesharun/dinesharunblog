@@ -300,7 +300,7 @@
   function GetRandomImages()
   {
     global $Debug;
-    $startPath = "images/art/photo";
+    $startPath = "images/art/photo/";
 	$imgPath   = "";
 
 	$imagesCount = CountImagesInDir(1, $startPath, 0, 0, $imgPath);
