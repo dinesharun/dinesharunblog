@@ -33,7 +33,7 @@
                   );
 
   $TestMode = 1;
-  $Debug = 0;
+  $Debug = 1;
   $pathPrefix;
   $currDepth;
   $totalImages;
@@ -366,8 +366,8 @@
 		while(($file = readdir($currDir)) != false)
         {
 		  $newPath = $path . '/' . $file;
-		  if($Debug)
-		   { echo "filename:" . $file . ", filetype: " . filetype($newPath) . "<br />"; }
+		  
+		  if($Debug) { echo "filename:" . $file . ", filetype: " . filetype($newPath) . "<br />"; }
 
 		  if((filetype($newPath) == 'dir') && (($file != '.') && ($file != '..')))
 		  {
@@ -401,8 +401,16 @@
 		  }
 		}
 	  }
+	  else
+	  {
+	    if($Debug) { echo "Open Dir Failure"; }
+	  }
 	  closedir($currDir);
     }
+	else
+	{
+	  if($Debug) { echo "Path:" . $path . "is not a Dir"; }
+	}
 
 	return $totalImages;
   }
