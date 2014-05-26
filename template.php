@@ -32,7 +32,7 @@
 				   array('I saw the angel in the marble and carved until I set him free', 'Michelangelo')
                   );
 
-  $TestMode = 1;
+  $TestMode = 0;
   $Debug = 1;
   $pathPrefix;
   $currDepth;
