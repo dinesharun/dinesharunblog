@@ -563,26 +563,26 @@
             echo '<div class="PostDataPlain" > <h3 style="text-align:center"> Random Topics </h3> <br /> ';
           }
 
-	        if($depth == 0)
-	        {
-	          $urlPrefix = $catStrs[0][$selCat];
-	          $urlPrefix .= '/';
-	          $urlPrefix .= $catStrs[$selCat][$selIdx];
-	          $urlPrefix .= '/';
-	        }
-	        else if($depth == 1)
-	        {
-	          $urlPrefix = $catStrs[$selCat][$selIdx];
-	          $urlPrefix .= '/';
-	        }
-	        else
-	        {
-	          $urlPrefix .= '';
-	        }
+	      if($depth == 0)
+	      {
+	        $urlPrefix = $catStrs[0][$selCat];
+	        $urlPrefix .= '/';
+	        $urlPrefix .= $catStrs[$selCat][$selIdx];
+	        $urlPrefix .= '/';
+	      }
+	      else if($depth == 1)
+	      {
+	        $urlPrefix = $catStrs[$selCat][$selIdx];
+	        $urlPrefix .= '/';
+	      }
+	      else
+	      {
+	        $urlPrefix .= '';
+	      }
 
-	        echo '<table style="text-align: left;border:0px;width:99%;"><tr><td style="width:33%"><a class="InTextLink" onclick=getPage('. $selCat . ',' . $selIdx . ',' . $postIdx')"></a></td><td>' . GetLinkParam(7) . '<br /></td></tr></table>';
+	      echo '<table style="text-align: left;border:0px;width:99%;"><tr><td style="width:33%"><a class="InTextLink" href="' . $urlPrefix . GetLinkParam(1) . '">' . GetLinkParam(2) . '</a></td><td>' . GetLinkParam(7) . '<br /></td></tr></table>';
         }
-	    }
+	  }
     }
     echo '</div><br /><br /><br />';
   }
