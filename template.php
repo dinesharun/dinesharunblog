@@ -565,7 +565,7 @@
 	          $urlPrefix .= '';
 	        }
 
-	        echo '<table style="text-align: left;border:0px;width:99%;"><tr><td style="width:33%"><a class="InTextLink" href="' . $urlPrefix . GetLinkParam(1) . '">' . GetLinkParam(2) . '</a></td><td>' . GetLinkParam(7) . '<br /></td></tr></table>';
+	        echo '<table style="text-align: left;border:0px;width:99%;"><tr><td style="width:33%"><a class="InTextLink" onclick=getPage('. $selCat . ',' . $selIdx . ',' . $postIdx')"></a></td><td>' . GetLinkParam(7) . '<br /></td></tr></table>';
         }
 	    }
     }
