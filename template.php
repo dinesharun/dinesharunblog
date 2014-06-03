@@ -238,8 +238,11 @@ function AddBody($cat, $idx, $post)
 	}
   echo '<img class="rightImg" src="' . $rightImg . '" />';
 
-	/* Right side list of links */
-  GetPostLinks($cat, $idx);
+  /* Right side list of links, only for posts */
+  if($post != 0)
+  {
+    GetPostLinks($cat, $idx);
+  }
 
 	/* There is no need for fotter current link if the category is not general */
   if($cat != 3) { $idx = 0; }
@@ -476,7 +479,7 @@ function GetPostLinks($cat, $idx)
 
     if($post["enable"] != 0)
     {
-      echo '<a class="PostLinks" onclick="getPage(' + $post["catId"] + ',' + $post["idxId"] + ',' + $post["postId"] + ')">' . $post["title"] . ' </a> <br />';;
+      echo '<a class="PostLinks" onclick="getPage(' . $post["catId"] . ',' . $post["idxId"] . ',' . $post["postId"] . ')">' . $post["title"] . ' </a> <br />';
     }
     
     $num++;
@@ -558,7 +561,7 @@ function GetRandomPosts($cat, $idx, $depth, $count)
           $urlPrefix .= '';
         }
 
-        echo '<table style="text-align: left;border:0px;width:99%;"><tr><td style="width:33%"><a class="InTextLink" onclick="getPage(' + $post["catId"] + ',' + $post["idxId"] + ',' + $post["postId"] + ')">' . $post["title"] . '  </a></td><td>' . $post["desc"] . '<br /></td></tr></table>';
+        echo '<table style="text-align: left;border:0px;width:99%;"><tr><td style="width:33%"><a class="InTextLink" onclick="getPage(' . $post["catId"] . ',' . $post["idxId"] . ',' . $post["postId"] . ')">' . $post["title"] . '  </a></td><td>' . $post["desc"] . '<br /></td></tr></table>';
       }
     }
   }
