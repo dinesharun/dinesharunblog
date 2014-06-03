@@ -32,8 +32,8 @@
                   array('I saw the angel in the marble and carved until I set him free', 'Michelangelo')
                  );
 
-  $TestMode = 0;
-  $Debug = 1;
+  $TestMode = 1;
+  $Debug = 0;
   $pathPrefix;
   $currDepth;
   $totalImages;
