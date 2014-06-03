@@ -33,6 +33,7 @@ $numPosts = 25;
 
 function GetPosts($catID, $idxID)
 {
+  global $links;
   $i = 0;
   $posts = array();
   
