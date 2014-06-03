@@ -226,6 +226,11 @@ body
   font-width: bold;
 }
 
+.mainLinks:hover
+{
+  cursor:pointer;
+}
+
 .mainLinks:link, .mainLinks:visited, .mainLinks:active
 {
   text-decoration: none;
@@ -445,6 +450,7 @@ body
 {
   color:rgb(30, 30, 210);
   text-decoration:underline;
+  cursor:pointer;
 }
 
 .PostLinks
@@ -461,6 +467,7 @@ body
 {
   color:rgb(18, 18, 60);
   text-decoration:underline;
+  cursor:pointer;
 }
 
 .CommentDIV

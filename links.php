@@ -14,7 +14,7 @@ $links = array( /*    0 */ array('catId' => 0, 'idxId' => 0, 'postId' =>    0, '
                 /*   10 */ array('catId' => 1, 'idxId' => 1, 'postId' =>   10, 'test' => 0, 'enable' => 1, 'link' => "seasons/autum001.php", 'title' => "Seasons Collection", 'date' => "22 October 2012", 'desc' => "Seasons Collection - Autum in Germany 2012"),
                 /*   11 */ array('catId' => 1, 'idxId' => 5, 'postId' =>   11, 'test' => 0, 'enable' => 1, 'link' => "EuropeMay2011", 'title' => "Europe Trip - May 2011", 'date' => "25 May 2012", 'desc' => "My Trip to Europe in My 2011"),
                 /*   12 */ array('catId' => 1, 'idxId' => 5, 'postId' =>   12, 'test' => 0, 'enable' => 1, 'link' => "EuropeMay2011/Lubeck.php", 'title' => "Lubeck - May 2011", 'date' => "25 May 2012", 'desc' => "Lubeck - A medieval city"),
-                /*   13 */ array('catId' => 1, 'idxId' => 5, 'postId' =>   13, 'test' => 0, 'enable' => 1, 'link' => "EuropeMay2011/Hamburg.php", 'title' => "Hamburg - May 2011", 'date' => "25 May 2012", 'desc' => "Hamburg - A wealthy city",
+                /*   13 */ array('catId' => 1, 'idxId' => 5, 'postId' =>   13, 'test' => 0, 'enable' => 1, 'link' => "EuropeMay2011/Hamburg.php", 'title' => "Hamburg - May 2011", 'date' => "25 May 2012", 'desc' => "Hamburg - A wealthy city"),
                 /*   14 */ array('catId' => 1, 'idxId' => 5, 'postId' =>   14, 'test' => 0, 'enable' => 1, 'link' => "EuropeMay2011/Berlin.php", 'title' => "Berlin - May 2011", 'date' => "25 May 2012", 'desc' => "Berlin - A artistic, infrastructre, cultural, social and historical city"),
                 /*   15 */ array('catId' => 1, 'idxId' => 5, 'postId' =>   15, 'test' => 0, 'enable' => 1, 'link' => "EuropeMay2011/Kiel.php", 'title' => "Kiel - May 2011", 'date' => "25 May 2012", 'desc' => "Kiel - A sailars paradise with a great natural harbour"),
                 /*   16 */ array('catId' => 1, 'idxId' => 5, 'postId' =>   16, 'test' => 0, 'enable' => 1, 'link' => "EuropeMay2011/Muritz.php", 'title' => "Muritz - May 2011", 'date' => "25 May 2012", 'desc' => "Muritz - A land of thousand lakes and unsopiled nature"),
@@ -33,14 +33,15 @@ $numPosts = 25;
 
 function GetPosts($catID, $idxID)
 {
+  global $links;
   $i = 0;
-  $posts = new array();
+  $posts = array();
   
   foreach($links as $post)
   {
-    if(($post["catId"] == catID) && ($post["idxId"] == idxID))
+    if(($post["catId"] == $catID) && ($post["idxId"] == $idxID))
     {
-      $posts[i] = $post;
+      $posts[$i] = $post;
       $i++;
     }
   }

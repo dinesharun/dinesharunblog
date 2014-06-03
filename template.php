@@ -155,8 +155,8 @@ function AddBody($cat, $idx, $post)
   {
     echo '<div class="header">';
     echo '  <a class="mainLinksCurr"> <span class="hMenuCurr" style="right: -2%;"> &nbsp; &nbsp;<img class="menuImg" alt="" src="' . $pathPrefix . 'images/home.png"/> Home &nbsp; &nbsp; </span> </a>';
-    echo '  <a class="mainLinks" href="' . $pathPrefix . 'art/"> <span class="hMenu" style="right: -2%;">  <img class="menuImg" alt="" src="' . $pathPrefix . 'images/art.png"/> Art </span> </a> ';
-    echo '  <a class="mainLinks" href="' . $pathPrefix . 'tech/"> <span class="hMenu" style="right: -2%;"> <img class="menuImg" alt="" src="' . $pathPrefix . 'images/tech.png"/> Technology </span> </a> ';
+    echo '  <a class="mainLinks" onclick="getPage(1, 0, 0)"> <span class="hMenu" style="right: -2%;">  <img class="menuImg" alt="" src="' . $pathPrefix . 'images/art.png"/> Art </span> </a> ';
+    echo '  <a class="mainLinks" onclick="getPage(2, 0, 0)"> <span class="hMenu" style="right: -2%;"> <img class="menuImg" alt="" src="' . $pathPrefix . 'images/tech.png"/> Technology </span> </a> ';
     echo '</div>';
   }
 	/* Art Section */
@@ -186,9 +186,9 @@ function AddBody($cat, $idx, $post)
   else
   {
     echo '<div class="header">';
-    echo '<a class="mainLinks" href="' . $pathPrefix . '"> <span class="hMenu" style="right: -2%;"> &nbsp; &nbsp; <img class="menuImg" alt="" src="' . $pathPrefix . 'images/home.png"/> Home &nbsp; &nbsp;  </span> </a>';
-    echo '  <a class="mainLinks" href="' . $pathPrefix . 'art/"> <span class="hMenu" style="right: -2%;">  <img class="menuImg" alt="" src="' . $pathPrefix . 'images/art.png"/> Art </span> </a> ';
-    echo '  <a class="mainLinks" href="' . $pathPrefix . 'tech/"> <span class="hMenu" style="right: -2%;"> <img class="menuImg" alt="" src="' . $pathPrefix . 'images/tech.png"/> Technology </span> </a> ';
+    echo '  <a class="mainLinks" onclick="getPage(0, 0, 0)"> <span class="hMenu" style="right: -2%;"> &nbsp; &nbsp; <img class="menuImg" alt="" src="' . $pathPrefix . 'images/home.png"/> Home &nbsp; &nbsp;  </span> </a>';
+    echo '  <a class="mainLinks" onclick="getPage(1, 0, 0)"> <span class="hMenu" style="right: -2%;">  <img class="menuImg" alt="" src="' . $pathPrefix . 'images/art.png"/> Art </span> </a> ';
+    echo '  <a class="mainLinks" onclick="getPage(2, 0, 0)"> <span class="hMenu" style="right: -2%;"> <img class="menuImg" alt="" src="' . $pathPrefix . 'images/tech.png"/> Technology </span> </a> ';
     echo '</div>';
   }
 
@@ -422,7 +422,14 @@ function countImagesInDir($firstCall, $path, $thumbDir, $imageIndx, &$selectedFi
                        'images/art/photo/sunriseset/images/thumbs/DSC01231.JPG', 'images/art/photo/sunriseset/images/thumbs/DSC01419.JPG', 'images/art/photo/sunriseset/images/thumbs/DSC01427.JPG',
                        'images/art/photo/trees/images/thumbs/DSC01533.JPG', 'images/art/photo/trees/images/thumbs/DSC00012.JPG', 'images/art/photo/trees/images/thumbs/DSC03663.JPG');
            
-  $selectedFile = $randImgs[$imageIndx];				 
+  if(($imageIndx != 0) && ($imageIndx <= $totalImages))
+  {
+    $selectedFile = $randImgs[$imageIndx-1];
+  }
+  else
+  {
+    $selectedFile = $randImgs[3];
+  }
 
   return $totalImages;
 }
