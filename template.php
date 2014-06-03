@@ -474,7 +474,7 @@ function GetPostLinks($cat, $idx)
       echo '<br /><br />';
     }
 
-    if($post["enabled"] != 0)
+    if($post["enable"] != 0)
     {
       echo '<a class="PostLinks" onclick="getPage(' + $post["catId"] + ',' + $post["idxId"] + ',' + $post["postId"] + ')">' . $post["title"] . ' </a> <br />';;
     }

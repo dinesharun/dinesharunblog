@@ -39,7 +39,7 @@ function GetPosts($catID, $idxID)
   
   foreach($links as $post)
   {
-    if(($post["catId"] == $catID) && ($post["idxId"] == $idxID))
+    if((($post["catId"] == $catID) && ($post["idxId"] == $idxID)) || ($catID == 0) || ($idxID == 0))
     {
       $posts[$i] = $post;
       $i++;
