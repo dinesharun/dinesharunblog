@@ -34,7 +34,7 @@ $numPosts = 25;
 function GetPosts($catID, $idxID)
 {
   $i = 0;
-  $posts = new array();
+  $posts = array();
   
   foreach($links as $post)
   {
