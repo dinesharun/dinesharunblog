@@ -1,114 +1,63 @@
-<?php
+﻿<?php
 
-$idxLink;
-$currPost;
-
-$numLinks = array(4, 6, 10, 2, 2);
-
-                /* Link, Display Name, Category, Index, Test, Time, Description, IncludeInRightPanel */
-$links = array(
-                /* 1 - Programming */
-                array( array("PrintThySelf/", "Print Thy Self", 2, 1, 0, "22 May 2012", "A C program that prints it's own source.", 1),
-                       array("PalinSqrChecker/", "Palindromic Palindrome Checker", 2, 1, 0, "22 May 2012", "A palindrome checker program writeen in C, where even the program is a palindrome", 1),
-                       array("Snake/", "Snake Game", 2, 1, 0, "20 Nov 2007", "The Classic Snake game as a simple console mode c program.", 1),
-                       array("Sudoku/", "SU-DO-KU Solver", 2, 1, 0, "15 Jan 2007", "A backtracking SU-DO-KU Solver.", 1)
-                     ),
-
-                /* 2 - Photography */
-                array( array("Flowers/FirstSet.php", "Flowers Collection - 1", 1, 1, 0, "22 May 2012", "A collection of my best photographs with macros of flowers", 1),
-                       array("360Pano/MyHomeSep2011.php", "360 Deg Panorama of My Home", 1, 1, 0, "22 May 2012", "360 Degree photo of My Home. Made with SE 750i and some very steady hands.", 1),
-                       array("sunriseset/FirstSet.php", "Sunrise Sunset Collection", 1, 1, 0, "03 July 2012", "Golden and magical moments when the sun rises or falls", 1),
-                       array("trees/FirstSet.php", "Trees Collection", 1, 1, 0, "07 July 2012", "The majestic and wonderful trees around us", 1),
-                       array("rain/FirstSet.php", "Rain Collection", 1, 1, 0, "07 July 2012", "Gift from the skies graces use - Rain", 1),
-					   array("seasons/autum001.php", "Seasons Collection", 1, 1, 0, "22 October 2012", "Seasons Collection - Autum in Germany 2012", 1)
-                     ),
-
-                /* 3 - Travel */
-                array( array("EuropeMay2011", "Europe Trip - May 2011", 1, 5, 0, "25 May 2012", "My Trip to Europe in My 2011", 1),
-                       array("EuropeMay2011/Lubeck.php", "Lubeck - May 2011", 1, 5, 0, "25 May 2012", "Lubeck - A medieval city", 0),
-                       array("EuropeMay2011/Hamburg.php", "Hamburg - May 2011", 1, 5, 0, "25 May 2012", "Hamburg - A wealthy city", 0),
-                       array("EuropeMay2011/Berlin.php", "Berlin - May 2011", 1, 5, 0, "25 May 2012", "Berlin - A artistic, infrastructre, cultural, social and historical city", 0),
-                       array("EuropeMay2011/Kiel.php", "Kiel - May 2011", 1, 5, 0, "25 May 2012", "Kiel - A sailars paradise with a great natural harbour", 0),
-                       array("EuropeMay2011/Muritz.php", "Muritz - May 2011", 1, 5, 0, "25 May 2012", "Muritz - A land of thousand lakes and unsopiled nature", 0),
-                       array("EuropeMay2011/Paris.php", "Paris - May 2011", 1, 5, 0, "25 May 2012", "Paris - An artists canvas", 0),
-                       array("EuropeMay2011/Sonderborg.php", "Sonderberg - May 2011", 1, 5, 0, "25 May 2012", "Sonderberg - A secluded getaway", 0),
-                       array("EuropeOct2012/", "Europe Trip - Oct 2012", 1, 5, 0, "20 October 2012", "Trip to Germany in Autum of 2012", 1),
-					             array("EuropeOct2012/mini.php", "Miniature Wonderland - Oct 2012", 1, 5, 0, "20 October 2012", "Miniature Wonderland - Life in micro propotions", 0),
-					             array("EuropeOct2012/autum.php", "Autum in Germany - Oct 2012", 1, 5, 0, "10 November 2012", "Autum - Nature's Color Canvas", 0)
-                     ),
-
-				/* 4 - Animation */
-				array( array("gallery/", "Blender - Gallery", 1, 2, 0, "27 May 2012", "A collection of my generic Blender works", 1),
-					   array("TheQuasarLink/", "The Quasar Link", 1, 2, 0, "27 May 2012", "A mysterious guest - with an unfinished bussiness - An Blender Animation - Trailer", 1)
-				     ),
-
-                /* 5 - Electronics */
-                array( array("bwlc/", "Basic Water Level Controller", 2, 2, 0, "27 May 2012", "A water motor controller that automatically switches ON/OFF the motor based on water level in tank", 1),
-                       array("dmo/", "Dot Matrix Oscilloscope", 2, 2, 0, "27 May 2012", "A collection of my generic Blender works", 1)
-                     )
+/* CatId, IdxId, PostId, TestMode, IncludeInRightPanel, Link, Display Name, Time, Description */
+$links = array( /*    0 */ array('catId' => 0, 'idxId' => 0, 'postId' =>    0, 'test' => 0, 'enable' => 0, 'link' => "NULL", 'title' => "NULL", 'date' => "NULL", 'desc' => "NULL"),
+                /*    1 */ array('catId' => 2, 'idxId' => 1, 'postId' =>    1, 'test' => 0, 'enable' => 1, 'link' => "PrintThySelf/", 'title' => "Print Thy Self", 'date' => "22 May 2012", 'desc' => "A C program that prints it's own source."),
+                /*    2 */ array('catId' => 2, 'idxId' => 1, 'postId' =>    2, 'test' => 0, 'enable' => 1, 'link' => "PalinSqrChecker/", 'title' => "Palindromic Palindrome Checker", 'date' => "22 May 2012", 'desc' => "A palindrome checker program writeen in C, where even the program is a palindrome"),
+                /*    3 */ array('catId' => 2, 'idxId' => 1, 'postId' =>    3, 'test' => 0, 'enable' => 1, 'link' => "Snake/", 'title' => "Snake Game", 'date' => "20 Nov 2007", 'desc' => "The Classic Snake game as a simple console mode c program."),
+                /*    4 */ array('catId' => 2, 'idxId' => 1, 'postId' =>    4, 'test' => 0, 'enable' => 1, 'link' => "Sudoku/", 'title' => "SU-DO-KU Solver", 'date' => "15 Jan 2007", 'desc' => "A backtracking SU-DO-KU Solver.")
+                /*    5 */ array('catId' => 1, 'idxId' => 1, 'postId' =>    5, 'test' => 0, 'enable' => 1, 'link' => "Flowers/FirstSet.php", 'title' => "Flowers Collection - 1", 'date' => "22 May 2012", 'desc' => "A collection of my best photographs with macros of flowers"),
+                /*    6 */ array('catId' => 1, 'idxId' => 1, 'postId' =>    6, 'test' => 0, 'enable' => 1, 'link' => "360Pano/MyHomeSep2011.php", 'title' => "360 Deg Panorama of My Home", 'date' => "22 May 2012", 'desc' => "360 Degree photo of My Home. Made with SE 750i and some very steady hands."),
+                /*    7 */ array('catId' => 1, 'idxId' => 1, 'postId' =>    7, 'test' => 0, 'enable' => 1, 'link' => "sunriseset/FirstSet.php", 'title' => "Sunrise Sunset Collection", 'date' => "03 July 2012", 'desc' => "Golden and magical moments when the sun rises or falls"),
+                /*    8 */ array('catId' => 1, 'idxId' => 1, 'postId' =>    8, 'test' => 0, 'enable' => 1, 'link' => "trees/FirstSet.php", 'title' => "Trees Collection", 'date' => "07 July 2012", 'desc' => "The majestic and wonderful trees around us"),
+                /*    9 */ array('catId' => 1, 'idxId' => 1, 'postId' =>    9, 'test' => 0, 'enable' => 1, 'link' => "rain/FirstSet.php", 'title' => "Rain Collection", 'date' => "07 July 2012", 'desc' => "Gift from the skies graces use - Rain"),
+                /*   10 */ array('catId' => 1, 'idxId' => 1, 'postId' =>   10, 'test' => 0, 'enable' => 1, 'link' => "seasons/autum001.php", 'title' => "Seasons Collection", 'date' => "22 October 2012", 'desc' => "Seasons Collection - Autum in Germany 2012")
+                /*   11 */ array('catId' => 1, 'idxId' => 5, 'postId' =>   11, 'test' => 0, 'enable' => 1, 'link' => "EuropeMay2011", 'title' => "Europe Trip - May 2011", 'date' => "25 May 2012", 'desc' => "My Trip to Europe in My 2011"),
+                /*   12 */ array('catId' => 1, 'idxId' => 5, 'postId' =>   12, 'test' => 0, 'enable' => 1, 'link' => "EuropeMay2011/Lubeck.php", 'title' => "Lubeck - May 2011", 'date' => "25 May 2012", 'desc' => "Lubeck - A medieval city"),
+                /*   13 */ array('catId' => 1, 'idxId' => 5, 'postId' =>   13, 'test' => 0, 'enable' => 1, 'link' => "EuropeMay2011/Hamburg.php", 'title' => "Hamburg - May 2011", 'date' => "25 May 2012", 'desc' => "Hamburg - A wealthy city",
+                /*   14 */ array('catId' => 1, 'idxId' => 5, 'postId' =>   14, 'test' => 0, 'enable' => 1, 'link' => "EuropeMay2011/Berlin.php", 'title' => "Berlin - May 2011", 'date' => "25 May 2012", 'desc' => "Berlin - A artistic, infrastructre, cultural, social and historical city"),
+                /*   15 */ array('catId' => 1, 'idxId' => 5, 'postId' =>   15, 'test' => 0, 'enable' => 1, 'link' => "EuropeMay2011/Kiel.php", 'title' => "Kiel - May 2011", 'date' => "25 May 2012", 'desc' => "Kiel - A sailars paradise with a great natural harbour"),
+                /*   16 */ array('catId' => 1, 'idxId' => 5, 'postId' =>   16, 'test' => 0, 'enable' => 1, 'link' => "EuropeMay2011/Muritz.php", 'title' => "Muritz - May 2011", 'date' => "25 May 2012", 'desc' => "Muritz - A land of thousand lakes and unsopiled nature"),
+                /*   17 */ array('catId' => 1, 'idxId' => 5, 'postId' =>   17, 'test' => 0, 'enable' => 1, 'link' => "EuropeMay2011/Paris.php", 'title' => "Paris - May 2011", 'date' => "25 May 2012", 'desc' => "Paris - An artists canvas"),
+                /*   18 */ array('catId' => 1, 'idxId' => 5, 'postId' =>   18, 'test' => 0, 'enable' => 1, 'link' => "EuropeMay2011/Sonderborg.php", 'title' => "Sonderberg - May 2011", 'date' => "25 May 2012", 'desc' => "Sonderberg - A secluded getaway"),
+                /*   19 */ array('catId' => 1, 'idxId' => 5, 'postId' =>   19, 'test' => 0, 'enable' => 1, 'link' => "EuropeOct2012/", 'title' => "Europe Trip - Oct 2012", 'date' => "20 October 2012", 'desc' => "Trip to Germany in Autum of 2012"),
+                /*   20 */ array('catId' => 1, 'idxId' => 5, 'postId' =>   20, 'test' => 0, 'enable' => 1, 'link' => "EuropeOct2012/mini.php", 'title' => "Miniature Wonderland - Oct 2012", 'date' => "20 October 2012", 'desc' => "Miniature Wonderland - Life in micro propotions"),
+                /*   21 */ array('catId' => 1, 'idxId' => 5, 'postId' =>   21, 'test' => 0, 'enable' => 1, 'link' => "EuropeOct2012/autum.php", 'title' => "Autum in Germany - Oct 2012", 'date' => "10 November 2012", 'desc' => "Autum - Nature's Color Canvas")
+                /*   22 */ array('catId' => 1, 'idxId' => 2, 'postId' =>   22, 'test' => 0, 'enable' => 1, 'link' => "gallery/", 'title' => "Blender - Gallery", 'date' => "27 May 2012", 'desc' => "A collection of my generic Blender works"),
+                /*   23 */ array('catId' => 1, 'idxId' => 2, 'postId' =>   23, 'test' => 0, 'enable' => 1, 'link' => "TheQuasarLink/", 'title' => "The Quasar Link", 'date' => "27 May 2012", 'desc' => "A mysterious guest - with an unfinished bussiness - An Blender Animation - Trailer")
+                /*   24 */ array('catId' => 2, 'idxId' => 2, 'postId' =>   24, 'test' => 0, 'enable' => 1, 'link' => "bwlc/", 'title' => "Basic Water Level Controller", 'date' => "27 May 2012", 'desc' => "A water motor controller that automatically switches ON/OFF the motor based on water level in tank"),
+                /*   25 */ array('catId' => 2, 'idxId' => 2, 'postId' =>   25, 'test' => 0, 'enable' => 1, 'link' => "dmo/", 'title' => "Dot Matrix Oscilloscope", 'date' => "27 May 2012", 'desc' => "A collection of my generic Blender works")
               );
+              
+$numPosts = 25;
 
-
-
-
-function InitLinkIdx($cat, $idx, $post)
+function GetPosts($catID, $idxID)
 {
-  global $idxLink;
-  global $currPost;
-
-  if(($cat == 2) && ($idx == 1))
+  $i = 0;
+  $posts = new array();
+  
+  foreach($links as $post)
   {
-    $idxLink = 1;
+    if(($post["catId"] == catID) && ($post["idxId"] == idxID))
+    {
+      $posts[i] = $post;
+      $i++;
+    }
   }
-  else if(($cat == 1) && ($idx == 1))
-  {
-    $idxLink = 2;
-  }
-  else if(($cat == 1) && ($idx == 5))
-  {
-    $idxLink = 3;
-  }
-  else if(($cat == 1) && ($idx == 2))
-  {
-    $idxLink = 4;
-  }
-  else if(($cat == 2) && ($idx == 2))
-  {
-    $idxLink = 5;
-  }
-  else
-  {
-    $idxLink = 0;
-  }
-
-  $currPost = $post;
+  
+  return $posts;
 }
 
-function GetLinkParam($paramID)
+function GetPost($postID)
 {
-  global $idxLink;
-  global $currPost;
-
-  global $cats;
-  global $numLinks;
-  global $links;
-
-  if($idxLink != 0)
+  if(($postID != 0) && ($postID <= $numPosts))
   {
-    if($paramID == 0)
-    {
-      return $numLinks[$idxLink-1];
-    }
-    else
-    {
-      return $links[$idxLink-1][$currPost][$paramID-1];
-    }
+    return $links[$postID];
   }
   else
   {
-    return 0;
+    return $links[0];
   }
-
 }
 
 ?>
