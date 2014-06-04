@@ -51,18 +51,17 @@ function GetPosts($catID, $idxID)
 
 function GetPost($postID)
 {
-  $posts = array();
+  global $links;
+  global $numPosts;
   
   if(($postID != 0) && ($postID <= $numPosts))
   {
-    $posts[0] = $links[$postID];
+    return $links[$postID];
   }
   else
   {
-    $posts[0] = $links[0];
+    return $links[0];
   }
-  
-  return $posts;
 }
 
 ?>
