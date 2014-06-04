@@ -199,7 +199,7 @@ function AddBody($cat, $idx, $post)
   if($post != 0)
   {
     $postData = GetPost($post);
-    echo '<div class="dateTimeDiv">' . $postData["date"] . ' </div>';
+    echo '<div class="dateTimeDiv">' . $postData[0]["date"] . ' </div>';
   }
 
 	/* Main post panel */
