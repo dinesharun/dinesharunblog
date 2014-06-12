@@ -52,17 +52,17 @@ function GetIds($path, &$catId, &$idxId, &$postId)
   
   if(isset($parts[0]))
   {
-    $catId  = array_search($parts[1], $catStrs);
+    $catId  = array_search($parts[1], $catStrs[0]);
     if($Debug) { echo 'Path 1:' . $parts[1] . ', Val 1:' . $catId . '&nbsp;&nbsp;&nbsp;'; }
   }
   if(isset($parts[1]))
   {
-    $idxId  = array_search($parts[2], $catStrs);
+    $idxId  = array_search($parts[2], $catStrs[$catId]);
     if($Debug) { echo 'Path 2:' . $parts[2] . ', Val 2:' . $idxId . '&nbsp;&nbsp;&nbsp;'; }
   }
   if(isset($parts[2]))
   {
-    $postId = array_search($parts[3], $catStrs);
+    $postId = getPostId($parts[3]);
     if($Debug) { echo 'Path 3:' . $parts[3] . ', Val 3:' . $postId . '&nbsp;&nbsp;&nbsp;'; }
   }
   
