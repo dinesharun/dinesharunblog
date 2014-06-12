@@ -45,15 +45,15 @@ function GetIds($path, &$catId, &$idxId, &$postId)
   $postId = 0;
   
   $parts  = explode('/', $path);
-  if(isset($parts[0])
+  if(isset($parts[0]))
   {
     $catId  = array_search($parts[0], $catStrs);
   }
-  if(isset($parts[1])
+  if(isset($parts[1]))
   {
     $idxId  = array_search($parts[1], $catStrs);
   }
-  if(isset($parts[2])
+  if(isset($parts[2]))
   {
     $postId = array_search($parts[2], $catStrs);
   }
