@@ -7,6 +7,10 @@ function StartScripts()
   resizeMe();
   StartClock();
   formatCodeBlock();
+  
+  window.addEventListener("popstate", function(e) {
+    
+  });
 }
 
 function StartClock()
@@ -402,17 +406,19 @@ function formatCodeBlock()
 
 function addPage(catId, idxId, postId, data)
 {
-  var link = "";
+  var link  = "";
+  var title = "";
   
   /* Update data */
   $(".contentFrame").html(data);
   
   /* Get current link */
-  link = $(".currLinkDiv").attr("linkStr");
+  link  = $(".currLinkDiv").attr("linkStr");
+  title = $(".currLinkDiv").attr("titleStr");
   
   /* Push new state */
   var stateObj = { catId: catId, idxId: idxId, postId: postId };
-  history.pushState(stateObj, NULL, link);
+  history.pushState(stateObj, title, link);
 }
 
 function addRandImages(data)
