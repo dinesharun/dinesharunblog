@@ -22,7 +22,7 @@ function StartScripts()
     }
     else
     {
-      if(e.state["path"] == NULL)
+      if(e.state["path"] == null)
       {
         getPage(null, e.state["catId"], e.state["idxId"], e.state["postId"], false);
       }
