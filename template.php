@@ -46,23 +46,24 @@ function GetIds($path, &$catId, &$idxId, &$postId)
   $postId = 0;
   $Debug  = 1;
   
-  if($Debug) { echo 'Path' . $path . '< br />'; }
-  
   $parts  = explode('/', $path);
+  
+  if($Debug) { echo 'Path:' . $path . 'Path 0:' . $parts[0] .'&nbsp;&nbsp;&nbsp;'; }
+  
   if(isset($parts[0]))
   {
-    $catId  = array_search($parts[0], $catStrs);
-    if($Debug) { echo 'Path 0' . $parts[0] . 'Val 0' . $catId . '< br />'; }
+    $catId  = array_search($parts[1], $catStrs);
+    if($Debug) { echo 'Path 1:' . $parts[1] . ', Val 1:' . $catId . '&nbsp;&nbsp;&nbsp;'; }
   }
   if(isset($parts[1]))
   {
-    $idxId  = array_search($parts[1], $catStrs);
-    if($Debug) { echo 'Path 1' . $parts[1] . 'Val 0' . $idxId . '< br />'; }
+    $idxId  = array_search($parts[2], $catStrs);
+    if($Debug) { echo 'Path 2:' . $parts[2] . ', Val 2:' . $idxId . '&nbsp;&nbsp;&nbsp;'; }
   }
   if(isset($parts[2]))
   {
-    $postId = array_search($parts[2], $catStrs);
-    if($Debug) { echo 'Path 2' . $parts[1] . 'Val 0' . $postId . '< br />'; }
+    $postId = array_search($parts[3], $catStrs);
+    if($Debug) { echo 'Path 3:' . $parts[3] . ', Val 3:' . $postId . '&nbsp;&nbsp;&nbsp;'; }
   }
   
   $Debug = 0;
