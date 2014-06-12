@@ -35,4 +35,4 @@ handlers:
   script: getpath.php
 
 - url: (.*)
-  script: \1/index.php
+  script: index.php

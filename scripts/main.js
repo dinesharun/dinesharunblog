@@ -18,13 +18,13 @@ function StartScripts()
   {
     if(e.state == null)
     {
-      getPage(null, 0, 0, 0, false);
+      getPage(0, 0, 0, false);
     }
     else
     {
       if(e.state["path"] == null)
       {
-        getPage(null, e.state["catId"], e.state["idxId"], e.state["postId"], false);
+        getPage(e.state["catId"], e.state["idxId"], e.state["postId"], false);
       }
       else
       {
