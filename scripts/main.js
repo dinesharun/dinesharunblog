@@ -9,7 +9,14 @@ function StartScripts()
   formatCodeBlock();
   
   window.addEventListener("popstate", function(e) {
-    getPage(e.state["catId"], e.state["idxId"], e.state["postId"], false);
+    if(e.state == NULL)
+    {
+      getPage(0, 0, 0, false);
+    }
+    else
+    {
+      getPage(e.state["catId"], e.state["idxId"], e.state["postId"], false);
+    }
   });
 }
 
@@ -411,9 +418,11 @@ function addPage(catId, idxId, postId, data, addHistory)
   
   if(addHistory == true)
   {
+    var dataHtml = $(data);
+    
     /* Get current link */
-    link  = $(".currLinkDiv", data).attr("linkStr");
-    title = $(".currLinkDiv", data).attr("titleStr");
+    link  = $(".currLinkDiv", dataHtml).attr("linkStr");
+    title = $(".currLinkDiv", dataHtml).attr("titleStr");
     
     /* Push new state */
     var stateObj = { catId: catId, idxId: idxId, postId: postId };
