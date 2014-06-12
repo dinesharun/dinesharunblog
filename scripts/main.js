@@ -9,7 +9,7 @@ function StartScripts()
   formatCodeBlock();
   
   window.addEventListener("popstate", function(e) {
-    getPage(e.state["catId"], e.state["idxId"], e.state["postId"]);
+    getPage(e.state["catId"], e.state["idxId"], e.state["postId"], false);
   });
 }
 
@@ -404,7 +404,7 @@ function formatCodeBlock()
   }
 }
 
-function addPage(catId, idxId, postId, data)
+function addPage(catId, idxId, postId, data, addHistory)
 {
   var link  = "";
   var title = "";
@@ -412,13 +412,16 @@ function addPage(catId, idxId, postId, data)
   /* Update data */
   $(".contentFrame").html(data);
   
-  /* Get current link */
-  link  = $(".currLinkDiv").attr("linkStr");
-  title = $(".currLinkDiv").attr("titleStr");
-  
-  /* Push new state */
-  var stateObj = { catId: catId, idxId: idxId, postId: postId };
-  history.pushState(stateObj, title, link);
+  if(addHistory == true)
+  {
+    /* Get current link */
+    link  = $(".currLinkDiv").attr("linkStr");
+    title = $(".currLinkDiv").attr("titleStr");
+    
+    /* Push new state */
+    var stateObj = { catId: catId, idxId: idxId, postId: postId };
+    history.pushState(stateObj, title, link);
+  }
 }
 
 function addRandImages(data)
@@ -426,11 +429,13 @@ function addRandImages(data)
   $(".randImgsDiv").html(data);
 }
 
-function getPage(catId, idxId, postId)
+function getPage(catId, idxId, postId, addHistory)
 {
+  addHistory = (typeof addHistory === "undefined") ? true : addHistory;
+  
   $.get( "getpage", { category: catId, index: idxId, post: postId }).done(function( data ) 
   {
-    addPage(catId, idxId, postId, data);
+    addPage(catId, idxId, postId, data, addHistory);
     formatCodeBlock();
   });
 }
