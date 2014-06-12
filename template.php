@@ -15,10 +15,10 @@
                        array('', 'Entertainment', 'History', 'Spirituality', 'Random Topics', 'About Me')
                       );
 
-  $bgImg = array(array('images/photo.png', 'images/art.png', 'images/tech.png'),
-                 array('images/art.png', 'images/photo.png', 'images/anim.png', 'images/music.png', 'images/nature.png', 'images/travel.png'),
-                 array('images/tech.png', 'images/pgm.png', 'images/elec.png', 'images/bio.png', 'images/web.png'),
-                 array('images/photo.png', 'images/enter.png', 'images/history.png', 'images/spritual.png', 'images/rand.png', 'images/home.png')
+  $bgImg = array(array('/images/photo.png', '/images/art.png', '/images/tech.png'),
+                 array('/images/art.png', '/images/photo.png', '/images/anim.png', '/images/music.png', '/images/nature.png', '/images/travel.png'),
+                 array('/images/tech.png', '/images/pgm.png', '/images/elec.png', '/images/bio.png', '/images/web.png'),
+                 array('/images/photo.png', '/images/enter.png', '/images/history.png', '/images/spritual.png', '/images/rand.png', '/images/home.png')
                 );
 
   $totalQuotes = 8;
@@ -43,7 +43,7 @@ function AddHeader($depth, $title, $keywords)
   global $pathPrefix;
   global $currDepth;
 
-  $pathPrefix = "";
+  $pathPrefix = "/";
   $i = 0;
 
   while($i < $depth)
@@ -442,13 +442,13 @@ function countImagesInDir($firstCall, $path, $thumbDir, $imageIndx, &$selectedFi
 --------------------------------------------------------*/
 
   $totalImages = 21;
-  $randImgs    = array('images/art/photo/Flowers/images/thumbs/DSC00025.JPG', 'images/art/photo/Flowers/images/thumbs/DSC00039.JPG', 'images/art/photo/Flowers/images/thumbs/DSC00008.JPG',
-                       'images/art/photo/Flowers/images/thumbs/DSC09158.JPG', 'images/art/photo/Flowers/images/thumbs/DSC09048.JPG', 'images/art/photo/Flowers/images/thumbs/DSC01083.JPG',
-                       'images/art/photo/rain/images/thumbs/DSC01142.JPG',    'images/art/photo/rain/images/thumbs/DSC07569.JPG',    'images/art/photo/rain/images/thumbs/DSC08640.JPG',
-                       'images/art/photo/seasons/images/thumbs/DSC01347.jpg', 'images/art/photo/seasons/images/thumbs/DSC01349.jpg', 'images/art/photo/seasons/images/thumbs/DSC01368.jpg',
-                       'images/art/photo/seasons/images/thumbs/DSC01390.jpg', 'images/art/photo/seasons/images/thumbs/DSC01419.jpg', 'images/art/photo/seasons/images/thumbs/DSC01433.jpg',
-                       'images/art/photo/sunriseset/images/thumbs/DSC01231.JPG', 'images/art/photo/sunriseset/images/thumbs/DSC01419.JPG', 'images/art/photo/sunriseset/images/thumbs/DSC01427.JPG',
-                       'images/art/photo/trees/images/thumbs/DSC01533.JPG', 'images/art/photo/trees/images/thumbs/DSC00012.JPG', 'images/art/photo/trees/images/thumbs/DSC03663.JPG');
+  $randImgs    = array('/images/art/photo/Flowers/images/thumbs/DSC00025.JPG', '/images/art/photo/Flowers/images/thumbs/DSC00039.JPG', '/images/art/photo/Flowers/images/thumbs/DSC00008.JPG',
+                       '/images/art/photo/Flowers/images/thumbs/DSC09158.JPG', '/images/art/photo/Flowers/images/thumbs/DSC09048.JPG', '/images/art/photo/Flowers/images/thumbs/DSC01083.JPG',
+                       '/images/art/photo/rain/images/thumbs/DSC01142.JPG',    '/images/art/photo/rain/images/thumbs/DSC07569.JPG',    '/images/art/photo/rain/images/thumbs/DSC08640.JPG',
+                       '/images/art/photo/seasons/images/thumbs/DSC01347.jpg', '/images/art/photo/seasons/images/thumbs/DSC01349.jpg', '/images/art/photo/seasons/images/thumbs/DSC01368.jpg',
+                       '/images/art/photo/seasons/images/thumbs/DSC01390.jpg', '/images/art/photo/seasons/images/thumbs/DSC01419.jpg', '/images/art/photo/seasons/images/thumbs/DSC01433.jpg',
+                       '/images/art/photo/sunriseset/images/thumbs/DSC01231.JPG', '/images/art/photo/sunriseset/images/thumbs/DSC01419.JPG', '/images/art/photo/sunriseset/images/thumbs/DSC01427.JPG',
+                       '/images/art/photo/trees/images/thumbs/DSC01533.JPG', '/images/art/photo/trees/images/thumbs/DSC00012.JPG', '/images/art/photo/trees/images/thumbs/DSC03663.JPG');
            
   if(($imageIndx != 0) && ($imageIndx <= $totalImages))
   {

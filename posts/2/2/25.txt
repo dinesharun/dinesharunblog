@@ -13,9 +13,9 @@
 	 </div><br /><br />
 
      <div align="center" class="InTextPicPinRight" style="text-align:center;width:18%">
-        &nbsp; <img style="position:absolute" src="images/greenpin.png" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</img>
+        &nbsp; <img style="position:absolute" src="/images/greenpin.png" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</img>
         <div class="InTextPicRight3">
-            <img onClick="ShowImage('images/tech/elec/dmo/dmo2.png', 'Sine Wave')" src="images/tech/elec/dmo/dmo2_t.png" width="99%" />
+            <img onClick="ShowImage('/images/tech/elec/dmo/dmo2.png', 'Sine Wave')" src="/images/tech/elec/dmo/dmo2_t.png" width="99%" />
         </div>
      </div><br />
 
@@ -34,14 +34,14 @@
 
    </div>
      <div align="center" class="InTextPicPinLeft" style="text-align:center;width:18%">
-        &nbsp;&nbsp;&nbsp;&nbsp; <img style="position:absolute" src="images/bluepin.png" >&nbsp;&nbsp;&nbsp;&nbsp;</img>
+        &nbsp;&nbsp;&nbsp;&nbsp; <img style="position:absolute" src="/images/bluepin.png" >&nbsp;&nbsp;&nbsp;&nbsp;</img>
         <div class="InTextPicLeft2">
-            <img onClick="ShowImage('images/tech/elec/dmo/dmo1.png', 'Square Wave')" src="images/tech/elec/dmo/dmo1_t.png" width="99%" />
+            <img onClick="ShowImage('/images/tech/elec/dmo/dmo1.png', 'Square Wave')" src="/images/tech/elec/dmo/dmo1_t.png" width="99%" />
         </div>
      </div>
 
      <br /><br /><br /><br /><br /><br /> <div class="PostDataPlain" style="margin-left:27%; width:63%;">
 
-     For a complete overview of the circuit <a class="InTextLink" href="images/tech/elec/dmo/dmo.pdf" target="_blank"> download this pdf file </a>.
+     For a complete overview of the circuit <a class="InTextLink" href="/images/tech/elec/dmo/dmo.pdf" target="_blank"> download this pdf file </a>.
 
      </div> <br /><br /><br /><br />
