@@ -124,11 +124,21 @@ function getPage($cat, $idx, $post)
 {
   global $catStrs;
   
-  /* Get the post */
-  $postRow = GetPost($post);
-  
   /* Build link */
-  $link = $catStrs[0][$cat] . '/' . $catStrs[$cat][$idx] . '/' . $postRow["link"];
+  $link = $catStrs[0][$cat] . '/';
+  
+  if($idx != 0)
+  {
+     $link = $link . $catStrs[$cat][$idx] . '/';
+     
+     if($post != 0)
+     {
+       /* Get the post */
+       $postRow = GetPost($post);
+       
+       $link = $link . $postRow["link"];
+     }
+  }
   
   /* Build the post path */
   $postFile = "posts/" . $cat . "/" . $idx . "/" . $post . ".txt";
