@@ -1,16 +1,17 @@
 
 <h2> Rain Collection </h2>
 
-<?php
-
-    StartGalleria();
-	AddImageToGalleria("DSC01142.JPG", "A Rainy Aahaya Thamarai", "");
-	AddImageToGalleria("DSC08640.JPG", "A Rainy Aahaya Thamarai", "");
-	AddImageToGalleria("DSC02225.JPG", "A Rainy Aahaya Thamarai", "");
-	AddImageToGalleria("DSC07569.JPG", "A Rainy Aahaya Thamarai", "");
-	AddImageToGalleria("DSC02581.JPG", "A Rainy Aahaya Thamarai", "");
-
-	EndGalleria(0);
+  <div id="galleria" class="galleriaDIV">
+    <a href="/images/DSC01142.JPG"><img src="/images/thumbs/DSC01142.JPG" data-title="title" data-description="description" /></a>';
+    <a href="/images/DSC08640.JPG"><img src="/images/thumbs/DSC08640.JPG" data-title="title" data-description="description" /></a>';
+    <a href="/images/DSC02225.JPG"><img src="/images/thumbs/DSC02225.JPG" data-title="title" data-description="description" /></a>';
+    <a href="/images/DSC07569.JPG"><img src="/images/thumbs/DSC07569.JPG" data-title="title" data-description="description" /></a>';
+    <a href="/images/DSC02581.JPG"><img src="/images/thumbs/DSC02581.JPG" data-title="title" data-description="description" /></a>';
+	</div>;
+  
+  <script type="text/javascript">
+    $('#galleria').galleria();
+  </script>
 ?>
 
 <br /><br /><br /><br /><br /><br />

@@ -726,37 +726,6 @@ function Comment($fnCode, $mainIndx, $subIndx, $postID, $postName, $postData, $p
   }
 }
 
-function StartGalleria()
-{
-  echo '<div id="galleria" class="galleriaDIV">';
-}
-
-function AddImageToGalleria($fileName, $title, $description)
-{
-  echo '<a href="images/' . $fileName . '"><img src="images/thumbs/' . $fileName . '" data-title="' . $title . '" data-description="' . $description .'" /></a>';
-}
-
-function AddImageToSlimbox($fileName, $title, $link)
-{
-  echo '<a href="images/' . $fileName . '" rel="lightbox' . $link .'"><img src="images/thumbs/' . $fileName . '" title="' . $title . '" /></a>';
-}
-
-function EndGalleria($theme)
-{
-  echo '</div>';
-  echo '<script>';
-  if($theme == 0)
-  {
-      echo "Galleria.loadTheme('../../../scripts/themes/lightbox/galleria.lightbox.js');";
-  }
-  else
-  {
-      echo "Galleria.loadTheme('../../../scripts/themes/classic/galleria.classic.js';";
-  }
-  echo "$('#galleria').galleria();";
-  echo '</script>';
-}
-
 function AddInlineImage($styleNum, $pinPath, $imgPath, $thumbPath, $imgName)
 {
   $classOne = array("InTextPicPinRight", "InTextPicPinLeft");
