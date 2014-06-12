@@ -402,9 +402,17 @@ function formatCodeBlock()
 
 function addPage(catId, idxId, postId, data)
 {
+  var link = "";
+  
+  /* Update data */
   $(".contentFrame").html(data);
-  var stateObj = { foo: "bar" };
-  history.pushState(stateObj, catId, postId);
+  
+  /* Get current link */
+  link = $(".currLinkDiv").attr("linkStr");
+  
+  /* Push new state */
+  var stateObj = { catId: catId, idxId: idxId, postId: postId };
+  history.pushState(stateObj, NULL, link);
 }
 
 function addRandImages(data)

@@ -122,6 +122,14 @@ function AddHeader($depth, $title, $keywords)
 
 function getPage($cat, $idx, $post)
 {
+  global $catStrs;
+  
+  /* Get the post */
+  $postRow = GetPost($post);
+  
+  /* Build link */
+  $link = $catStrs[0][$cat] . '/' . $catStrs[$cat][$idx] . '/' . $postRow["link"];
+  
   /* Build the post path */
   $postFile = "posts/" . $cat . "/" . $idx . "/" . $post . ".txt";
 	
@@ -135,8 +143,11 @@ function getPage($cat, $idx, $post)
 	}
 	else
 	{
+    $link = "error";
 	  echo "No Such Posts Exists!";
 	}
+  
+  return $link;  
 }
   
 function AddBody($cat, $idx, $post)
@@ -147,6 +158,8 @@ function AddBody($cat, $idx, $post)
 	global $quotes;
   global $totalQuotes;
 	global $enableComments;	
+  
+  $link = "";
 
 	echo '<div class="centerBlock">';
 	
@@ -206,7 +219,7 @@ function AddBody($cat, $idx, $post)
   echo '<div class="mainPanel" id="mp">';
 	
 	/* Get the actual post from the data file */
-	getPage($cat, $idx, $post);
+	$link = getPage($cat, $idx, $post);
 
 	/* Random post list for all categories in root except about me */
   if(($post == 0) && (!(($cat == 3) && ($idx == 5))))
@@ -265,6 +278,8 @@ function AddBody($cat, $idx, $post)
   $indx = rand(0, $totalQuotes-1);
   echo '<div class="bodyBGHeading"> "' . $quotes[$indx][0] . '" <br />';
   echo '<span style="font-size: 69%;"> - ' . $quotes[$indx][1] .  ' </span></div>';	
+  
+  return $link;
 }
 
 function AddFooter($cat, $idx, $post)
