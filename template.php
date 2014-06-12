@@ -35,6 +35,29 @@
   $TestMode = 1;
   $Debug = 0;
   $totalImages;
+  
+function GetIds($path, &$catId, &$idxId, &$postId)
+{
+  global $catStrs;
+  
+  $catId  = 0;
+  $idxId  = 0;
+  $postId = 0;
+  
+  $parts  = explode('/', $path);
+  if(isset($parts[0])
+  {
+    $catId  = array_search($parts[0], $catStrs);
+  }
+  if(isset($parts[1])
+  {
+    $idxId  = array_search($parts[1], $catStrs);
+  }
+  if(isset($parts[2])
+  {
+    $postId = array_search($parts[2], $catStrs);
+  }
+}
 
 function AddHeader($depth, $title, $keywords)
 {

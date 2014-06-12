@@ -8,14 +8,28 @@ function StartScripts()
   StartClock();
   formatCodeBlock();
   
-  window.addEventListener("popstate", function(e) {
+  /* If not the root request the page using getPath method */
+  if((window.location.pathname != null) && (window.location.pathname != "/"))
+  {
+    getPath(window.location.pathname);
+  }
+  
+  window.addEventListener("popstate", function(e) 
+  {
     if(e.state == null)
     {
-      getPage(0, 0, 0, false);
+      getPage(null, 0, 0, 0, false);
     }
     else
     {
-      getPage(e.state["catId"], e.state["idxId"], e.state["postId"], false);
+      if(e.state["path"] == NULL)
+      {
+        getPage(null, e.state["catId"], e.state["idxId"], e.state["postId"], false);
+      }
+      else
+      {
+        getPage(e.state["path"], false);
+      }
     }
   });
 }
@@ -411,7 +425,7 @@ function formatCodeBlock()
   }
 }
 
-function addPage(catId, idxId, postId, data, addHistory)
+function addPage(path, catId, idxId, postId, data, addHistory)
 {
   var link  = "";
   var title = "";
@@ -425,7 +439,7 @@ function addPage(catId, idxId, postId, data, addHistory)
     title = $(".currLinkDiv", dataHtml).attr("titleStr");
     
     /* Push new state */
-    var stateObj = { catId: catId, idxId: idxId, postId: postId };
+    var stateObj = { path: path, catId: catId, idxId: idxId, postId: postId };
     history.pushState(stateObj, title, link);
   }
   
@@ -444,7 +458,18 @@ function getPage(catId, idxId, postId, addHistory)
   
   $.get( "getpage", { category: catId, index: idxId, post: postId }).done(function( data ) 
   {
-    addPage(catId, idxId, postId, data, addHistory);
+    addPage(null, catId, idxId, postId, data, addHistory);
+    formatCodeBlock();
+  });
+}
+
+function getPath(path, addHistory)
+{
+  addHistory = (typeof addHistory === "undefined") ? true : addHistory;
+  
+  $.get( "getpath", { path: path }).done(function( data ) 
+  {
+    addPage(path, 0, 0, 0, data, addHistory);
     formatCodeBlock();
   });
 }
