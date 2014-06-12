@@ -34,26 +34,10 @@
 
   $TestMode = 1;
   $Debug = 0;
-  $pathPrefix;
-  $currDepth;
   $totalImages;
 
 function AddHeader($depth, $title, $keywords)
 {
-  global $pathPrefix;
-  global $currDepth;
-
-  $pathPrefix = "/";
-  $i = 0;
-
-  while($i < $depth)
-  {
-    $pathPrefix .= "../";
-    $i++;
-  }
-
-  $currDepth = $depth;
-
   echo '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">';
   echo '<!-- <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> -->';
   echo '<html xmlns="http://www.w3.org/1999/xhtml">';
@@ -65,16 +49,16 @@ function AddHeader($depth, $title, $keywords)
   echo '<meta name="Keywords" content=" ' . $keywords . ' " />';
   echo '<title> ' . $title . ' </title>';
 
-  echo '<link rel="stylesheet" type="text/css" href="' . $pathPrefix . 'css/main.css" />';
+  echo '<link rel="stylesheet" type="text/css" href="/css/main.css" />';
 	echo '<link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet" type="text/css">';
 	echo '<link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet" type="text/css">';
 	echo '<link href="https://fonts.googleapis.com/css?family=Emblema+One" rel="stylesheet" type="text/css">';
 	echo '<link href="https://fonts.googleapis.com/css?family=Combo" rel="stylesheet" type="text/css">';
-  echo '<script type="text/javascript" src="' . $pathPrefix . 'scripts/main.js"></script>';
-  echo '<script type="text/javascript" src="' . $pathPrefix . 'scripts/jquery.js"></script>';
-  echo '<script type="text/javascript" src="' . $pathPrefix . 'scripts/showImage.js"></script>';
-	echo '<script type="text/javascript" src="' . $pathPrefix . 'scripts/galleria.js"></script>';
-	echo '<script type="text/javascript" src="' . $pathPrefix . 'scripts/swfobject.js"></script>';
+  echo '<script type="text/javascript" src="/scripts/main.js"></script>';
+  echo '<script type="text/javascript" src="/scripts/jquery.js"></script>';
+  echo '<script type="text/javascript" src="/scripts/showImage.js"></script>';
+	echo '<script type="text/javascript" src="/scripts/galleria.js"></script>';
+	echo '<script type="text/javascript" src="/scripts/swfobject.js"></script>';
   echo '</head>';
   echo '<body onload="StartScripts()" onresize="resizeMe()">';
   echo '<div class="stageBG"  Id="StageBG">   </div>';
@@ -101,10 +85,10 @@ function AddHeader($depth, $title, $keywords)
   echo '      <td class="topImageDisabled"> &nbsp; &nbsp; &nbsp; </td>';
   echo '      <td class="topImageDisabled"> &nbsp; &nbsp; &nbsp; </td>';
   echo '      <td class="topImageDisabled"> &nbsp; &nbsp; &nbsp; </td>';
-  echo '      <td class="topImage"> <a class="topILink" href="https://plus.google.com/117144638090915831878?rel=author" target="_blank"> <img style="width: 99%; border: 0px;" src="' . $pathPrefix . 'css/images/googleplus.png" /> </a> </td>';
-  echo '      <td class="topImage"> <a class="topILink" href="http://www.orkut.co.in/Main#Profile?uid=7117684347204734942" target="_blank"> <img style="width: 99%; border: 0px;" src="' . $pathPrefix . 'css/images/orkut.png" /> </a> </td>';
-  echo '      <td class="topImage"> <a class="topILink" href="https://twitter.com/#!/dinesharun" target="_blank"> <img style="width: 99%; border: 0px;" src="' . $pathPrefix . 'css/images/twitter.png" /> </a> </td>';
-  echo '      <td class="topImage"> <a class="topILink" href="http://www.facebook.com/dinesharunk" target="_blank"> <img style="width: 99%; border: 0px;" src="' . $pathPrefix . 'css/images/facebook.png" /> </a> </td>';
+  echo '      <td class="topImage"> <a class="topILink" href="https://plus.google.com/117144638090915831878?rel=author" target="_blank"> <img style="width: 99%; border: 0px;" src="/css/images/googleplus.png" /> </a> </td>';
+  echo '      <td class="topImage"> <a class="topILink" href="http://www.orkut.co.in/Main#Profile?uid=7117684347204734942" target="_blank"> <img style="width: 99%; border: 0px;" src="/css/images/orkut.png" /> </a> </td>';
+  echo '      <td class="topImage"> <a class="topILink" href="https://twitter.com/#!/dinesharun" target="_blank"> <img style="width: 99%; border: 0px;" src="/css/images/twitter.png" /> </a> </td>';
+  echo '      <td class="topImage"> <a class="topILink" href="http://www.facebook.com/dinesharunk" target="_blank"> <img style="width: 99%; border: 0px;" src="/css/images/facebook.png" /> </a> </td>';
   echo '      <td colspan="2" class="topClock" id="clk"> 22-05-2012 <br /> 11:30 </td>';
   echo '    </tr>';
   echo '  </table>';
@@ -162,8 +146,6 @@ function getPage($cat, $idx, $post)
   
 function AddBody($cat, $idx, $post)
 {
-  global $pathPrefix;
-	global $currDepth;
 	global $bgImg;
 	global $quotes;
   global $totalQuotes;
@@ -177,46 +159,46 @@ function AddBody($cat, $idx, $post)
   if($cat == 0)
   {
     echo '<div class="header">';
-    echo '  <a class="mainLinksCurr"> <span class="hMenuCurr" style="right: -2%;"> &nbsp; &nbsp;<img class="menuImg" alt="" src="' . $pathPrefix . 'images/home.png"/> Home &nbsp; &nbsp; </span> </a>';
-    echo '  <a class="mainLinks" onclick="getPage(1, 0, 0)"> <span class="hMenu" style="right: -2%;">  <img class="menuImg" alt="" src="' . $pathPrefix . 'images/art.png"/> Art </span> </a> ';
-    echo '  <a class="mainLinks" onclick="getPage(2, 0, 0)"> <span class="hMenu" style="right: -2%;"> <img class="menuImg" alt="" src="' . $pathPrefix . 'images/tech.png"/> Technology </span> </a> ';
+    echo '  <a class="mainLinksCurr"> <span class="hMenuCurr" style="right: -2%;"> &nbsp; &nbsp;<img class="menuImg" alt="" src="/images/home.png"/> Home &nbsp; &nbsp; </span> </a>';
+    echo '  <a class="mainLinks" onclick="getPage(1, 0, 0)"> <span class="hMenu" style="right: -2%;">  <img class="menuImg" alt="" src="/images/art.png"/> Art </span> </a> ';
+    echo '  <a class="mainLinks" onclick="getPage(2, 0, 0)"> <span class="hMenu" style="right: -2%;"> <img class="menuImg" alt="" src="/images/tech.png"/> Technology </span> </a> ';
     echo '</div>';
   }
 	/* Art Section */
   else if($cat == 1)
   {
     echo '<div class="header">';
-    echo '  <a class="mainLinks' . (($idx==0)?('Curr'):('')) . '" onclick="getPage(1, 0, 0)"> <span class="hMenu' . (($idx==0)?('Curr'):('')) . '" style="right: -2%;">  <img class="menuImg" alt="" src="' . $pathPrefix . 'images/art.png"/> Art </span> </a> ';
-    echo '  <a class="mainLinks' . (($idx==1)?('Curr'):('')) . '" onclick="getPage(1, 1, 0)"> <span class="hMenu' . (($idx==1)?('Curr'):('')) . '" style="right: -1%;"> <img class="menuImg" alt="" src="' . $pathPrefix . 'images/photo.png"/> Photography </span> </a> ';
-    echo '  <a class="mainLinks' . (($idx==2)?('Curr'):('')) . '" onclick="getPage(1, 2, 0)"> <span class="hMenu' . (($idx==2)?('Curr'):('')) . '" style="right: 0%;"> <img class="menuImg" alt="" src="' . $pathPrefix . 'images/anim.png"/> Animation </span> </a> ';
-    echo '  <a class="mainLinks' . (($idx==3)?('Curr'):('')) . '" onclick="getPage(1, 3, 0)"> <span class="hMenu' . (($idx==3)?('Curr'):('')) . '" style="right: 1%;"> <img class="menuImg" alt="" src="' . $pathPrefix . 'images/music.png"/> Music </span> </a> ';
-    echo '  <a class="mainLinks' . (($idx==4)?('Curr'):('')) . '" onclick="getPage(1, 4, 0)"> <span class="hMenu' . (($idx==4)?('Curr'):('')) . '" style="right: 2%;"> <img class="menuImg" alt="" src="' . $pathPrefix . 'images/nature.png"/> Nature </span> </a> ';
-    echo '  <a class="mainLinks' . (($idx==5)?('Curr'):('')) . '" onclick="getPage(1, 5, 0)"> <span class="hMenu' . (($idx==5)?('Curr'):('')) . '" style="right: 3%;"> <img class="menuImg" alt="" src="' . $pathPrefix . 'images/travel.png"/> Travel </span> </a> ';
+    echo '  <a class="mainLinks' . (($idx==0)?('Curr'):('')) . '" onclick="getPage(1, 0, 0)"> <span class="hMenu' . (($idx==0)?('Curr'):('')) . '" style="right: -2%;">  <img class="menuImg" alt="" src="/images/art.png"/> Art </span> </a> ';
+    echo '  <a class="mainLinks' . (($idx==1)?('Curr'):('')) . '" onclick="getPage(1, 1, 0)"> <span class="hMenu' . (($idx==1)?('Curr'):('')) . '" style="right: -1%;"> <img class="menuImg" alt="" src="/images/photo.png"/> Photography </span> </a> ';
+    echo '  <a class="mainLinks' . (($idx==2)?('Curr'):('')) . '" onclick="getPage(1, 2, 0)"> <span class="hMenu' . (($idx==2)?('Curr'):('')) . '" style="right: 0%;"> <img class="menuImg" alt="" src="/images/anim.png"/> Animation </span> </a> ';
+    echo '  <a class="mainLinks' . (($idx==3)?('Curr'):('')) . '" onclick="getPage(1, 3, 0)"> <span class="hMenu' . (($idx==3)?('Curr'):('')) . '" style="right: 1%;"> <img class="menuImg" alt="" src="/images/music.png"/> Music </span> </a> ';
+    echo '  <a class="mainLinks' . (($idx==4)?('Curr'):('')) . '" onclick="getPage(1, 4, 0)"> <span class="hMenu' . (($idx==4)?('Curr'):('')) . '" style="right: 2%;"> <img class="menuImg" alt="" src="/images/nature.png"/> Nature </span> </a> ';
+    echo '  <a class="mainLinks' . (($idx==5)?('Curr'):('')) . '" onclick="getPage(1, 5, 0)"> <span class="hMenu' . (($idx==5)?('Curr'):('')) . '" style="right: 3%;"> <img class="menuImg" alt="" src="/images/travel.png"/> Travel </span> </a> ';
     echo '</div>';
   }
 	/* Tech Section */
   else if($cat == 2)
   {
     echo '<div class="header">';
-    echo '  <a class="mainLinks' . (($idx==0)?('Curr'):('')) . '" onclick="getPage(2, 0, 0)"> <span class="hMenu' . (($idx==0)?('Curr'):('')) . '" style="right: -2%;"> <img class="menuImg" alt="" src="' . $pathPrefix . 'images/tech.png"/> Technology </span> </a> ';
-    echo '  <a class="mainLinks' . (($idx==1)?('Curr'):('')) . '" onclick="getPage(2, 1, 0)"> <span class="hMenu' . (($idx==1)?('Curr'):('')) . '" style="right: -1%;"> <img class="menuImg" alt="" src="' . $pathPrefix . 'images/pgm.png"/> Programming </span> </a> ';
-    echo '  <a class="mainLinks' . (($idx==2)?('Curr'):('')) . '" onclick="getPage(2, 2, 0)"> <span class="hMenu' . (($idx==2)?('Curr'):('')) . '" style="right: 0%;"> <img class="menuImg" alt="" src="' . $pathPrefix . 'images/elec.png"/> Electronics </span> </a> ';
-    echo '  <a class="mainLinks' . (($idx==3)?('Curr'):('')) . '" onclick="getPage(2, 3, 0)"> <span class="hMenu' . (($idx==3)?('Curr'):('')) . '" style="right: 1%;">  <img class="menuImg" alt="" src="' . $pathPrefix . 'images/bio.png"/> Biology </span> </a> ';
-    echo '  <a class="mainLinks' . (($idx==4)?('Curr'):('')) . '" onclick="getPage(2, 4, 0)"> <span class="hMenu' . (($idx==4)?('Curr'):('')) . '" style="right: 2%;"> <img class="menuImg" alt="" src="' . $pathPrefix . 'images/web.png"/> Webdesign </span> </a> ';
+    echo '  <a class="mainLinks' . (($idx==0)?('Curr'):('')) . '" onclick="getPage(2, 0, 0)"> <span class="hMenu' . (($idx==0)?('Curr'):('')) . '" style="right: -2%;"> <img class="menuImg" alt="" src="/images/tech.png"/> Technology </span> </a> ';
+    echo '  <a class="mainLinks' . (($idx==1)?('Curr'):('')) . '" onclick="getPage(2, 1, 0)"> <span class="hMenu' . (($idx==1)?('Curr'):('')) . '" style="right: -1%;"> <img class="menuImg" alt="" src="/images/pgm.png"/> Programming </span> </a> ';
+    echo '  <a class="mainLinks' . (($idx==2)?('Curr'):('')) . '" onclick="getPage(2, 2, 0)"> <span class="hMenu' . (($idx==2)?('Curr'):('')) . '" style="right: 0%;"> <img class="menuImg" alt="" src="/images/elec.png"/> Electronics </span> </a> ';
+    echo '  <a class="mainLinks' . (($idx==3)?('Curr'):('')) . '" onclick="getPage(2, 3, 0)"> <span class="hMenu' . (($idx==3)?('Curr'):('')) . '" style="right: 1%;">  <img class="menuImg" alt="" src="/images/bio.png"/> Biology </span> </a> ';
+    echo '  <a class="mainLinks' . (($idx==4)?('Curr'):('')) . '" onclick="getPage(2, 4, 0)"> <span class="hMenu' . (($idx==4)?('Curr'):('')) . '" style="right: 2%;"> <img class="menuImg" alt="" src="/images/web.png"/> Webdesign </span> </a> ';
     echo '</div>';
   }
 	/* Default: Home Section */
   else
   {
     echo '<div class="header">';
-    echo '  <a class="mainLinks" onclick="getPage(0, 0, 0)"> <span class="hMenu" style="right: -2%;"> &nbsp; &nbsp; <img class="menuImg" alt="" src="' . $pathPrefix . 'images/home.png"/> Home &nbsp; &nbsp;  </span> </a>';
-    echo '  <a class="mainLinks" onclick="getPage(1, 0, 0)"> <span class="hMenu" style="right: -2%;">  <img class="menuImg" alt="" src="' . $pathPrefix . 'images/art.png"/> Art </span> </a> ';
-    echo '  <a class="mainLinks" onclick="getPage(2, 0, 0)"> <span class="hMenu" style="right: -2%;"> <img class="menuImg" alt="" src="' . $pathPrefix . 'images/tech.png"/> Technology </span> </a> ';
+    echo '  <a class="mainLinks" onclick="getPage(0, 0, 0)"> <span class="hMenu" style="right: -2%;"> &nbsp; &nbsp; <img class="menuImg" alt="" src="/images/home.png"/> Home &nbsp; &nbsp;  </span> </a>';
+    echo '  <a class="mainLinks" onclick="getPage(1, 0, 0)"> <span class="hMenu" style="right: -2%;">  <img class="menuImg" alt="" src="/images/art.png"/> Art </span> </a> ';
+    echo '  <a class="mainLinks" onclick="getPage(2, 0, 0)"> <span class="hMenu" style="right: -2%;"> <img class="menuImg" alt="" src="/images/tech.png"/> Technology </span> </a> ';
     echo '</div>';
   }
 
 	/* Background thumbnail image for every category and index */
-  echo'<div class="bodyBGImgDiv"><img class="bodyImg" alt="" src="' . $pathPrefix . $bgImg[$cat][$idx] . '"/> </div>';
+  echo'<div class="bodyBGImgDiv"><img class="bodyImg" alt="" src="/' . $bgImg[$cat][$idx] . '"/> </div>';
 
 	/* Post date addition */
   if($post != 0)
@@ -234,7 +216,7 @@ function AddBody($cat, $idx, $post)
 	/* Random post list for all categories in root except about me */
   if(($post == 0) && (!(($cat == 3) && ($idx == 5))))
   {
-    GetRandomPosts($cat, $idx, $currDepth, 5);
+    GetRandomPosts($cat, $idx, 5);
   }
 
 	/* Comments for posts if enabled */
@@ -246,17 +228,17 @@ function AddBody($cat, $idx, $post)
 	echo '</div>';
 
 	/* Right hand side image */
-	$rightImg = $pathPrefix . 'images/index_header_' . $cat . '_' . $idx . '_' . $post . '.png';
+	$rightImg = '/images/index_header_' . $cat . '_' . $idx . '_' . $post . '.png';
 	
 	/* Post Specific image not present, check group specific file present */
 	if((file_exists($rightImg)) == false)
 	{
-	  $rightImg = $pathPrefix . 'images/index_header_' . $cat . '_' . $idx . '_0' . '.png';
+	  $rightImg = '/images/index_header_' . $cat . '_' . $idx . '_0' . '.png';
 
 	  /* Default to home pages image */
 	  if((file_exists($rightImg)) == false)
 	  {
-	    $rightImg = $pathPrefix . 'images/index_header_0_0_0.png';
+	    $rightImg = '/images/index_header_0_0_0.png';
 	  }
 	}
   echo '<img class="rightImg" src="' . $rightImg . '" />';
@@ -273,11 +255,11 @@ function AddBody($cat, $idx, $post)
 	/* Fotter section (general) */
   echo '<a name="fotter"></a>';
   echo '<div class="fotter">';
-  echo '   <a class="mainLinks' . (($idx==1)?('Curr'):('')) . '" onclick="getPage(3, 0, 0)"> <span class="fMenu' . (($idx==1)?('Curr'):('')) . '" style="right: -2%;"> <img class="menuImgBottom" alt="" src="' . $pathPrefix . 'images/enter.png"/> Entertainment </span> </a>';
-  echo '   <a class="mainLinks' . (($idx==2)?('Curr'):('')) . '" onclick="getPage(3, 1, 0)"> <span class="fMenu' . (($idx==2)?('Curr'):('')) . '" style="right: -1%;"> <img class="menuImgBottom" alt="" src="' . $pathPrefix . 'images/history.png"/> History </span> </a>';
-  echo '   <a class="mainLinks' . (($idx==3)?('Curr'):('')) . '" onclick="getPage(3, 2, 0)"> <span class="fMenu' . (($idx==3)?('Curr'):('')) . '" style="right: 0%;"> <img class="menuImgBottom" alt="" src="' . $pathPrefix . 'images/spritual.png"/> Spritual </span> </a>';
-  echo '   <a class="mainLinks' . (($idx==4)?('Curr'):('')) . '" onclick="getPage(3, 3, 0)"> <span class="fMenu' . (($idx==4)?('Curr'):('')) . '" style="right: 1%;"> <img class="menuImgBottom" alt="" src="' . $pathPrefix . 'images/rand.png"/> Random Thoughts </span> </a>';
-  echo '   <a class="mainLinks' . (($idx==5)?('Curr'):('')) . '" onclick="getPage(3, 4, 0)" rel="author"> <span class="fMenu' . (($idx==5)?('Curr'):('')) . '" style="right: 2%;"> <img class="menuImgBottom" alt="" src="' . $pathPrefix . 'images/home.png"/> About me </span> </a>';
+  echo '   <a class="mainLinks' . (($idx==1)?('Curr'):('')) . '" onclick="getPage(3, 0, 0)"> <span class="fMenu' . (($idx==1)?('Curr'):('')) . '" style="right: -2%;"> <img class="menuImgBottom" alt="" src="/images/enter.png"/> Entertainment </span> </a>';
+  echo '   <a class="mainLinks' . (($idx==2)?('Curr'):('')) . '" onclick="getPage(3, 1, 0)"> <span class="fMenu' . (($idx==2)?('Curr'):('')) . '" style="right: -1%;"> <img class="menuImgBottom" alt="" src="/images/history.png"/> History </span> </a>';
+  echo '   <a class="mainLinks' . (($idx==3)?('Curr'):('')) . '" onclick="getPage(3, 2, 0)"> <span class="fMenu' . (($idx==3)?('Curr'):('')) . '" style="right: 0%;"> <img class="menuImgBottom" alt="" src="/images/spritual.png"/> Spritual </span> </a>';
+  echo '   <a class="mainLinks' . (($idx==4)?('Curr'):('')) . '" onclick="getPage(3, 3, 0)"> <span class="fMenu' . (($idx==4)?('Curr'):('')) . '" style="right: 1%;"> <img class="menuImgBottom" alt="" src="/images/rand.png"/> Random Thoughts </span> </a>';
+  echo '   <a class="mainLinks' . (($idx==5)?('Curr'):('')) . '" onclick="getPage(3, 4, 0)" rel="author"> <span class="fMenu' . (($idx==5)?('Curr'):('')) . '" style="right: 2%;"> <img class="menuImgBottom" alt="" src="/images/home.png"/> About me </span> </a>';
   echo '</div>';
 
   echo '<br /><br /><br /><br /><br />';
@@ -517,7 +499,7 @@ function GetPostLinks($cat, $idx)
   }
 }
 
-function GetRandomPosts($cat, $idx, $depth, $count)
+function GetRandomPosts($cat, $idx, $count)
 {
   global $catStrs;
   global $catFullStrs;
@@ -567,23 +549,6 @@ function GetRandomPosts($cat, $idx, $depth, $count)
         if($i == 0)
         {
           echo '<div class="PostDataPlain" > <h3 style="text-align:center"> Random Topics </h3> <br /> ';
-        }
-
-        if($depth == 0)
-        {
-          $urlPrefix = $catStrs[0][$selCat];
-          $urlPrefix .= '/';
-          $urlPrefix .= $catStrs[$selCat][$selIdx];
-          $urlPrefix .= '/';
-        }
-        else if($depth == 1)
-        {
-          $urlPrefix = $catStrs[$selCat][$selIdx];
-          $urlPrefix .= '/';
-        }
-        else
-        {
-          $urlPrefix .= '';
         }
 
         echo '<table style="text-align: left;border:0px;width:99%;"><tr><td style="width:33%"><a class="InTextLink" onclick="getPage(' . $post["catId"] . ',' . $post["idxId"] . ',' . $post["postId"] . ')">' . $post["title"] . '  </a></td><td>' . $post["desc"] . '<br /></td></tr></table>';
@@ -764,9 +729,6 @@ function EndGalleria($theme)
 
 function AddInlineImage($styleNum, $pinPath, $imgPath, $thumbPath, $imgName)
 {
-  global $currDepth;
-  global $pathPrefix;
-
   $classOne = array("InTextPicPinRight", "InTextPicPinLeft");
   $classTwo = array("InTextPicRight1", "InTextPicRight2", "InTextPicRight3",
                     "InTextPicLeft1", "InTextPicLeft2", "InTextPicLeft3");
@@ -780,7 +742,7 @@ function AddInlineImage($styleNum, $pinPath, $imgPath, $thumbPath, $imgName)
   $classTwoIndx = $styleNum - 1;
 
   echo '<div align="center" class="' . $classOne[$classOneIndx] . '" style="text-align:center;width:18%">';
-    echo '&nbsp<img style="position:absolute" src="' . $pathPrefix . $pinPath . '" >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</img>';
+    echo '&nbsp<img style="position:absolute" src="/' . $pinPath . '" >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</img>';
 	   echo '<div class="' . $classTwo[$classTwoIndx] . '">';
 		 echo '<img onClick="ShowImage(\'' . $imgPath . '\', \'' . $imgName . '\')" src="' . $thumbPath . '" width="99%"> </img>';
 		 echo '<div class="InTextPicCaption">' . $imgName . '</div>';
