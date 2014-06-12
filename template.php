@@ -44,7 +44,6 @@ function GetIds($path, &$catId, &$idxId, &$postId)
   $catId  = 0;
   $idxId  = 0;
   $postId = 0;
-  $Debug  = 1;
   
   $parts  = explode('/', $path);
   
@@ -65,8 +64,6 @@ function GetIds($path, &$catId, &$idxId, &$postId)
     $postId = getPostId($parts[3]);
     if($Debug) { echo 'Path 3:' . $parts[3] . ', Val 3:' . $postId . '&nbsp;&nbsp;&nbsp;'; }
   }
-  
-  $Debug = 0;
 }
 
 function AddHeader($depth, $title, $keywords)

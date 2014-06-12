@@ -69,7 +69,7 @@ function getPostId($postLink)
   global $links;
   global $numPosts;
   
-  foreach($links as $key => $link)
+  foreach($links as $key => $val)
   {
     if($val["link"] === $postLink)
     {
