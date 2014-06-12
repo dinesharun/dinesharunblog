@@ -9,7 +9,7 @@ function StartScripts()
   formatCodeBlock();
   
   window.addEventListener("popstate", function(e) {
-    if(e.state == NULL)
+    if(e.state == null)
     {
       getPage(0, 0, 0, false);
     }
