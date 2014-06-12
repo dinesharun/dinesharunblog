@@ -27,7 +27,7 @@
     $link = AddBody($catId, $idxId, $postId);
     
     /* Return the link of the current page as a property in a empty DIV */
-    echo '<div id="currLinkDiv" class="currLinkDiv" linkStr="' . $link . '" titleStr="' . $postId . '" ></div>';
+    echo '<div><div id="currLinkDiv" class="currLinkDiv" linkStr="' . $link . '" titleStr="' . $postId . '" ></div></div>';
   }
   else if(isset($_GET["randImages"]))
   {
