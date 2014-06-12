@@ -14,7 +14,7 @@
 	<td style="padding-left: 1%; width: 15%; vertical-align: top;">
 		<div class="PostDataPlain" style="padding: 1.8%; text-align: center; font-family: corbel; font-size: 87%">
 			Currently Reading <br /><br />
-			<a href="http://www.amazon.co.uk/London-Edward-Rutherfurd/dp/0099551373" target="_blank"> <img style="width: 81%; cursor:pointer; border: 0px;" src="images/bookLondon.jpg" /> <br /><br /></a>
+			<a href="http://www.amazon.co.uk/London-Edward-Rutherfurd/dp/0099551373" target="_blank"> <img style="width: 81%; cursor:pointer; border: 0px;" src="/images/bookLondon.jpg" /> <br /><br /></a>
 		</div>
 	</td>
   </tr>

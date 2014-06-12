@@ -433,7 +433,8 @@ function addPage(path, catId, idxId, postId, data, addHistory)
   var link  = "";
   var title = "";
   
-  if(addHistory == true)
+  /* Add history only for requested for non root pages */
+  if((addHistory == true) && (($path != null) || (($catId != 0) && ($idxId != 0) && ($postId != 0))
   {
     var dataHtml = $(data);
     
