@@ -400,9 +400,11 @@ function formatCodeBlock()
   }
 }
 
-function addPage(data)
+function addPage(catId, idxId, postId, data)
 {
   $(".contentFrame").html(data);
+  var stateObj = { foo: "bar" };
+  history.pushState(stateObj, catId, postId);
 }
 
 function addRandImages(data)
@@ -414,7 +416,7 @@ function getPage(catId, idxId, postId)
 {
   $.get( "getpage", { category: catId, index: idxId, post: postId }).done(function( data ) 
   {
-    addPage(data);
+    addPage(catId, idxId, postId, data);
     formatCodeBlock();
   });
 }
