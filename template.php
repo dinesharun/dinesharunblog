@@ -39,24 +39,31 @@
 function GetIds($path, &$catId, &$idxId, &$postId)
 {
   global $catStrs;
+  global $Debug;
   
   $catId  = 0;
   $idxId  = 0;
   $postId = 0;
+  $Debug  = 1;
   
   $parts  = explode('/', $path);
   if(isset($parts[0]))
   {
     $catId  = array_search($parts[0], $catStrs);
+    if($Debug) { echo $parts[0] . $catId; }
   }
   if(isset($parts[1]))
   {
     $idxId  = array_search($parts[1], $catStrs);
+    if($Debug) { echo $parts[1] . $idxId; }
   }
   if(isset($parts[2]))
   {
     $postId = array_search($parts[2], $catStrs);
+    if($Debug) { echo $parts[1] . $postId; }
   }
+  
+  $Debug = 0;
 }
 
 function AddHeader($depth, $title, $keywords)
@@ -160,8 +167,8 @@ function getPage($cat, $idx, $post)
 	}
 	else
 	{
-    $link = "error";
-	  echo "No Such Posts Exists!";
+    $link = "/error";
+	  echo "<br /><div class=\"errorDiv\"> No Such Posts Exists! </div><br />";
 	}
   
   return $link;  

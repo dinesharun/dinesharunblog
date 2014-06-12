@@ -981,3 +981,10 @@ text-align:center;
 {
   display: none;
 }
+
+.errorDiv
+{
+  text-align: center;
+  font-size: 91%;
+  color: #993939;
+}
