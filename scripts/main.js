@@ -9,7 +9,7 @@ function StartScripts()
   formatCodeBlock();
   
   window.addEventListener("popstate", function(e) {
-    
+    getPage(e.state["catId"], e.state["idxId"], e.state["postId"]);
   });
 }
 
