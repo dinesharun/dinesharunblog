@@ -6,12 +6,15 @@ function StartScripts()
 {
   resizeMe();
   StartClock();
-  formatCodeBlock();
   
   /* If not the root request the page using getPath method */
   if((window.location.pathname != null) && (window.location.pathname != "/"))
   {
     getPath(window.location.pathname);
+  }
+  else
+  {
+    getPage(0, 0, 0, false);
   }
   
   window.addEventListener("popstate", function(e) 
@@ -28,7 +31,7 @@ function StartScripts()
       }
       else
       {
-        getPage(e.state["path"], false);
+        getPath(e.state["path"], false);
       }
     }
   });
