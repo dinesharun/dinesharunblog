@@ -409,19 +409,19 @@ function addPage(catId, idxId, postId, data, addHistory)
   var link  = "";
   var title = "";
   
-  /* Update data */
-  $(".contentFrame").html(data);
-  
   if(addHistory == true)
   {
     /* Get current link */
-    link  = $(".currLinkDiv").attr("linkStr");
-    title = $(".currLinkDiv").attr("titleStr");
+    link  = $(".currLinkDiv", data).attr("linkStr");
+    title = $(".currLinkDiv", data).attr("titleStr");
     
     /* Push new state */
     var stateObj = { catId: catId, idxId: idxId, postId: postId };
     history.pushState(stateObj, title, link);
   }
+  
+  /* Update data */
+  $(".contentFrame").html(data);
 }
 
 function addRandImages(data)
