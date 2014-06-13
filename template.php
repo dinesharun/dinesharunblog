@@ -198,7 +198,7 @@ function parseData($rawData, $imgPrefix)
   $rep = '&lt;a href="/'. $imgPrefix . '/$1"&gt;&lt;img src="/' . $imgPrefix . '/thumbs/$1" data-title="$2" data-description="$3" /&gt;&lt;/a&gt;';
   $parsedData = preg_replace($pattern, $rep, $parsedData);
  
-  retrun $parsedData;
+  return $parsedData;
 }
   
 function AddBody($cat, $idx, $post)
