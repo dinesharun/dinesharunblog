@@ -160,14 +160,14 @@ function getPage($cat, $idx, $post)
 	
 	/* Get the file contents */
   $postData = file_get_contents($postFile);
-  
-  /* Parse the data and replace MACROS */
-  $parsedData = parseData($postData, $imgPrefix);
 	
 	/* If got post the data */
 	if($postData != FALSE)
 	{
-	  echo $postData;
+    /* Parse the data and replace MACROS */
+    $parsedData = parseData($postData, $imgPrefix);
+    
+	  echo $parsedData;
 	}
 	else
 	{
@@ -198,7 +198,7 @@ function parseData($rawData, $imgPrefix)
   $rep = '&lt;a href="/'. $imgPrefix . '/$1"&gt;&lt;img src="/' . $imgPrefix . '/thumbs/$1" data-title="$2" data-description="$3" /&gt;&lt;/a&gt;';
   $parsedData = preg_replace($pattern, $rep, $parsedData);
  
-  retrun $parsedData;
+  return $parsedData;
 }
   
 function AddBody($cat, $idx, $post)
@@ -255,7 +255,7 @@ function AddBody($cat, $idx, $post)
   }
 
 	/* Background thumbnail image for every category and index */
-  echo'<div class="bodyBGImgDiv"><img class="bodyImg" alt="" src="/' . $bgImg[$cat][$idx] . '"/> </div>';
+  echo'<div class="bodyBGImgDiv"><img class="bodyImg" alt="" src="' . $bgImg[$cat][$idx] . '"/> </div>';
 
 	/* Post date addition */
   if($post != 0)
