@@ -184,7 +184,7 @@ function parseData($rawData, $imgPrefix)
   
   $pattern = '/;/i';
   $rep = ' ';
-  $parsedData = preg_replace($pattern, $rep, $data);
+  $parsedData = preg_replace($pattern, $rep, $rawData);
  
   $pattern = '/StartGalleria\(\)/i';
   $rep     = '&lt;div id="galleria" class="galleriaDIV"&gt;';
