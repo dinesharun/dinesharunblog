@@ -156,7 +156,7 @@ function getPage($cat, $idx, $post)
   
   /* Build the post path */
   $postFile  = "posts/" . $cat . "/" . $idx . "/" . $post . ".txt";
-  $imgPrefix = $link . "/images/";
+  $imgPrefix = "/images" . $link . "/images/";
 	
 	/* Get the file contents */
   $postData = file_get_contents($postFile);
@@ -167,7 +167,7 @@ function getPage($cat, $idx, $post)
     /* Parse the data and replace MACROS */
     $parsedData = parseData($postData, $imgPrefix);
     
-	  echo $parsedData;
+	  echo htmlspecialchars_decode($parsedData);
 	}
 	else
 	{
@@ -191,7 +191,7 @@ function parseData($rawData, $imgPrefix)
   $parsedData = preg_replace($pattern, $rep, $parsedData);
   
   $pattern = '/EndGalleria\(.*\)/i';
-  $rep = '&lt;/div&gt;&lt;script type="text/javascript"&gt;\$(\'#galleria\').galleria();&lt;/script&gt;';
+  $rep = '&lt;/div&gt;&lt;script type="text/javascript"&gt;Galleria.loadTheme(\'/scripts/themes/lightbox/galleria.lightbox.js\');\$(\'#galleria\').galleria();&lt;/script&gt;';
   $parsedData = preg_replace($pattern, $rep, $parsedData);
  
   $pattern = '/AddImageToGalleria\("(.*)", "(.*)", "(.*)"\)/i';
