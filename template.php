@@ -191,7 +191,7 @@ function parseData($rawData, $imgPrefix)
   $parsedData = preg_replace($pattern, $rep, $parsedData);
   
   $pattern = '/EndGalleria\(.*\)/i';
-  $rep = '&lt;/div&gt;&lt;script type="text/javascript"&gt;\$(\'#galleria\').galleria();&lt;/script&gt;';
+  $rep = '&lt;/div&gt;&lt;script type="text/javascript"&gt;Galleria.loadTheme(\'/scripts/themes/lightbox/galleria.lightbox.js\');\$(\'#galleria\').galleria();&lt;/script&gt;';
   $parsedData = preg_replace($pattern, $rep, $parsedData);
  
   $pattern = '/AddImageToGalleria\("(.*)", "(.*)", "(.*)"\)/i';
