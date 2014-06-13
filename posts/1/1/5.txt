@@ -1,8 +1,6 @@
 <h2> Flowers Collection - 1 </h2>
 
-<?php
-
-    StartGalleria();
+  StartGalleria();
 	AddImageToGalleria("DSC02578.JPG", "A Rainy Aahaya Thamarai", "");
 	AddImageToGalleria("DSC02639.JPG", "A Rainy Aahaya Thamarai", "");
 	AddImageToGalleria("DSC07536.JPG", "A Rainy Aahaya Thamarai", "");
@@ -20,9 +18,7 @@
 	AddImageToGalleria("DSC01087.JPG", "A Rainy Aahaya Thamarai", "");
 	AddImageToGalleria("DSC00005.JPG", "A Rainy Aahaya Thamarai", "");
 	AddImageToGalleria("DSC09023.JPG", "A Rainy Aahaya Thamarai", "");
-
 	EndGalleria(0);
-?>
 
 <br /><br /><br /><br /><br /><br />
 

@@ -2,8 +2,6 @@
 
 <?php
 
-    StartGalleria();
-
 	AddImageToGalleria("DSC01344.jpg", "Autum Scene", "");
 	AddImageToGalleria("DSC01346.jpg", "Autum Scene", "");
 	AddImageToGalleria("DSC01347.jpg", "Autum Scene", "");
@@ -36,6 +34,5 @@
 	AddImageToGalleria("DSC01441.jpg", "Autum Scene", "");
 
 	EndGalleria(0);
-?>
 
 <br /><br /><br /><br /><br /><br />

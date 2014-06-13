@@ -1,8 +1,6 @@
 <h2> Blender Gallery </h2>
 
-<?php
-
-    StartGalleria();
+  StartGalleria();
 	AddImageToGalleria("Lost_Compass.jpg", "A Rainy Aahaya Thamarai", "");
 	AddImageToGalleria("Lost_season_6.jpg", "A Rainy Aahaya Thamarai", "");
 	AddImageToGalleria("Cheetah.jpg", "A Rainy Aahaya Thamarai", "");
@@ -14,6 +12,5 @@
 	AddImageToGalleria("Shuttle_Court.jpg", "A Rainy Aahaya Thamarai", "");
 	AddImageToGalleria("WaterLillies.jpg", "A Rainy Aahaya Thamarai", "");
 	EndGalleria(0);
-?>
 
 <br /><br /><br /><br /><br /><br />

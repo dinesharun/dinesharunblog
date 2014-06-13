@@ -1,8 +1,6 @@
 <h2> Sunrise Sunset Collection </h2>
 
-<?php
-
-    StartGalleria();
+  StartGalleria();
 	AddImageToGalleria("DSC01231.JPG", "A Rainy Aahaya Thamarai", "");
 	AddImageToGalleria("DSC01389.JPG", "A Rainy Aahaya Thamarai", "");
 	AddImageToGalleria("DSC01419.JPG", "A Rainy Aahaya Thamarai", "");
@@ -16,6 +14,4 @@
 	AddImageToGalleria("DSC09126.JPG", "A Rainy Aahaya Thamarai", "");
 
 	EndGalleria(0);
-?>
-
 <br /><br /><br /><br /><br /><br />

@@ -1,8 +1,6 @@
 <h2> Tress Collection </h2>
 
-<?php
-
-    StartGalleria();
+  StartGalleria();
 	AddImageToGalleria("DSC01533.JPG", "A Rainy Aahaya Thamarai", "");
 	AddImageToGalleria("DSC01557.JPG", "A Rainy Aahaya Thamarai", "");
 	AddImageToGalleria("DSC01442.JPG", "A Rainy Aahaya Thamarai", "");
@@ -19,6 +17,5 @@
 	AddImageToGalleria("DSC08953.JPG", "A Rainy Aahaya Thamarai", "");
 
 	EndGalleria(0);
-?>
 
 <br /><br /><br /><br /><br /><br />

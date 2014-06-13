@@ -2,11 +2,11 @@
 <h2> Rain Collection </h2>
 
   <div id="galleria" class="galleriaDIV">
-    <a href="/images/art/photo/flowers/images/DSC01142.JPG"><img src="/images/art/photo/flowers/images/thumbs/DSC01142.JPG" data-title="title" data-description="description" /></a>
-    <a href="/images/art/photo/flowers/images/DSC08640.JPG"><img src="/images/art/photo/flowers/images/thumbs/DSC08640.JPG" data-title="title" data-description="description" /></a>
-    <a href="/images/art/photo/flowers/images/DSC02225.JPG"><img src="/images/art/photo/flowers/images/thumbs/DSC02225.JPG" data-title="title" data-description="description" /></a>
-    <a href="/images/art/photo/flowers/images/DSC07569.JPG"><img src="/images/art/photo/flowers/images/thumbs/DSC07569.JPG" data-title="title" data-description="description" /></a>
-    <a href="/images/art/photo/flowers/images/DSC02581.JPG"><img src="/images/art/photo/flowers/images/thumbs/DSC02581.JPG" data-title="title" data-description="description" /></a>
+    <a href="/images/art/photo/rain/images/DSC01142.JPG"><img src="/images/art/photo/rain/images/thumbs/DSC01142.JPG" data-title="title" data-description="description" /></a>
+    <a href="/images/art/photo/rain/images/DSC08640.JPG"><img src="/images/art/photo/rain/images/thumbs/DSC08640.JPG" data-title="title" data-description="description" /></a>
+    <a href="/images/art/photo/rain/images/DSC02225.JPG"><img src="/images/art/photo/rain/images/thumbs/DSC02225.JPG" data-title="title" data-description="description" /></a>
+    <a href="/images/art/photo/rain/images/DSC07569.JPG"><img src="/images/art/photo/rain/images/thumbs/DSC07569.JPG" data-title="title" data-description="description" /></a>
+    <a href="/images/art/photo/rain/images/DSC02581.JPG"><img src="/images/art/photo/rain/images/thumbs/DSC02581.JPG" data-title="title" data-description="description" /></a>
 	</div>
   
   <script type="text/javascript">

@@ -155,10 +155,14 @@ function getPage($cat, $idx, $post)
   }
   
   /* Build the post path */
-  $postFile = "posts/" . $cat . "/" . $idx . "/" . $post . ".txt";
+  $postFile  = "posts/" . $cat . "/" . $idx . "/" . $post . ".txt";
+  $imgPrefix = $link . "/images/";
 	
 	/* Get the file contents */
   $postData = file_get_contents($postFile);
+  
+  /* Parse the data and replace MACROS */
+  $parsedData = parseData($postData, $imgPrefix);
 	
 	/* If got post the data */
 	if($postData != FALSE)
@@ -172,6 +176,29 @@ function getPage($cat, $idx, $post)
 	}
   
   return $link;  
+}
+
+function parseData($rawData, $imgPrefix)
+{
+  $parsedData = "";
+  
+  $pattern = '/;/i';
+  $rep = ' ';
+  $parsedData = preg_replace($pattern, $rep, $data);
+ 
+  $pattern = '/StartGalleria\(\)/i';
+  $rep     = '&lt;div id="galleria" class="galleriaDIV"&gt;';
+  $parsedData = preg_replace($pattern, $rep, $parsedData);
+  
+  $pattern = '/EndGalleria\(.*\)/i';
+  $rep = '&lt;/div&gt;&lt;script type="text/javascript"&gt;\$(\'#galleria\').galleria();&lt;/script&gt;';
+  $parsedData = preg_replace($pattern, $rep, $parsedData);
+ 
+  $pattern = '/AddImageToGalleria\("(.*)", "(.*)", "(.*)"\)/i';
+  $rep = '&lt;a href="/'. $imgPrefix . '/$1"&gt;&lt;img src="/' . $imgPrefix . '/thumbs/$1" data-title="$2" data-description="$3" /&gt;&lt;/a&gt;';
+  $parsedData = preg_replace($pattern, $rep, $parsedData);
+ 
+  retrun $parsedData;
 }
   
 function AddBody($cat, $idx, $post)
