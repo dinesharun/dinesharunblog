@@ -167,7 +167,7 @@ function getPage($cat, $idx, $post)
     /* Parse the data and replace MACROS */
     $parsedData = parseData($postData, $imgPrefix);
     
-	  echo $parsedData;
+	  echo htmlspecialchars_decode($parsedData);
 	}
 	else
 	{
