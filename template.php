@@ -156,7 +156,7 @@ function getPage($cat, $idx, $post)
   
   /* Build the post path */
   $postFile  = "posts/" . $cat . "/" . $idx . "/" . $post . ".txt";
-  $imgPrefix = $link . "/images/";
+  $imgPrefix = "/images" . $link . "/images/";
 	
 	/* Get the file contents */
   $postData = file_get_contents($postFile);
