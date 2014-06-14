@@ -181,20 +181,16 @@ function getPage($cat, $idx, $post)
 function parseData($rawData, $imgPrefix)
 {
   $parsedData = "";
-  
-  $pattern = '/;/i';
-  $rep = ' ';
-  $parsedData = preg_replace($pattern, $rep, $rawData);
  
-  $pattern = '/StartGalleria\(\)/i';
+  $pattern = '/StartGalleria\(\);/i';
   $rep     = '&lt;div id="galleria" class="galleriaDIV"&gt;';
-  $parsedData = preg_replace($pattern, $rep, $parsedData);
+  $parsedData = preg_replace($pattern, $rep, $rawData);
   
-  $pattern = '/EndGalleria\(.*\)/i';
+  $pattern = '/EndGalleria\(.*\);/i';
   $rep = '&lt;/div&gt;&lt;script type="text/javascript"&gt;Galleria.loadTheme(\'/scripts/themes/lightbox/galleria.lightbox.js\');\$(\'#galleria\').galleria();&lt;/script&gt;';
   $parsedData = preg_replace($pattern, $rep, $parsedData);
  
-  $pattern = '/AddImageToGalleria\("(.*)", "(.*)", "(.*)"\)/i';
+  $pattern = '/AddImageToGalleria\("(.*)", "(.*)", "(.*)"\);/i';
   $rep = '&lt;a href="'. $imgPrefix . '$1"&gt;&lt;img src="' . $imgPrefix . 'thumbs/$1" data-title="$2" data-description="$3" /&gt;&lt;/a&gt;';
   $parsedData = preg_replace($pattern, $rep, $parsedData);
  
