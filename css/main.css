@@ -14,7 +14,7 @@ body { background-color: rgb(210, 210, 210); padding: 0px; margin: 0px; font-siz
 .centerBlock { position: absolute; margin-left: 0%; margin-right: 0%; margin-top: 0%; padding: 0px; padding-top: 9%; width: 100%; } 
 .header { position: static; margin: 0px; padding: 0px; margin-left: 3%; margin-right: 6%; width: 91%; z-index: 0; } 
 .hMenu {position: relative; bottom: 2px; border-left: 1px solid rgb(0, 0, 0);  border-right: 1px solid rgb(0, 0, 0);  border-top: 1px solid rgb(0, 0, 0);  padding-left: 1.8%;  padding-right: 1.8%;  padding-top: 1%;  padding-bottom: 3px;  margin: 0%;  background-color: rgb(255, 255, 255);  background-image:url('images/menuBG.png');  border-radius:30px 30px 0px 0px;  -moz-border-radius:30px 30px 0px 0px;  font-size: 93%;  z-index: 0;  height: 6%; }
-.hMenu:hover  {padding-bottom: 11px;   bottom: 10px;   background-color: rgb(242, 242, 242);   background-image:url('images/menuBGHover.png') };
+.hMenu:hover  {padding-bottom: 11px;   bottom: 10px;   background-color: rgb(242, 242, 242);   background-image:url('images/menuBGHover.png'); }
 .hMenuCurr { position: relative; bottom: -3px; border-left: 2px solid rgb(0, 0, 0); border-right: 2px solid rgb(0, 0, 0); border-top: 2px solid rgb(0, 0, 0); padding-left: 1.8%; padding-right: 1.8%; padding-top: 1%; padding-bottom: 0px; margin: 0%; background-color: rgb(120, 111, 99); background-image:url('images/main.png'); border-radius:30px 30px 0px 0px; -moz-border-radius:30px 30px 0px 0px; font-size: 111%; z-index: 1; } 
 .menuImg { width: 2.7%; border: 0px solid black; } 
 .mainLinks { font-family: 'Combo', Calibri; font-size: 150%; color: rgb(0, 0, 120); text-decoration: none; z-index: 0; font-width: bold; } 
