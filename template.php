@@ -135,23 +135,31 @@ function getPage($cat, $idx, $post)
 {
   global $catStrs;
   
-  /* Build link */
-  $link = $catStrs[0][$cat];
-  
-  if($idx != 0)
+  if(($cat == 0) && ($idx == 0))
   {
-     $link = $link . '/' . $catStrs[$cat][$idx];
-     
-     if($post != 0)
-     {
-       /* Get the post */
-       $postRow = GetPost($post);
-       
-       $link = $link . $postRow["link"];
-     }
+    $postFile  = 'index.htm';
   }
-  
-  $postFile  = $link . '/index.htm';
+  else
+  {
+    /* Build link */
+    $link = $catStrs[0][$cat];
+    
+    if($idx != 0)
+    {
+       $link = $link . '/' . $catStrs[$cat][$idx];
+       
+       if($post != 0)
+       {
+         /* Get the post */
+         $postRow = GetPost($post);
+         
+         $link = $link . $postRow["link"];
+       }
+    }
+    
+    $postFile  = $link . '/index.htm';
+  }
+    
   $imgPrefix = '';
 	
 	/* Get the file contents */
