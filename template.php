@@ -136,7 +136,7 @@ function getPage($cat, $idx, $post)
   global $catStrs;
   
   /* Build link */
-  $link = '/' . $catStrs[0][$cat];
+  $link = $catStrs[0][$cat];
   
   if($idx != 0)
   {
