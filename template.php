@@ -136,11 +136,11 @@ function getPage($cat, $idx, $post)
   global $catStrs;
   
   /* Build link */
-  $link = '/' . $catStrs[0][$cat] . '/';
+  $link = '/' . $catStrs[0][$cat];
   
   if($idx != 0)
   {
-     $link = $link . $catStrs[$cat][$idx] . '/';
+     $link = $link . '/' . $catStrs[$cat][$idx] . '/';
      
      if($post != 0)
      {
@@ -359,7 +359,7 @@ function AddFooter($cat, $idx, $post)
 function GetRandomImages()
 {
   global $Debug;
-  $startPath = "images/art/photo/";
+  $startPath = "/art/photo/";
 	$imgPath   = "";
 
 	$imagesCount = CountImagesInDir(1, $startPath, 0, 0, $imgPath);
@@ -477,13 +477,13 @@ function countImagesInDir($firstCall, $path, $thumbDir, $imageIndx, &$selectedFi
 --------------------------------------------------------*/
 
   $totalImages = 21;
-  $randImgs    = array('/images/art/photo/Flowers/images/thumbs/DSC00025.JPG', '/images/art/photo/Flowers/images/thumbs/DSC00039.JPG', '/images/art/photo/Flowers/images/thumbs/DSC00008.JPG',
-                       '/images/art/photo/Flowers/images/thumbs/DSC09158.JPG', '/images/art/photo/Flowers/images/thumbs/DSC09048.JPG', '/images/art/photo/Flowers/images/thumbs/DSC01083.JPG',
-                       '/images/art/photo/rain/images/thumbs/DSC01142.JPG',    '/images/art/photo/rain/images/thumbs/DSC07569.JPG',    '/images/art/photo/rain/images/thumbs/DSC08640.JPG',
-                       '/images/art/photo/seasons/images/thumbs/DSC01347.jpg', '/images/art/photo/seasons/images/thumbs/DSC01349.jpg', '/images/art/photo/seasons/images/thumbs/DSC01368.jpg',
-                       '/images/art/photo/seasons/images/thumbs/DSC01390.jpg', '/images/art/photo/seasons/images/thumbs/DSC01419.jpg', '/images/art/photo/seasons/images/thumbs/DSC01433.jpg',
-                       '/images/art/photo/sunriseset/images/thumbs/DSC01231.JPG', '/images/art/photo/sunriseset/images/thumbs/DSC01419.JPG', '/images/art/photo/sunriseset/images/thumbs/DSC01427.JPG',
-                       '/images/art/photo/trees/images/thumbs/DSC01533.JPG', '/images/art/photo/trees/images/thumbs/DSC00012.JPG', '/images/art/photo/trees/images/thumbs/DSC03663.JPG');
+  $randImgs    = array('/art/photo/Flowers/thumbs/DSC00025.JPG', '/art/photo/Flowers/thumbs/DSC00039.JPG', '/art/photo/Flowers/thumbs/DSC00008.JPG',
+                       '/art/photo/Flowers/thumbs/DSC09158.JPG', '/art/photo/Flowers/thumbs/DSC09048.JPG', '/art/photo/Flowers/thumbs/DSC01083.JPG',
+                       '/art/photo/rain/thumbs/DSC01142.JPG',    '/art/photo/rain/thumbs/DSC07569.JPG',    '/art/photo/rain/thumbs/DSC08640.JPG',
+                       '/art/photo/seasons/thumbs/DSC01347.jpg', '/art/photo/seasons/thumbs/DSC01349.jpg', '/art/photo/seasons/thumbs/DSC01368.jpg',
+                       '/art/photo/seasons/thumbs/DSC01390.jpg', '/art/photo/seasons/thumbs/DSC01419.jpg', '/art/photo/seasons/thumbs/DSC01433.jpg',
+                       '/art/photo/sunriseset/thumbs/DSC01231.JPG', '/art/photo/sunriseset/thumbs/DSC01419.JPG', '/art/photo/sunriseset/thumbs/DSC01427.JPG',
+                       '/art/photo/trees/thumbs/DSC01533.JPG', '/art/photo/trees/thumbs/DSC00012.JPG', '/art/photo/trees/thumbs/DSC03663.JPG');
            
   if(($imageIndx != 0) && ($imageIndx <= $totalImages))
   {

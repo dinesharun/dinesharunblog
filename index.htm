@@ -1,75 +1,27 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<!-- <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> -->
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-    <meta name="Description" content="Personal Blog of Dinesh Arun.K." />
-    <meta name="Keywords" content=" Blog, Photography, Blender, Nature, Landscape, Electronics, Animation " />
-    <title> Photography, Animation, Music, Nature & more ....... </title>
-    
-    <link rel="stylesheet" type="text/css" href="css/main.css" />
-    <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Emblema+One" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Combo" rel="stylesheet" type="text/css">
-    
-    <script type="text/javascript" src="scripts/main.js"></script>
-    <script type="text/javascript" src="scripts/jquery.js"></script>
-    <script type="text/javascript" src="scripts/showImage.js"></script>
-    <script type="text/javascript" src="scripts/galleria.js"></script>
-    <script type="text/javascript" src="scripts/swfobject.js"></script>
-  </head>
-  
-  <body onload="StartScripts()" onresize="resizeMe()">
-    <div class="stageBG"  Id="StageBG">   </div>
-    <div class="stageImg" Id="StageImg" align="center">  </div>
-    <div class="topBar">
-      <span class="topBarClock" style="border:0px;">
-        22-05-2012  <br /> 11:30
-      </span>
-      <span class="topBarItem">    
-        <a class="topILink" href="https://plus.google.com/117144638090915831878?rel=author" target="_blank"> 
-          <img style="width: 100%; border: 0px;" src="css/images/googleplus.png" /> 
-        </a> 
-      </span>
-      <span class="topBarItem">
-        <a class="topILink" href="http://www.orkut.co.in/Main#Profile?uid=7117684347204734942" target="_blank"> 
-          <img style="width: 100%; border: 0px;" src="css/images/orkut.png" /> 
-        </a> 
-      </span>
-      <span class="topBarItem">
-      <a class="topILink" href="https://twitter.com/#!/dinesharun" target="_blank"> 
-        <img style="width: 100%; border: 0px;" src="css/images/twitter.png" /> 
-      </a> 
-      </span>
-      <span class="topBarItem">
-      <a class="topILink" href="http://www.facebook.com/dinesharunk" target="_blank"> 
-        <img style="width: 100%; border: 0px;" src="css/images/facebook.png" /> 
-      </a> 
-      </span>
-      <span class="topBarBigLink">
-        <a class="toplbLink" onclick="getPage(0, 0, 0)"> Home </a> 
-      </span>
-      <span class="topBarBigLink">
-        <a class="toplbLink" onclick="getPage(1, 0, 0)"> Art </a> 
-      </span>
-      <span class="topBarBigLink">
-        <a class="toplbLink" onclick="getPage(2, 0, 0)"> Technology </a>
-      </span>
-    </div>  
-    
-    <div class="contentFrame" id="contentFrame"></div>
-    
-    <div class="bottomBar">  
-      <table style="width:100%;text-align:center;padding:0px;">    
-        <tr style="width:99%">      
-          <td style="width:20%;">       </td>      
-          <td style="width:65%;text-align:center;font-size:69%;color:rgb(210, 210, 210);">         
-            All the content presented here are my personal works if unless otherwise specified. <br />         If you find any of the content not presentable or offsensive or copyrighted, kindly report         to <a Class="InTextLink" href="mailto:dinesh.arun@rediffmail.com"> me here </a>         Also your feedback and suggestions are welcome.<br />       
-          </td>      
-          <td style="width:15%;text-align:center;font-size:75%;color:rgb(210, 210, 210);">           Site best viewed in any mordern browsers with a resolution more than 1280x768       </td>   
-        </tr>  
-      </table>
-    </div>
-  </body>
-</html>
+<table style="width: 100%; margin:0px; padding: 1%;">
+  <tr>
+	<td style="width: 84%; vertical-align: top;">
+		<div class="PostDataPlain" style="">
+			<span class="firstWord">W</span>elcome to my corner of the web. <br /><br />
+			&nbsp; &nbsp; &nbsp; &nbsp; A place dedicated for my pursuit of <a class="InTextLink" href="art/photo/"> recording </a>
+			(through photography) or <a class="InTextLink" href="art/anim/"> recreating </a> (through animation)
+			the wonders of the natural world in both it's <a class="InTextLink" href="art/nature/"> visual </a> form
+			or <a class="InTextLink" href="art/music/"> audible </a> form. Along the lines of the famous quote "Technology Inspires Art,
+			Art Challenges Technology", my life follows both.  As a programmer by profession and with a passion for technology, a fascination for nature & history,
+			and an artist by soul, I try to find a point where technology and art collide.
+		</div>
+	</td>
+	<td style="padding-left: 1%; width: 15%; vertical-align: top;">
+		<div class="PostDataPlain" style="padding: 1.8%; text-align: center; font-family: corbel; font-size: 87%">
+			Currently Reading <br /><br />
+			<a href="http://www.amazon.co.uk/London-Edward-Rutherfurd/dp/0099551373" target="_blank"> <img style="width: 81%; cursor:pointer; border: 0px;" src="/images/bookLondon.jpg" /> <br /><br /></a>
+		</div>
+	</td>
+  </tr>
+</table>
+<h3 style="text-align: center;"> A few Random Images from my <a class="InTextLink" href="art/photo/"> Photography </a> Archive <br /></h3><br />
+<div id="randImgsDiv" class="randImgsDiv">
+  <script type="text/javascript">
+    GetRandomImages();
+  </script>
+</div>
