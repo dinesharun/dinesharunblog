@@ -140,18 +140,18 @@ function getPage($cat, $idx, $post)
   
   if($idx != 0)
   {
-     $link = $link . '/' . $catStrs[$cat][$idx] . '/';
+     $link = $link . '/' . $catStrs[$cat][$idx];
      
      if($post != 0)
      {
        /* Get the post */
        $postRow = GetPost($post);
        
-       $link = $link . $postRow["link"] . '/';
+       $link = $link . $postRow["link"];
      }
   }
   
-  $postFile  = $link . 'index.htm';
+  $postFile  = $link . '/index.htm';
   $imgPrefix = '';
 	
 	/* Get the file contents */
@@ -477,8 +477,8 @@ function countImagesInDir($firstCall, $path, $thumbDir, $imageIndx, &$selectedFi
 --------------------------------------------------------*/
 
   $totalImages = 21;
-  $randImgs    = array('/art/photo/Flowers/thumbs/DSC00025.JPG', '/art/photo/Flowers/thumbs/DSC00039.JPG', '/art/photo/Flowers/thumbs/DSC00008.JPG',
-                       '/art/photo/Flowers/thumbs/DSC09158.JPG', '/art/photo/Flowers/thumbs/DSC09048.JPG', '/art/photo/Flowers/thumbs/DSC01083.JPG',
+  $randImgs    = array('/art/photo/flowers/thumbs/DSC00025.JPG', '/art/photo/flowers/thumbs/DSC00039.JPG', '/art/photo/flowers/thumbs/DSC00008.JPG',
+                       '/art/photo/flowers/thumbs/DSC09158.JPG', '/art/photo/flowers/thumbs/DSC09048.JPG', '/art/photo/flowers/thumbs/DSC01083.JPG',
                        '/art/photo/rain/thumbs/DSC01142.JPG',    '/art/photo/rain/thumbs/DSC07569.JPG',    '/art/photo/rain/thumbs/DSC08640.JPG',
                        '/art/photo/seasons/thumbs/DSC01347.jpg', '/art/photo/seasons/thumbs/DSC01349.jpg', '/art/photo/seasons/thumbs/DSC01368.jpg',
                        '/art/photo/seasons/thumbs/DSC01390.jpg', '/art/photo/seasons/thumbs/DSC01419.jpg', '/art/photo/seasons/thumbs/DSC01433.jpg',

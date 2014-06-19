@@ -191,8 +191,8 @@ function resizeMe()
 
     var displayHeight = $(window).height();
     var displayWidth = $(window).width();
-    var percentageH = ((1.1 * displayHeight) / preferredHeight);
-    var percentageW = ((1.1 * displayWidth) / preferredWidth);
+    var percentageH = ((0.96 * displayHeight) / preferredHeight);
+    var percentageW = ((0.96 * displayWidth) / preferredWidth);
     var percentage  = ((percentageH > percentageW)?(percentageW):(percentageH))
     var newFontSize = Math.floor(fontsize * percentage);
     $("body").css("font-size", newFontSize);
