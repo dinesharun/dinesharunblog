@@ -27,6 +27,11 @@ handlers:
   static_files: post/\1
   upload: post/(.*)
   application_readable: true
+  
+- url: /(.*\.(gif|png|jpg|pdf))$
+  static_files: /\1
+  upload: .*\.(gif|png|jpg|pdf)$
+  application_readable: true
 
 - url: .*getpage.*
   script: getpage.php
