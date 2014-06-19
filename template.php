@@ -153,7 +153,7 @@ function getPage($cat, $idx, $post)
          /* Get the post */
          $postRow = GetPost($post);
          
-         $link = $link . $postRow["link"];
+         $link = $link . '/' . $postRow["link"];
        }
     }
     
