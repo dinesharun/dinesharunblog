@@ -749,9 +749,9 @@ function Comment($fnCode, $mainIndx, $subIndx, $postID, $postName, $postData, $p
   }
 }
 
-function AddInlineImage(argList)
+function AddInlineImage($argList)
 {
-  $args = explode(',', $path);
+  $args = explode(',', $argList);
   
   $styleNum   = (int)$args[0];
   $pinPath    = $args[1];
