@@ -147,13 +147,12 @@ function getPage($cat, $idx, $post)
        /* Get the post */
        $postRow = GetPost($post);
        
-       $link = $link . $postRow["link"];
+       $link = $link . $postRow["link"] . '/';
      }
   }
   
-  /* Build the post path */
-  $postFile  = "posts/" . $cat . "/" . $idx . "/" . $post . ".txt";
-  $imgPrefix = "/images" . $link . "/images/";
+  $postFile  = $link . 'index.htm';
+  $imgPrefix = $link . '/images/';
 	
 	/* Get the file contents */
   $postData = file_get_contents($postFile);
@@ -190,7 +189,11 @@ function parseData($rawData, $imgPrefix)
   $pattern = '/AddImageToGalleria\("(.*)", "(.*)", "(.*)"\);/i';
   $rep = '&lt;a href="'. $imgPrefix . '$1"&gt;&lt;img src="' . $imgPrefix . 'thumbs/$1" data-title="$2" data-description="$3" /&gt;&lt;/a&gt;';
   $parsedData = preg_replace($pattern, $rep, $parsedData);
- 
+  
+  $pattern = '/AddInlineImage\((.*)\);/i';
+  $rep = AddInlineImage("$1");
+  $parsedData = preg_replace($pattern, $rep, $parsedData);
+  
   return $parsedData;
 }
   
@@ -746,8 +749,18 @@ function Comment($fnCode, $mainIndx, $subIndx, $postID, $postName, $postData, $p
   }
 }
 
-function AddInlineImage($styleNum, $pinPath, $imgPath, $thumbPath, $imgName)
+function AddInlineImage(argList)
 {
+  $args = explode(',', $path);
+  
+  $styleNum   = (int)$args[0];
+  $pinPath    = $args[1];
+  $imgPath    = $args[2];
+  $thumbPath  = $args[3];
+  $imgName    = $args[4];
+  
+  $retStr = "";
+  
   $classOne = array("InTextPicPinRight", "InTextPicPinLeft");
   $classTwo = array("InTextPicRight1", "InTextPicRight2", "InTextPicRight3",
                     "InTextPicLeft1", "InTextPicLeft2", "InTextPicLeft3");
@@ -760,13 +773,15 @@ function AddInlineImage($styleNum, $pinPath, $imgPath, $thumbPath, $imgName)
   }
   $classTwoIndx = $styleNum - 1;
 
-  echo '<div align="center" class="' . $classOne[$classOneIndx] . '" style="text-align:center;width:18%">';
-    echo '&nbsp<img style="position:absolute" src="/' . $pinPath . '" >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</img>';
-	   echo '<div class="' . $classTwo[$classTwoIndx] . '">';
-		 echo '<img onClick="ShowImage(\'' . $imgPath . '\', \'' . $imgName . '\')" src="' . $thumbPath . '" width="99%"> </img>';
-		 echo '<div class="InTextPicCaption">' . $imgName . '</div>';
-	   echo '</div>';
-	 echo '</div>';
+  $retStr = $retStr . '<div align="center" class="' . $classOne[$classOneIndx] . '" style="text-align:center;width:18%">';
+  $retStr = $retStr . '&nbsp<img style="position:absolute" src="/' . $pinPath . '" >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</img>';
+	$retStr = $retStr . '<div class="' . $classTwo[$classTwoIndx] . '">';
+	$retStr = $retStr . '<img onClick="ShowImage(\'' . $imgPath . '\', \'' . $imgName . '\')" src="' . $thumbPath . '" width="99%"> </img>';
+	$retStr = $retStr . '<div class="InTextPicCaption">' . $imgName . '</div>';
+	$retStr = $retStr . '</div>';
+	$retStr = $retStr . '</div>';
+  
+  return $retStr;
 }
 
 ?>
