@@ -152,7 +152,7 @@ function getPage($cat, $idx, $post)
   }
   
   $postFile  = $link . 'index.htm';
-  $imgPrefix = $link . '/images/';
+  $imgPrefix = '';
 	
 	/* Get the file contents */
   $postData = file_get_contents($postFile);
