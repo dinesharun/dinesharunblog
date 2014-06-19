@@ -28,9 +28,9 @@ handlers:
   upload: post/(.*)
   application_readable: true
   
-- url: /(.*\.(gif|png|jpg|pdf))$
-  static_files: /\1
-  upload: .*\.(gif|png|jpg|pdf)$
+- url: /(.*\.(gif|png|jpg|pdf|JPG|PNG|GIF|PDF))$
+  static_files: \1
+  upload: .*\.(gif|png|jpg|pdf|JPG|PNG|GIF|PDF)$
   application_readable: true
 
 - url: .*getpage.*
