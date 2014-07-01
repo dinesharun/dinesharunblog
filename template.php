@@ -142,22 +142,27 @@ function getPage($cat, $idx, $post)
   else
   {
     /* Build link */
-    $link = $catStrs[0][$cat];
+    $link = '/';
     
-    if($idx != 0)
+    if($cat != 0)
     {
-       $link = $link . '/' . $catStrs[$cat][$idx];
-       
-       if($post != 0)
-       {
-         /* Get the post */
-         $postRow = GetPost($post);
+      $link = $catStrs[0][$cat] . '/';
+    
+      if($idx != 0)
+      {
+         $link = $link . $catStrs[$cat][$idx] . '/';
          
-         $link = $link . '/' . $postRow["link"];
-       }
+         if($post != 0)
+         {
+           /* Get the post */
+           $postRow = GetPost($post);
+           
+           $link = $link . $postRow["link"] . '/';
+         }
+      }
     }
     
-    $postFile  = $link . '/index.htm';
+    $postFile  = $link . 'index.htm';
   }
     
   $imgPrefix = '';
