@@ -1,16 +1,8 @@
 var stageDiv;
 var imgDiv;
-var imgTimeOut;
-var refreshCount = 0;
-var currTitle = "";
-var curPath = "";
 
 function ShowImage(path, title)
 {
-  //alert("Showing" + path);
-
-  imgTimeOut = null;
-  
   stageDiv = document.getElementById("StageBG");
   imgDiv   = document.getElementById("StageImg");
   
@@ -30,52 +22,22 @@ function ShowImage(path, title)
     imgDiv.style.width = "81%";
     imgDiv.style.height = "88%";
     stageDiv.innerHTML = '<br /><br />' + title;
-    imgDiv.innerHTML   = '<span class="closeImg" title="Close" onClick="StopImage()"> &nbsp;&nbsp;&nbsp; </span> <br /><br /><br /><a target="_blank" title="Open Image in a new tab" href="' + path + '"><img class="ShowImageImg" id="ShowImageImg" width="99%" src=' + path + ' onload="RefreshImage()" /></a>'; 
-    currTitle = title;
-    currPath  = path;
-    var CallAgain = function() { RefreshImage(); };
-    imgTimeOut = setTimeout(CallAgain,500);
-    refreshCount = 0;
-  }
-}
-
-function RefreshImage()
-{
-  refreshCount++;
-  
-  if(refreshCount >= 25)
-  {
-    clearTimeout(imgTimeOut);
-    imgTimeOut = null;
-  }
-  
-  if((stageDiv != null) && (imgDiv != null) && (imgTimeOut != null))
-  {
-    stageDiv.innerHTML = '<br /><br />' + currTitle;
-    imgDiv.innerHTML   = '<span class="closeImg" title="Close" onClick="StopImage()"> &nbsp;&nbsp;&nbsp; </span> <br /><br /><br /><a target="_blank" title="Open Image in a new tab" href="' + currPath + '"><img class="ShowImageImg" id="ShowImageImg" width="99%" src=' + currPath + ' onload="RefreshImage()" /></a>'; 
-  
-    var img = document.getElementById("ShowImageImg");
-    var imgSrc = new Image();
-	
-	/* var scrwh  =  (($(window).height()) /  ($(window).width())) * 100;
-	var scrhw  =  (($(window).width()) /  ($(window).height())) * 100;
-	var scale = ((scrwh > scrhw)?(scrhw):(scrwh)); */
-  
-    imgSrc.src = img.src;
-  
-    if(img != null)
-    {
-      if(imgSrc.width > imgSrc.height)
-      {
-		img.style.width  = "96%";
-		img.style.height = "auto";
-      }
-      else
-      {
-		img.style.width = "auto";
-		img.style.height = "96%";
-      }
-    }
+    var img = document.createElement('img');
+    img.addEventListener('load', function () {
+         imgDiv.innerHTML = '<span class="closeImg" title="Close" onClick="StopImage()"> &nbsp;&nbsp;&nbsp; </span> <br /><br /><br /><a target="_blank" title="Open Image in a new tab" href="';
+         imgDiv.innerHTML = imgDiv.innerHTML + path;
+         if(img.width > img.height)
+         {
+           imgDiv.innerHTML = imgDiv.innerHTML + '"><img class="ShowImageImgLandscape" id="ShowImageImg" src=';
+         }
+         else
+         {
+           imgDiv.innerHTML = imgDiv.innerHTML + '"><img class="ShowImageImgPotrait" id="ShowImageImg" src=';
+         }
+         imgDiv.innerHTML = imgDiv.innerHTML + path;
+         imgDiv.innerHTML = imgDiv.innerHTML + ' /></a>'; 
+      });    
+    img.setAttribute('src', path);
   }
 }
 
@@ -98,8 +60,6 @@ function StopImage()
     imgDiv.style.height = "0%";
     stageDiv.innerHTML = "";
     imgDiv.innerHTML = "";
-    clearTimeout(imgTimeOut);
-    imgTimeOut = null;
     stageDiv = null;
     imgDiv = null;
   }
