@@ -21,21 +21,25 @@ function ShowImage(path, title)
     imgDiv.style.right = "9%";    
     imgDiv.style.width = "81%";
     imgDiv.style.height = "88%";
-    stageDiv.innerHTML = '<br /><br />' + title;
+    stageDiv.innerHTML = '<br />' + title;
     var img = document.createElement('img');
     img.addEventListener('load', function () {
-         imgDiv.innerHTML = '<span class="closeImg" title="Close" onClick="StopImage()"> &nbsp;&nbsp;&nbsp; </span> <br /><br /><br /><a target="_blank" title="Open Image in a new tab" href="';
-         imgDiv.innerHTML = imgDiv.innerHTML + path;
+         var imagData = "";
+         
+         imagData = '<span class="closeImg" title="Close" onClick="StopImage()"> &nbsp;&nbsp;&nbsp; </span> <br /><br /><br /><a target="_blank" title="Open Image in a new tab" href="';
+         imagData = imagData + path;
          if(img.width > img.height)
          {
-           imgDiv.innerHTML = imgDiv.innerHTML + '"><img class="ShowImageImgLandscape" id="ShowImageImg" src=';
+           imagData = imagData + '"><img class="ShowImageImgLandscape" id="ShowImageImg" src=';
          }
          else
          {
-           imgDiv.innerHTML = imgDiv.innerHTML + '"><img class="ShowImageImgPotrait" id="ShowImageImg" src=';
+           imagData = imagData + '"><img class="ShowImageImgPotrait" id="ShowImageImg" src=';
          }
-         imgDiv.innerHTML = imgDiv.innerHTML + path;
-         imgDiv.innerHTML = imgDiv.innerHTML + ' /></a>'; 
+         imagData = imagData + path;
+         imagData = imagData + ' /></a>'; 
+         
+         imgDiv.innerHTML = imagData;
       });    
     img.setAttribute('src', path);
   }
