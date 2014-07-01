@@ -666,7 +666,7 @@ function SetSelectedPost(&$sel, &$num, $c, $i, $p)
 
 function Comment($fnCode, $mainIndx, $subIndx, $postID, $postName, $postData, $posterName, $posterEmail, $Start)
 {
-  $Query       = "";
+  $Query       = ""; /* MySQL query */
   $MaxComments = 50;
   $i           = 0;
 
