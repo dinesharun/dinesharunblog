@@ -190,12 +190,20 @@ function parseData($rawData, $imgPrefix)
   $rep     = '&lt;div id="galleria" class="galleriaDIV"&gt;';
   $parsedData = preg_replace($pattern, $rep, $rawData);
   
-  $pattern = '/EndGalleria\(.*\);/i';
+  /*$pattern = '/EndGalleria\(.*\);/i';
   $rep = '&lt;/div&gt;&lt;script type="text/javascript"&gt;Galleria.loadTheme(\'/scripts/themes/lightbox/galleria.lightbox.js\');\$(\'#galleria\').galleria();&lt;/script&gt;';
+  $parsedData = preg_replace($pattern, $rep, $parsedData);*/
+  
+  $pattern = '/EndGalleria\(.*\);/i';
+  $rep = '&lt;/div&gt;';
   $parsedData = preg_replace($pattern, $rep, $parsedData);
  
-  $pattern = '/AddImageToGalleria\("(.*)", "(.*)", "(.*)"\);/i';
+  /*$pattern = '/AddImageToGalleria\("(.*)", "(.*)", "(.*)"\);/i';
   $rep = '&lt;a href="'. $imgPrefix . '$1"&gt;&lt;img src="' . $imgPrefix . 'thumbs/$1" data-title="$2" data-description="$3" /&gt;&lt;/a&gt;';
+  $parsedData = preg_replace($pattern, $rep, $parsedData);*/
+  
+  $pattern = '/AddImageToGalleria\("(.*)", "(.*)", "(.*)"\);/i';
+  $rep = '&lt;a href="'. $imgPrefix . '$1"&gt;&lt;img src="' . $imgPrefix . 'thumbs/$1" data-title="$2" data-description="$3" onclick=ShowImage("' . $imgPrefix . '$1", "$2") /&gt;&lt;/a&gt;';
   $parsedData = preg_replace($pattern, $rep, $parsedData);
   
   $pattern = '/AddInlineImage\((.*)\);/i';
