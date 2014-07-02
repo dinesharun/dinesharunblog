@@ -30,8 +30,8 @@ function ShowImage(path, title)
          imagData = '<span class="closeImg" title="Close" onClick="StopImage()"> &nbsp;&nbsp;&nbsp; </span> <br /><br /><br /><a target="_blank" title="Open Image in a new tab" href="';
          imagData = imagData + path;
          imagData = imagData + '"><img class="ShowImage" id="ShowImageImg" style="';
-         imagData = imagData + 'width:' + (stageImg.width-18);
-         imagData = imagData + ';height:' + (stageImg.height-18) + ';"';
+         imagData = imagData + 'width:' + (stageImg.offsetWidth-18) + 'px;';
+         imagData = imagData + 'height:' + (stageImg.offsetHeight-18) + 'px;"';
          imagData = imagData + ' src=' + path;
          imagData = imagData + ' /></a>'; 
          
