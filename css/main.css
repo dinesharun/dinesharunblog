@@ -65,7 +65,7 @@ body { background-color: rgb(210, 210, 210); padding: 0px; margin: 0px; font-siz
 .PanaImage { width:99%; border: 3px rgb(51, 51, 51) solid; background-color:black; overflow:auto; overflow-x:scroll; overflow-y:hidden; font-size:117%; color:rgb(180, 210, 180); text-align:center; }
 .galleriaDIV { margin: 1%; padding: 3px; border: 0px dotted rgb(210, 210, 210); text-align: center; } 
 .imgStrip { /* background-image: url('images/photoNeg.png'); background-repeat:repeat-x; background-size: 25%; */ padding-top: 1%; padding-bottom: 1%; background-color: black; background-image: url('images/topBar.png'); border: 2px double white; text-align: center; } 
-.closeImg { float:right; background-image: url('images/close.png'); background-size: 100% auto; background-repeat:no-repeat; cursor: pointer; font-size: 270%; } 
+.closeImg { position:fixed; top:3%; right:9%; background-image: url('images/close.png'); background-size: 100% auto; background-repeat:no-repeat; cursor: pointer; font-size: 270%; } 
 .randImgsDiv { width: 98%; border: 0px; padding: 0%; } 
 .currLinkDiv { display: none; } 
 .errorDiv { text-align: center; font-size: 91%; color: #993939; }

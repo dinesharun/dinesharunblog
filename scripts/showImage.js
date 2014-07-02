@@ -41,7 +41,11 @@ function ShowImage(path, title)
            imgWidth  = stageImg.offsetWidth - 9;
          }
          
-         imagData = '<span class="closeImg" title="Close" onClick="StopImage()"> &nbsp;&nbsp;&nbsp; </span> <br /><br /><br /><a target="_blank" title="Open Image in a new tab" href="';
+         var closeRight = ((document.body.offsetWidth - imgWidth)/2);
+         
+         imagData = '<span class="closeImg" title="Close" onClick="StopImage()" style="';
+         imagData = imagData + 'right=' + closeRight + 'px;';
+         imagData = imagData + '"> &nbsp;&nbsp;&nbsp; </span> <a target="_blank" title="Open Image in a new tab" href="';
          imagData = imagData + path;
          imagData = imagData + '"><img class="ShowImageImg" id="ShowImageImg" style="';
          imagData = imagData + 'width:' + imgWidth + 'px;';
