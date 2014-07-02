@@ -12,8 +12,8 @@ function ShowImage(path, title)
     stageDiv.style.left = "0%";
     stageDiv.style.bottom = "0%";
     stageDiv.style.right = "0%";
-    stageDiv.style.width = "100%";
-    stageDiv.style.height = "100%";
+    stageDiv.style.width = "99%";
+    stageDiv.style.height = "99%";
     stageDiv.style.zIndex = "16";
     imgDiv.style.top = "3%";
     imgDiv.style.left = "9%";
@@ -26,12 +26,26 @@ function ShowImage(path, title)
     img.addEventListener('load', function () {
          var imagData = "";
          var stageImg = document.getElementById("StageImg");
+         var imgWidth  = img.width;
+         var imgHeight = img.height;
+         var aRatio    = (imgWidth/imgHeight);
+         
+         /* Height is 99% of the container */
+         imgHeight = stageImg.offsetHeight * 0.99;
+         /* Calculate width accordingly */
+         imgWidth  = imgHeight * aRatio;
+         
+         /* Clip width if it overflows out of the container */
+         if(imgWidth >= stageImg.offsetWidth)
+         {
+           imgWidth  = stageImg.offsetWidth - 9;
+         }
          
          imagData = '<span class="closeImg" title="Close" onClick="StopImage()"> &nbsp;&nbsp;&nbsp; </span> <br /><br /><br /><a target="_blank" title="Open Image in a new tab" href="';
          imagData = imagData + path;
          imagData = imagData + '"><img class="ShowImageImg" id="ShowImageImg" style="';
-         imagData = imagData + 'width:' + (stageImg.offsetWidth-18) + 'px;';
-         imagData = imagData + 'height:' + (stageImg.offsetHeight-18) + 'px;"';
+         imagData = imagData + 'width:' + imgWidth + 'px;';
+         imagData = imagData + 'height:' + imgHeight + 'px;"';
          imagData = imagData + ' src=' + path;
          imagData = imagData + ' /></a>'; 
          
