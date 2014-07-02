@@ -21,7 +21,7 @@ function ShowImage(path, title)
     imgDiv.style.right = "9%";    
     imgDiv.style.width = "81%";
     imgDiv.style.height = "88%";
-    stageDiv.innerHTML = '<br />' + title;
+    stageDiv.innerHTML = title;
     var img = document.createElement('img');
     img.addEventListener('load', function () {
          var imagData = "";
@@ -29,7 +29,7 @@ function ShowImage(path, title)
          
          imagData = '<span class="closeImg" title="Close" onClick="StopImage()"> &nbsp;&nbsp;&nbsp; </span> <br /><br /><br /><a target="_blank" title="Open Image in a new tab" href="';
          imagData = imagData + path;
-         imagData = imagData + '"><img class="ShowImage" id="ShowImageImg" style="';
+         imagData = imagData + '"><img class="ShowImageImg" id="ShowImageImg" style="';
          imagData = imagData + 'width:' + (stageImg.offsetWidth-18) + 'px;';
          imagData = imagData + 'height:' + (stageImg.offsetHeight-18) + 'px;"';
          imagData = imagData + ' src=' + path;
