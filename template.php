@@ -80,15 +80,15 @@ function AddHeader($depth, $title, $keywords)
   echo '<title> ' . $title . ' </title>';
 
   echo '<link rel="stylesheet" type="text/css" href="/css/main.css" />';
-	echo '<link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet" type="text/css" />';
-	echo '<link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet" type="text/css" />';
-	echo '<link href="https://fonts.googleapis.com/css?family=Emblema+One" rel="stylesheet" type="text/css" />';
-	echo '<link href="https://fonts.googleapis.com/css?family=Combo" rel="stylesheet" type="text/css" />';
+  echo '<link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet" type="text/css" />';
+  echo '<link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet" type="text/css" />';
+  echo '<link href="https://fonts.googleapis.com/css?family=Emblema+One" rel="stylesheet" type="text/css" />';
+  echo '<link href="https://fonts.googleapis.com/css?family=Combo" rel="stylesheet" type="text/css" />';
   echo '<script type="text/javascript" src="/scripts/main.js"></script>';
   echo '<script type="text/javascript" src="/scripts/jquery.js"></script>';
   echo '<script type="text/javascript" src="/scripts/showImage.js"></script>';
-	echo '<script type="text/javascript" src="/scripts/galleria.js"></script>';
-	echo '<script type="text/javascript" src="/scripts/swfobject.js"></script>';
+  echo '<script type="text/javascript" src="/scripts/galleria.js"></script>';
+  echo '<script type="text/javascript" src="/scripts/swfobject.js"></script>';
   echo '</head>';
   echo '<body onload="StartScripts()" onresize="resizeMe()">';
   echo '<div class="stageBG"  id="StageBG">   </div>';
@@ -128,7 +128,7 @@ function AddHeader($depth, $title, $keywords)
   echo '  </span>';
   echo '</div>';
  
-	echo '<div class="contentFrame" id="contentFrame">';
+  echo '<div class="contentFrame" id="contentFrame">';
 }
 
 function getPage($cat, $idx, $post)
@@ -170,19 +170,19 @@ function getPage($cat, $idx, $post)
 	/* Get the file contents */
   $postData = file_get_contents($postFile);
 	
-	/* If got post the data */
-	if($postData != FALSE)
-	{
+  /* If got post the data */
+  if($postData != FALSE)
+  {
     /* Parse the data and replace MACROS */
     $parsedData = parseData($postData, $imgPrefix);
-    
-	  echo htmlspecialchars_decode($parsedData);
-	}
-	else
-	{
+  
+    echo htmlspecialchars_decode($parsedData);
+  }
+  else
+  {
     $link = "/error";
-	  echo "<br /><div class=\"errorDiv\"> No Such Posts Exists! </div><br />";
-	}
+    echo "<br /><div class=\"errorDiv\"> No Such Posts Exists! </div><br />";
+  }
   
   return $link;  
 }
