@@ -134,19 +134,17 @@ function AddHeader($depth, $title, $keywords)
 function getPage($cat, $idx, $post)
 {
   global $catStrs;
+  $link = '/';
   
   if(($cat == 0) && ($idx == 0))
   {
-    $postFile  = 'index.htm';
+    $postFile  = $link . 'index.htm';
   }
   else
   {
-    /* Build link */
-    $link = '/';
-    
     if($cat != 0)
     {
-      $link = $catStrs[0][$cat] . '/';
+      $link = $link . $catStrs[0][$cat] . '/';
     
       if($idx != 0)
       {
