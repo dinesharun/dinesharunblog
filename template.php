@@ -134,7 +134,7 @@ function AddHeader($depth, $title, $keywords)
 function getPage($cat, $idx, $post)
 {
   global $catStrs;
-  $link = '/';
+  $link = '';
   
   if(($cat == 0) && ($idx == 0))
   {
