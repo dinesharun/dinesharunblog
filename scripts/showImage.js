@@ -15,10 +15,10 @@ function ShowImage(path, title)
     stageDiv.style.width = "99%";
     stageDiv.style.height = "99%";
     stageDiv.style.zIndex = "16";
-    imgDiv.style.top = "3%";
-    imgDiv.style.left = "9%";
-    imgDiv.style.bottom = "1%";
-    imgDiv.style.right = "9%";    
+    imgDiv.style.paddingTop = "3%";
+    imgDiv.style.paddingLeft = "9%";
+    imgDiv.style.paddingBottom = "1%";
+    imgDiv.style.paddingRight = "9%";    
     imgDiv.style.width = "81%";
     imgDiv.style.height = "88%";
     stageDiv.innerHTML = title;
@@ -72,6 +72,7 @@ function StopImage()
     imgDiv.style.right = "100%"; 
     imgDiv.style.width = "0%";
     imgDiv.style.height = "0%";
+    imgDiv.style.padding = "0%";
     stageDiv.innerHTML = "";
     imgDiv.innerHTML = "";
     stageDiv = null;
