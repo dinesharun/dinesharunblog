@@ -15,10 +15,10 @@ function ShowImage(path, title)
     stageDiv.style.width = "99%";
     stageDiv.style.height = "99%";
     stageDiv.style.zIndex = "16";
-    imgDiv.style.paddingTop = "3%";
-    imgDiv.style.paddingLeft = "9%";
-    imgDiv.style.paddingBottom = "1%";
-    imgDiv.style.paddingRight = "9%";    
+    imgDiv.style.marginTop = "3%";
+    imgDiv.style.marginLeft = "9%";
+    imgDiv.style.marginBottom = "1%";
+    imgDiv.style.marginRight = "9%";    
     imgDiv.style.width = "81%";
     imgDiv.style.height = "88%";
     stageDiv.innerHTML = title;
@@ -31,7 +31,7 @@ function ShowImage(path, title)
          var aRatio    = (imgWidth/imgHeight);
          
          /* Height is 99% of the container */
-         imgHeight = stageImg.offsetHeight * 0.99;
+         imgHeight = stageImg.offsetHeight * 0.96;
          /* Calculate width accordingly */
          imgWidth  = imgHeight * aRatio;
          
@@ -73,6 +73,7 @@ function StopImage()
     imgDiv.style.width = "0%";
     imgDiv.style.height = "0%";
     imgDiv.style.padding = "0%";
+    imgDiv.style.margin  = "0%";
     stageDiv.innerHTML = "";
     imgDiv.innerHTML = "";
     stageDiv = null;
