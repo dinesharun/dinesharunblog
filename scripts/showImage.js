@@ -25,18 +25,14 @@ function ShowImage(path, title)
     var img = document.createElement('img');
     img.addEventListener('load', function () {
          var imagData = "";
+         var stageImg = document.getElementById("StageImg");
          
          imagData = '<span class="closeImg" title="Close" onClick="StopImage()"> &nbsp;&nbsp;&nbsp; </span> <br /><br /><br /><a target="_blank" title="Open Image in a new tab" href="';
          imagData = imagData + path;
-         if(img.width > img.height)
-         {
-           imagData = imagData + '"><img class="ShowImageImgLandscape" id="ShowImageImg" src=';
-         }
-         else
-         {
-           imagData = imagData + '"><img class="ShowImageImgPotrait" id="ShowImageImg" src=';
-         }
-         imagData = imagData + path;
+         imagData = imagData + '"><img class="ShowImage" id="ShowImageImg" style="';
+         imagData = imagData + 'width:' + (stageImg.width-18);
+         imagData = imagData + ';height:' + (stageImg.height-18) + ';"';
+         imagData = imagData + ' src=' + path;
          imagData = imagData + ' /></a>'; 
          
          imgDiv.innerHTML = imagData;

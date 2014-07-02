@@ -178,7 +178,7 @@ function getPage($cat, $idx, $post)
   }
   else
   {
-    $link = "/error";
+    $link = "error";
     echo "<br /><div class=\"errorDiv\"> No Such Posts Exists! </div><br />";
   }
   
