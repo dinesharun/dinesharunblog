@@ -8,19 +8,21 @@ function ShowImage(path, title)
   
   if((stageDiv != null) && (imgDiv != null))
   {
-    stageDiv.style.top = "0%";
-    stageDiv.style.left = "0%";
-    stageDiv.style.bottom = "0%";
-    stageDiv.style.right = "0%";
+    stageDiv.style.top = "0px";
+    stageDiv.style.left = "0px";
+    stageDiv.style.bottom = "0px";
+    stageDiv.style.right = "0px";
     stageDiv.style.width = "99%";
     stageDiv.style.height = "99%";
     stageDiv.style.zIndex = "16";
+    stageDiv.style.padding = "0.5%";
     imgDiv.style.marginTop = "3%";
     imgDiv.style.marginLeft = "9%";
-    imgDiv.style.marginBottom = "1%";
+    imgDiv.style.marginBottom = "3%";
     imgDiv.style.marginRight = "9%";    
     imgDiv.style.width = "81%";
-    imgDiv.style.height = "88%";
+    imgDiv.style.height = "93%";
+    imgDiv.style.padding = "0.5%";
     stageDiv.innerHTML = title;
     var img = document.createElement('img');
     img.addEventListener('load', function () {
@@ -31,7 +33,7 @@ function ShowImage(path, title)
          var aRatio    = (imgWidth/imgHeight);
          
          /* Height is 99% of the container */
-         imgHeight = stageImg.offsetHeight * 0.96;
+         imgHeight = stageImg.offsetHeight * 0.99;
          /* Calculate width accordingly */
          imgWidth  = imgHeight * aRatio;
          
@@ -41,10 +43,11 @@ function ShowImage(path, title)
            imgWidth  = stageImg.offsetWidth - 9;
          }
          
-         var closeRight = ((document.body.offsetWidth - imgWidth)/2);
+         var closeRight = ((document.body.offsetWidth - imgWidth)/2) + 9;
+         var closetop   = ((document.body.offsetHeight - imgHeight)/2) + 9;
          
          imagData = '<span class="closeImg" title="Close" onClick="StopImage()" style="';
-         imagData = imagData + 'right=' + closeRight + 'px;';
+         imagData = imagData + 'right:' + closeRight + 'px;top:' + closeTop + 'px;';
          imagData = imagData + '"> &nbsp;&nbsp;&nbsp; </span> <a target="_blank" title="Open Image in a new tab" href="';
          imagData = imagData + path;
          imagData = imagData + '"><img class="ShowImageImg" id="ShowImageImg" style="';
@@ -63,21 +66,22 @@ function StopImage()
 {
   if((stageDiv != null) && (imgDiv != null))
   {
-    stageDiv.style.top = "0%";
-    stageDiv.style.left = "0%";
+    stageDiv.style.top = "0px";
+    stageDiv.style.left = "0px";
     stageDiv.style.bottom = "100%";
     stageDiv.style.right = "100%";
-    stageDiv.style.width = "0%";
-    stageDiv.style.height = "0%";
+    stageDiv.style.width = "0px";
+    stageDiv.style.height = "0px";
     stageDiv.style.zIndex = "-1";
-    imgDiv.style.top = "0%";
-    imgDiv.style.left = "0%";
+    stageDiv.style.padding = "0px";
+    imgDiv.style.top = "0px";
+    imgDiv.style.left = "0px";
     imgDiv.style.bottom = "100%";
     imgDiv.style.right = "100%"; 
-    imgDiv.style.width = "0%";
-    imgDiv.style.height = "0%";
-    imgDiv.style.padding = "0%";
-    imgDiv.style.margin  = "0%";
+    imgDiv.style.width = "0px";
+    imgDiv.style.height = "0px";
+    imgDiv.style.padding = "0px";
+    imgDiv.style.margin  = "0px";
     stageDiv.innerHTML = "";
     imgDiv.innerHTML = "";
     stageDiv = null;
