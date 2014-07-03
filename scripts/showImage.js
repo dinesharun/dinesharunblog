@@ -44,7 +44,7 @@ function ShowImage(path, title)
          }
          
          var closeRight = ((document.body.offsetWidth - imgWidth)/2) + 9;
-         var closetop   = ((document.body.offsetHeight - imgHeight)/2) + 9;
+         var closeTop   = ((document.body.offsetHeight - imgHeight)/2) + 9;
          
          imagData = '<span class="closeImg" title="Close" onClick="StopImage()" style="';
          imagData = imagData + 'right:' + closeRight + 'px;top:' + closeTop + 'px;';
