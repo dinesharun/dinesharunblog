@@ -1,6 +1,6 @@
 body { background-color: rgb(210, 210, 210); padding: 0px; margin: 0px; font-size: 12px; font-family: 'Patrick Hand', corbel, calibri, tahoma; } 
-ul{list-style-position:inside;list-style-type: circle;}
-ol{list-style-position:inside;}
+ul{list-style-position:inside;list-style-type: circle;font-size:100%;}
+ol{list-style-position:inside;font-size:100%;}
 .topBar { position: fixed; top: 0px; left: 0px; margin: 0px; padding: 0px; padding-top:3px; padding-bottom:3px; padding-left:6%; width: 94%; border-bottom: 3px double #ffffff; background-color: rgb(45, 45, 45); background-image:url('images/topBar.png'); color: rgb(240, 240, 240); box-shadow: 0px 0px 12px #99cc99; z-index: 9; } 
 .topBarClock {float:right; margin:3px; margin-right:9px; margin-left:9px;padding:0px; text-align:center; font-family:Combo;}
 .topBarItem {float:right; margin:3px; padding:0px; width:1.8%; border:1px solid #cccccc; border-radius:33%; text-align:center; box-shadow: 0px 0px 3px #aaccaa; overflow:hidden; vertical-align:middle;}
@@ -79,8 +79,8 @@ ol{list-style-position:inside;}
 .polImgLeft{float:left;margin-left:0px;}
 .polImage {width:99%;}
 .postPara{text-indent:9%;text-align: justify; font-size:105%;font-family: Verdana;}
-.postPara:first-line{}
 .postPara::before{content:"\A ";text-align:center;white-space:pre;display: block;}
-.postPara::after{content:"\A ~~~#~~~ \A";text-align:center;white-space:pre;display: block;font-weight:bold;color:#ffffff;text-shadow:0px 0px 3px #000000;}
-.firstPara{}
-.firstPara:first-letter{font-size:180%;font-family:Philosopher;}
+.postPara::after{content:"\A ~~~#~~~ \A";text-align:center;white-space:pre;display: block;font-weight:bold;color:#696969;text-shadow:0px 0px 3px #000000;}
+.firstPara{font-size:102%;}
+.firstPara:first-letter{font-size:180%;font-family:Philosopher;text-transform:uppercase;}
+.firstPara:first-line{line-height: 100%;}
