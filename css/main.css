@@ -80,7 +80,7 @@ ol{list-style-position:inside;}
 .polImage {width:99%;}
 .postPara{text-indent:9%;text-align: justify; font-size:105%;font-family: Verdana;}
 .postPara:first-line{}
-.postPara::before{content:"\A \A \A";text-align:center;white-space:pre;}
-.postPara::after{content:"\A \A ~~~§~~~ \A";text-align:center;white-space:pre;}
+.postPara::before{content:"\A ";text-align:center;white-space:pre;display: block;}
+.postPara::after{content:"\A ~~~§~~~ \A";text-align:center;white-space:pre;display: block;}
 .firstPara{}
 .firstPara:first-letter{font-size:180%;}
