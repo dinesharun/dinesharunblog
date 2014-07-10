@@ -69,14 +69,16 @@ body { background-color: rgb(210, 210, 210); padding: 0px; margin: 0px; font-siz
 .randImgsDiv { width: 98%; border: 0px; padding: 0%; } 
 .currLinkDiv { display: none; } 
 .errorDiv { text-align: center; font-size: 91%; color: #993939; }
-.polImageDiv{ float:left; position:relative; border:2px solid black; padding:0.3%; padding-top:0.3%; padding-bottom:1.8%; margin:0.6%; margin-top:0.3%; border-radius:9%; overflow:hidden; box-shadow:0px 0px 6px #121212 inset;}
+.polImageDiv{ position:relative; border:2px solid black; padding:0.3%; padding-top:0.3%; padding-bottom:1.8%; margin:0.6%; margin-top:0.3%; border-radius:9%; overflow:hidden; box-shadow:0px 0px 6px #121212 inset;}
 .polImageDiv:hover {cursor:pointer;}
-.polImageDiv::before{  }
-.polImageDiv::after{ content:"Description"; position:absolute; bottom:0px; top:87%; left:0px; right:0px; border:0px; border-top:2px dotted black;text-align:center;vertical-align:center; background-color:#c3c3cc; box-shadow:0px 0px 2px #121212;}
+.polImageDiv::before{}
+.polImageDiv::after{content:"Description"; position:absolute; bottom:0px; top:87%; left:0px; right:0px; border:0px; border-top:2px dotted black;text-align:center;vertical-align:center; background-color:#c3c3cc; box-shadow:0px 0px 2px #121212;}
+.polImgRight{float:right;}
+.polImgLeft{float:left;}
 .polImage {width:99%;}
-.postPara{text-align: justify;}
+.postPara{text-align: justify; font-size:105%;font-family: Verdana;}
 .postPara:first-line{text-indent:12%;}
-.postPara::before{content:"\00000a\00000a"}
-.postPara::after{content:"\00000a\00000a"}
+.postPara::before{content:"\00000a \00000a \00000a";text-align:center;}
+.postPara::after{content:"\00000a \00000a ~~~§~~~ \00000a";text-align:center;}
 .firstPara{}
 .firstPara:first-letter{font-size:180%;}
