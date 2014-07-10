@@ -83,4 +83,4 @@ ol{list-style-position:inside;}
 .postPara::before{content:"\A ";text-align:center;white-space:pre;display: block;}
 .postPara::after{content:"\A ~~~§~~~ \A";text-align:center;white-space:pre;display: block;}
 .firstPara{}
-.firstPara:first-letter{font-size:180%;}
+.firstPara:first-letter{font-size:180%;font-family:Philosopher;}
