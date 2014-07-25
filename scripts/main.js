@@ -196,6 +196,8 @@ function resizeMe()
     var percentage  = ((percentageH > percentageW)?(percentageW):(percentageH))
     var newFontSize = Math.floor(fontsize * percentage);
     $("body").css("font-size", newFontSize);
+    
+    ShowImage(null, null);
 }
 
 

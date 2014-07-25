@@ -193,24 +193,16 @@ function parseData($rawData, $imgPrefix)
   $rep     = '&lt;div id="galleria" class="galleriaDIV"&gt;';
   $parsedData = preg_replace($pattern, $rep, $rawData);
   
-  /*$pattern = '/EndGalleria\(.*\);/i';
-  $rep = '&lt;/div&gt;&lt;script type="text/javascript"&gt;Galleria.loadTheme(\'/scripts/themes/lightbox/galleria.lightbox.js\');\$(\'#galleria\').galleria();&lt;/script&gt;';
-  $parsedData = preg_replace($pattern, $rep, $parsedData);*/
-  
   $pattern = '/EndGalleria\(.*\);/i';
   $rep = '&lt;/div&gt;';
   $parsedData = preg_replace($pattern, $rep, $parsedData);
- 
-  /*$pattern = '/AddImageToGalleria\("(.*)", "(.*)", "(.*)"\);/i';
-  $rep = '&lt;a href="'. $imgPrefix . '$1"&gt;&lt;img src="' . $imgPrefix . 'thumbs/$1" data-title="$2" data-description="$3" /&gt;&lt;/a&gt;';
-  $parsedData = preg_replace($pattern, $rep, $parsedData);*/
   
   $pattern = '/AddImageToGalleria\("(.*)", "(.*)", "(.*)"\);/i';
-  $rep = '&lt;img src="' . $imgPrefix . 'thumbs/$1" data-title="$2" data-description="$3" onclick="ShowImage(\'' . $imgPrefix . '$1\', \'$2\')" /&gt;';
+  $rep = '&lt;div class="albImgDiv" name="$2" &gt; &lt;img class="albImg" src="' . $imgPrefix . 'thumbs/$1" data-title="$2" data-description="$3" onclick="ShowImage(\'' . $imgPrefix . '$1\', \'$2\')" /&gt;&lt;/div&gt;';
   $parsedData = preg_replace($pattern, $rep, $parsedData);
   
-  $pattern = '/AddInlineImage\((.*)\);/i';
-  $rep = AddInlineImage("$1");
+  $pattern = '/AddInlineImage\((.*), (.*), "(.*)", "(.*)", "(.*)"\);/i';
+  $rep = '&lt;div class="polImgDiv polImgLoc$1 polImgRot$2" name="$5"><img class="polImage" onClick="ShowImage(\'$3\', \'$5\')" src=\'$4\' /&gt;&lt;/div&gt;';
   $parsedData = preg_replace($pattern, $rep, $parsedData);
   
   return $parsedData;
@@ -779,27 +771,7 @@ function AddInlineImage($argList)
   $imgName    = $args[4];
   
   $retStr = "";
-  
-  $classOne = array("InTextPicPinRight", "InTextPicPinLeft");
-  $classTwo = array("InTextPicRight1", "InTextPicRight2", "InTextPicRight3",
-                    "InTextPicLeft1", "InTextPicLeft2", "InTextPicLeft3");
-  $classOneIndx = 0;
-  $classTwoIndx = 0;
-
-  if($styleNum > 3)
-  {
-    $classOneIndx = 1;
-  }
-  $classTwoIndx = $styleNum - 1;
-
-  $retStr = $retStr . '<div align="center" class="' . $classOne[$classOneIndx] . '" style="text-align:center;width:18%">';
-  $retStr = $retStr . '&nbsp<img style="position:absolute" src="/' . $pinPath . '" >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</img>';
-	$retStr = $retStr . '<div class="' . $classTwo[$classTwoIndx] . '">';
-	$retStr = $retStr . '<img onClick="ShowImage(\'' . $imgPath . '\', \'' . $imgName . '\')" src="' . $thumbPath . '" width="99%"> </img>';
-	$retStr = $retStr . '<div class="InTextPicCaption">' . $imgName . '</div>';
-	$retStr = $retStr . '</div>';
-	$retStr = $retStr . '</div>';
-  
+    
   return $retStr;
 }
 

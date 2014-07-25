@@ -1,12 +1,25 @@
-var stageDiv;
-var imgDiv;
+stageDiv  = null;
+imgDiv    = null;
+currPath  = null;
+currTitle = null;
 
 function ShowImage(path, title)
 {
   stageDiv = document.getElementById("StageBG");
   imgDiv   = document.getElementById("StageImg");
   
-  if((stageDiv != null) && (imgDiv != null))
+  if((path != null) && (title != null))
+  {
+    currPath  = path;
+    currTitle = title;
+  }
+  else
+  {
+    path  = currPath;
+    title = currTitle;
+  }
+  
+  if((stageDiv != null) && (imgDiv != null) && (path != null) && (title != null))
   {
     stageDiv.style.top = "0px";
     stageDiv.style.left = "0px";
@@ -43,12 +56,12 @@ function ShowImage(path, title)
            imgWidth  = stageImg.offsetWidth - 9;
          }
          
-         var closeRight = ((document.body.offsetWidth - imgWidth)/2) + 9;
-         var closeTop   = ((document.body.offsetHeight - imgHeight)/2) + 9;
+         var closeRight = ((stageDiv.offsetWidth - imgWidth)/2) - 12;
+         var closeTop   = ((stageDiv.offsetHeight - imgHeight)/2) - 3;
          
          imagData = '<span class="closeImg" title="Close" onClick="StopImage()" style="';
          imagData = imagData + 'right:' + closeRight + 'px;';
-         /* imagData = imagData + 'top:' + closeTop + 'px;'; */
+         imagData = imagData + 'top:' + closeTop + 'px;';
          imagData = imagData + '"> &nbsp;&nbsp;&nbsp; </span> <a target="_blank" title="Open Image in a new tab" href="';
          imagData = imagData + path;
          imagData = imagData + '"><img class="ShowImageImg" id="ShowImageImg" style="';
@@ -87,5 +100,7 @@ function StopImage()
     imgDiv.innerHTML = "";
     stageDiv = null;
     imgDiv = null;
+    currPath  = null;
+    currTitle = null;
   }
 }

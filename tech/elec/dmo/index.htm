@@ -1,16 +1,18 @@
 <h2> Dot Matrix Digital Oscillscope </h2>
 
+AddInlineImage(1, 1, "dmo2.png", "dmo2_t.png", "Sine Wave");
+
 <div class="postPara firstPara">
    Every electronics enthusiats will always love own an oscilloscope to analyze every circuits they encounter.
    But economical issues always prevents the possesion of such an cool toy. I was also longing for an oscilloscope for years,
    but unable to get my hands on one. So one day i decided i will build my own oscillscope, albeit a small one.
    The basic operation of an oscilloscope is simple, a horizontal/vertical sweep system and a comparator would do.
-   <div class="polImageDiv polImgRight"><img class="polImage" onClick="ShowImage('dmo2.png', 'Sine Wave')" src='dmo2_t.png' /></div>
    I built a small prototype based on this theory. It is a 7x8 LED display with a range of 20 - 100 Hz.
    In details the circuit does the following operations,
 </div>
 
-<div class="polImageDiv polImgLeft"><img class="polImage" onClick="ShowImage('dmo2.png', 'Square Wave')" src='dmo1_t.png' /></div>
+AddInlineImage(2, 2, "dmo1.png", "dmo1_t.png", "Square Wave");
+
 <ul>
   <li> First a frequency generator based on a 555 timer generates the base frequency used all along the system. It determines the maximum frequency of the input wave
        that can be traced without aliasing. </li>
