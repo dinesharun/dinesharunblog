@@ -1,0 +1,21 @@
+{
+  "name": "dinesharunblog",
+  "description": "Personal website of Dinesh Arun",
+  "version": "0.0.1",
+  "private": true,
+  "license": "tbd",
+  "author": "Dinesh Arun",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dinesharun/dinesharunblog.git"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
