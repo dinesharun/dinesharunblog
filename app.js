@@ -1,11 +1,14 @@
 'use strict';
 
 const express = require('express');
-
 const app = express();
 
-app.get('/', (req, res) => {
-  res.status(200).send('Hello, world!').end();
+app.use("/css", express.static(__dirname + '/css'));
+app.use("/imgs", express.static(__dirname + '/imgs'));
+app.use("/scripts", express.static(__dirname + '/scripts'));
+
+app.get('/*', (req, res) => {
+  res.sendFile(__dirname + '/index.html');
 });
 
 // Start the server
