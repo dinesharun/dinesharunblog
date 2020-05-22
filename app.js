@@ -9,7 +9,7 @@ const config = require('./admin/config.js');
 const app = express();
 app.use(cookie());
 app.use(express.json());
-app.use(session({secret: config.sessionSecret, saveUninitialized: false, resave: false }));
+app.use(session({secret: config.sessionSecret, saveUninitialized: false, resave: false, maxAge: 3600000 }));
 
 app.use("/css", express.static(__dirname + '/css'));
 app.use("/imgs", express.static(__dirname + '/imgs'));
