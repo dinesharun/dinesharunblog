@@ -4,11 +4,12 @@ const express = require('express');
 const session = require('express-session');
 const cookie = require('cookie-parser');
 const admin = require('./admin/admin.js');
+const config = require('./admin/config.js');
 
 const app = express();
 app.use(cookie());
 app.use(express.json());
-app.use(session({secret: "replacethissecret"}));
+app.use(session({secret: config.sessionSecret, saveUninitialized: false, resave: false }));
 
 app.use("/css", express.static(__dirname + '/css'));
 app.use("/imgs", express.static(__dirname + '/imgs'));
@@ -26,7 +27,6 @@ app.get('/*', (req, res) => {
   res.sendFile(__dirname + '/index.html');
 });
 
-// Start the server
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`App listening on port ${PORT}`);
