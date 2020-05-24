@@ -1,36 +1,31 @@
 'use strict';
 
+/* Import the required modules */
 const express = require('express');
-const session = require('express-session');
-const cookie = require('cookie-parser');
-const admin = require('./admin/admin.js');
-const config = require('./admin/config.js');
+const admin   = require('./admin/admin.js');
 
+/* Get the express app */
 const app = express();
-app.use(cookie());
-app.use(express.json());
-app.use(session({secret: config.sessionSecret, saveUninitialized: false, resave: false, maxAge: 3600000 }));
 
+/* Initialize the admin module */
+admin.initApp(app, express);
+
+/* Configure static directories */
 app.use("/css", express.static(__dirname + '/css'));
 app.use("/imgs", express.static(__dirname + '/imgs'));
 app.use("/scripts", express.static(__dirname + '/scripts'));
 
-app.get("/admin", (req, res) => {
-  admin.runQuery(req, res);
-});
-
-app.post("/admin/doLogin", (req, res) => {
-  admin.doLogin(req, res);
-});
-
+/* For everything else route to home page */
 app.get('/*', (req, res) => {
   res.sendFile(__dirname + '/index.html');
 });
 
+/* Get the port and set listening */
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`App listening on port ${PORT}`);
   console.log('Press Ctrl+C to quit.');
 });
 
+/* Export our app */
 module.exports = app;
