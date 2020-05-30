@@ -19,6 +19,9 @@
     "express": "^4.16.3",
     "express-session": "^1.17.1",
     "cookie-parser": "^1.4.5",
-    "google-auth-library": "^6.0.0"
+    "google-auth-library": "^6.0.0",
+    "@google-cloud/datastore": "^5.0.0",
+    "@google-cloud/storage": "^4.0.0",
+    "@sendgrid/mail": "^7.1.1"
   }
 }
