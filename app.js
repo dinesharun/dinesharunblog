@@ -7,16 +7,16 @@ const admin   = require('./admin/admin.js');
 /* Get the express app */
 const app = express();
 
-/* Initialize the admin module */
-admin.initApp(app, express);
-
 /* Configure static directories */
 app.use("/css", express.static(__dirname + '/css'));
 app.use("/imgs", express.static(__dirname + '/imgs'));
 app.use("/scripts", express.static(__dirname + '/scripts'));
 
-/* For everything else route to home page */
-app.get('/*', (req, res) => {
+/* Initialize the admin module */
+admin.initApp(app, express);
+
+/* For root route to home page */
+app.get('/', (req, res) => {
   res.sendFile(__dirname + '/index.html');
 });
 
