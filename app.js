@@ -16,7 +16,7 @@ app.use("/scripts", express.static(__dirname + '/scripts'));
 admin.initApp(app, express);
 
 /* For root route to home page */
-app.get('/', (req, res) => {
+app.get('/*', (req, res) => {
   res.sendFile(__dirname + '/index.html');
 });
 

@@ -9,9 +9,18 @@ body { font-size: 1.2vmax; margin: 0px auto; background-color: #f0f0f6; font-fam
 .hdrSocial { float: right; margin: 0px; margin-left: 0.3%; margin-right: 0.3%;  height: 100%; padding-top: 0.5%;  }
 .hdrSocial:hover { cursor: pointer; transform: rotate(3deg); }
 .hdrSocial:active:hover { cursor: pointer; transform: rotate(-3deg); }  
-.content { position: absolute; top: 6%; margin: 3%; }
+.content { position: absolute; top: 6%; margin: 3%; width: 93%; padding: 0.5%; }
 .intro { border: 1px solid #c0c0c0; border-radius: 9px; padding: 0.63%; background-color: rgba(255, 255, 255, 0.45); box-shadow: 1px 1px #c0c0c0; }
 .firstWord { font-size: 3.6vmax; font-family: 'Dancing Script'; }
 .fotter { position: fixed; top: 97%; left: 0px; right: 0px; bottom: 0px; padding: 0.3%; border: 0px; border-top: 1px solid black; font-size: 0.81vmax; background-color: #e0e0ef; text-align: center; background-image: url('/imgs/tile.png'); z-index: 1000; }
 .maxHImg { width: auto; max-height: 72%; }
-
+.loader {margin: 9% auto; border: 0.3vw solid #f3f3f3; border-top: 0.3vw solid blue; border-radius: 50%; width: 3%; font-size: 2.3vw; animation: spin 2s linear infinite; }
+@keyframes spin {
+  0% { transform: rotate(0deg); border-top: 0.3vw solid blue; }
+  25% { transform: rotate(150deg); border-top: 0.3vw solid green; }
+  50% { transform: rotate(180deg); border-top: 0.3vw solid blue; }
+  75% { transform: rotate(330deg); border-top: 0.3vw solid green; }
+  100% { transform: rotate(360deg); border-top: 0.3vw solid blue; }
+}
+[v-cloak] { display: none; }
+.postDiv { border: 1px solid black; border-radius: 3px; }

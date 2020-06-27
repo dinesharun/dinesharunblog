@@ -7,10 +7,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital@1&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
-    <script src="scripts/vue.js"></script>
+    <script src="/scripts/vue.js"></script>
+    <script src="/scripts/main.js"></script>
     <title> Art & Technology </title>
 </head>
-<body>
+<body onload="onLoadFn()">
   <div class="bodyDiv">
     <div class="header">
       <div class="hdrTopicBar"> 
@@ -24,8 +25,8 @@
         <span class="hdrSocial"> <a target="_blank" href="https://www.linkedin.com/in/dinesh-arun-8b590736/"> <image class="maxHImg" src="/imgs/linkedin.png" /> </a> </span>
       </div>
     </div>
-    <div class="content">
-      <div class="intro">
+    <div class="content" id="vueApp" v-cloak>
+      <div class="intro" v-show="currLevel == 0">
         <span class="firstWord">W</span>elcome to my corner of the web. <br /><br /> 
         &nbsp; &nbsp; &nbsp; &nbsp; A place dedicated for my pursuit of <a class="InTextLink" href="art/photo/"> recording </a> (through photography) or 
         <a class="InTextLink" href="art/anim/"> recreating </a> (through animation) the wonders of the natural world in both it's 
@@ -34,11 +35,18 @@
         As a programmer by profession and with a passion for technology, a fascination for nature & history, and an artist by soul,
         I try to find a point where technology and art collide.
       </div>
-      <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-      <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-      <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-      Hello I'm here
-      <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+      <div>
+        <div class="loader" id="loader" v-show="loading == true"> <br /> </div>
+        <div id="rootNav" v-if="currLevel == 0">
+
+        </div>
+        <div id="catNav" v-if="currLevel == 1">
+          
+        </div>
+        <div id="post" class="postDiv" v-if="postValid == true">
+          {{ postData[0].title }}
+        </div>
+      </div>
     </div>
     <div class="fotter">
        | Copyright (C) Dinesh Arun. &nbsp; | &nbsp;  
