@@ -7,17 +7,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital@1&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@500&display=swap" rel="stylesheet">
     <script src="/scripts/vue.js"></script>
     <script src="/scripts/main.js"></script>
     <title> Art & Technology </title>
 </head>
 <body onload="onLoadFn()">
-  <div class="bodyDiv">
+  <div class="bodyDiv" id="vueApp" v-cloak>
     <div class="header">
       <div class="hdrTopicBar"> 
-        <span class="hdrTopic"> Home </span>
-        <span class="hdrTopic"> Art </span>
-        <span class="hdrTopic"> Tech </span>
+        <span class="hdrTopic" @click="loadUrl('/')"> Home </span>
+        <span class="hdrTopic" @click="loadUrl('/art/')"> Art </span>
+        <span class="hdrTopic" @click="loadUrl('/tech/')"> Tech </span>
       </div>
       <div class="hdrSocialBar">
         <span class="hdrSocial"> <a target="_blank" href="https://www.facebook.com/dinesharunk"> <image class="maxHImg" src="/imgs/facebook.png" /> </a> </span>
@@ -25,27 +27,40 @@
         <span class="hdrSocial"> <a target="_blank" href="https://www.linkedin.com/in/dinesh-arun-8b590736/"> <image class="maxHImg" src="/imgs/linkedin.png" /> </a> </span>
       </div>
     </div>
-    <div class="content" id="vueApp" v-cloak>
+    <div class="content">
+      <div class="quote" v-html="randomQuote" v-show="lastErr <= 0"> </div>
       <div class="intro" v-show="currLevel == 0">
         <span class="firstWord">W</span>elcome to my corner of the web. <br /><br /> 
-        &nbsp; &nbsp; &nbsp; &nbsp; A place dedicated for my pursuit of <a class="InTextLink" href="art/photo/"> recording </a> (through photography) or 
-        <a class="InTextLink" href="art/anim/"> recreating </a> (through animation) the wonders of the natural world in both it's 
-        <a class="InTextLink" href="art/nature/"> visual </a> form or <a class="InTextLink" href="art/music/"> audible </a> form. 
-        Along the lines of the famous quote <span style="color: limegreen; font-style: italic;"> "Technology Inspires Art, Art Challenges Technology" </span>, my life follows both.
+        &nbsp; &nbsp; &nbsp; &nbsp; A place dedicated for my pursuit of <span class="InTextLink" @click="loadUrl('art/photo/')"> recording </span> (through photography) or 
+        <span class="InTextLink" @click="loadUrl('art/anim/')"> recreating </span> (through animation) the wonders of the natural world in both it's 
+        <span class="InTextLink" @click="loadUrl('art/nature/')"> visual </span> form or <span class="InTextLink" @click="loadUrl('art/music/')"> audible </span> form. 
+        Along the lines of the famous quote <span style="color: #cc9999; font-style: italic;"> "Technology Inspires Art, Art Challenges Technology" </span>, my life follows both.
         As a programmer by profession and with a passion for technology, a fascination for nature & history, and an artist by soul,
         I try to find a point where technology and art collide.
       </div>
       <div>
-        <div class="loader" id="loader" v-show="loading == true"> <br /> </div>
-        <div id="rootNav" v-if="currLevel == 0">
-
+        <div id="loader" class="loader" v-show="loading == true"> <br /> </div>
+        <div id="list" class="listDiv" v-if="((listReq == true) && (lastErr == 0))">
+          <div class="postLink" v-for="post in postList" @click="loadPost(post)">
+            <img class="postLinkThumb" :src="getThumbUrl(post.tmbUrl)" />
+            <div class="postLinkData">
+              <div class="postLinkDate"> {{ getDateTimeStr(post.ts) }} </div>
+              {{ post.title }}
+              <div class="postLinkCats"> {{ post.cats }} </div>
+            </div>
+          </div>
         </div>
-        <div id="catNav" v-if="currLevel == 1">
-          
+        <div id="post" class="postDiv" v-if="((dataReq == true) && (lastErr == 0))">
+          <div class="vertGradLine"> <br /> </div>
+          <div class="postTitle"> {{ postData[0].title }} </div>
+          <div class="vertGradLine"> <br /> </div>
+          <div class="postDate"> {{ getDateTimeStr(postData[0].ts) }} </div> <br />
+          <div class="postData"> <span class="firstWord">{{postData[0].data[0]}}</span> {{postData[0].data.substring(1)}} </div> <br />
+          <div class="vertGradLine smallLine"> <br /> </div>
+          <div class="postKeys"> keywords : {{ postData[0].keys }} </div>
+          <div class="vertGradLine smallLine"> <br /> </div>
         </div>
-        <div id="post" class="postDiv" v-if="postValid == true">
-          {{ postData[0].title }}
-        </div>
+        <div  id="error" class="errDiv" v-show="lastErr > 0"> {{ getErrStr() }} </div>
       </div>
     </div>
     <div class="fotter">
