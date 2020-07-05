@@ -9,6 +9,16 @@ const insQuotes = [
   'I saw the angel in the marble and carved until I set him free <br /> - Michelangelo'
 ];
 
+function showImage(imgId) {
+  document.getElementById("imgStageImg").src = document.getElementById(imgId).src;
+  document.getElementById("imgStage").style.display = "block";
+}
+
+function hideImage() {
+  document.getElementById("imgStage").style.display = "none";
+  document.getElementById("imgStageImg").src = "";
+}
+
 /* Onload init function */
 function onLoadFn() {
   new Vue({
