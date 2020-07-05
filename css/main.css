@@ -1,5 +1,5 @@
-body { font-size: 1.2vmax; margin: 0px auto; background-color: #f0f0f6; font-family: 'lato'; background-image: linear-gradient(rgba(120, 120, 150 , 0.45), rgba(210, 210, 240, 0.12)); }
-.bodyDiv { position: relative; top: 0px; bottom: 0px; left: 0px; right: 0px; width: 100%; height: 100vh; margin: 0px; padding: 0px; }
+body { font-size: 1.2vmax; margin: 0px auto; background-color: #f0f0f6; font-family: 'lato'; background-image: url('/imgs/asfalt.png'); }
+.bodyDiv { position: relative; top: 0px; bottom: 0px; left: 0px; right: 0px; width: 100%; height: 100vh; margin: 0px; padding: 0px; background-image: linear-gradient(rgba(120, 120, 150 , 0.45), rgba(210, 210, 240, 0.12)); }
 .header { position: fixed; top: 0px; left: 0px; right: 0px; bottom: 95%; padding: 0px; padding-left: 1.8%; border: 0px; border-bottom: 2px double black; background-color: #e0e0ef; background-image: url('/imgs/tile.png'); z-index: 1000; }
 .hdrTopicBar { position: absolute; bottom: 0%; width: 80%; transform: translateY(50%); }
 .hdrTopic { margin: 0px; margin-left: 1%; margin-right: 1%; padding: 0.36%; font-family: 'Acme'; color: #33cc33; transform: skew(-3deg,0deg); border: 1px solid black; border-radius: 0 18% 0 18%; background-color: #698169; font-size: 1.8vmax; display: inline-block; background-image: url('/imgs/linen.png'); }
@@ -10,9 +10,9 @@ body { font-size: 1.2vmax; margin: 0px auto; background-color: #f0f0f6; font-fam
 .hdrSocial:hover { cursor: pointer; transform: rotate(3deg); }
 .hdrSocial:active:hover { cursor: pointer; transform: rotate(-3deg); }  
 .content { position: absolute; top: 6%; margin: 3%; margin-top: 0.3%; width: 93%; padding: 0.5%; }
-.intro { border: 1px solid #909099; border-radius: 9px; padding: 0.63%; background-color: rgba(255, 255, 255, 0.45); box-shadow: 1px 1px #909099; margin-bottom: 3%; }
+.intro { border: 1px solid #909099; border-radius: 9px; padding: 0.63%; background-color: rgba(252, 255, 252, 0.45); background-image: url('/imgs/brushed.png'); box-shadow: 1px 1px #909099; margin-bottom: 3%; }
 .firstWord { font-size: 3.6vmax; font-family: 'Dancing Script'; }
-.fotter { position: fixed; top: 97%; left: 0px; right: 0px; bottom: 0px; padding: 0.3%; border: 0px; border-top: 1px solid black; font-size: 0.81vmax; background-color: #e0e0ef; text-align: center; background-image: url('/imgs/tile.png'); z-index: 1000; }
+.fotter { position: fixed; top: 97%; left: 0px; right: 0px; bottom: 0px; padding: 0.3%; border: 0px; border-top: 1px solid black; font-size: 0.69vmax; background-color: #e0e0ef; text-align: center; background-image: url('/imgs/tile.png'); z-index: 1000; }
 .maxHImg { width: auto; max-height: 72%; }
 .InTextLink { color: #3333cc; text-decoration: underline; font-style: italic; }
 .InTextLink:hover { cursor: pointer; }
@@ -32,7 +32,7 @@ body { font-size: 1.2vmax; margin: 0px auto; background-color: #f0f0f6; font-fam
 .postDate { margin: 0px; margin-left: 42%; margin-right: 42%; padding: 3px; border: 1px solid black; border-top: 0px; border-radius: 0 0 100% 100%; text-align: center;  font-size: 81%; font-weight: bold; font-family: 'Dosis'; background-image: radial-gradient(circle, rgba(210, 255, 210, 0), rgba(60, 90, 60, 0.15)); color: #333399; }
 .postData { padding: 0.6%; margin-left: 6%; margin-right: 6%; font-family: 'Baloo Thambi 2', cursive; font-size: 93%; }
 .postKeys { border: 0px; font-size: 81%; padding: 3px; text-align: center; margin-left: 9%; margin-right: 9%; background-image: radial-gradient(circle, rgba(180, 210, 180, 0.12), rgba(180, 240, 180, 0)); color: #999999; }
-.postLink { float: left; width: 47.1%; margin: 0px; margin-top: 1%; margin-left: 1%; padding: 0.63%; border: 1px solid #909099; border-radius: 9px; background-color: rgba(255, 255, 255, 0.45); box-shadow: 1px 1px #c0c0c0; }
+.postLink { float: left; width: 47.1%; margin: 0px; margin-top: 1%; margin-left: 1%; padding: 0.63%; border: 1px solid #909099; border-radius: 9px; box-shadow: 1px 1px #c0c0c0; background-color: rgba(252, 255, 252, 0.45); background-image: url('/imgs/brushed.png'); }
 .postLink:hover { cursor: pointer; background-color: rgba(210, 210, 210, 0.69); box-shadow: 1px 1px #606060; }
 .postLink:active { cursor: pointer; background-color: rgba(216, 216, 216, 0.69); box-shadow: 0px 1px #606060; }
 .postLinkData { width: 91.2%; padding: 0.3%; }
