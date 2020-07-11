@@ -8,8 +8,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital@1&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@500&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@500&display=swap" rel="stylesheet">
     <script src="/scripts/vue.js"></script>
+    <script src="/scripts/format.js"></script>
     <script src="/scripts/main.js"></script>
     <title> Art & Technology </title>
 </head>
@@ -28,7 +29,7 @@
       </div>
     </div>
     <div class="content">
-      <div id="imgStage" class="imgStage" onclick="hideImage()"> <img id="imgStageImg" class="imgStageImg" /> </div>
+      <div id="imgStage" class="imgStage"> <span class="imgStageClose" onclick="hideImage()"> &nbsp;X&nbsp; </span> <img id="imgStageImg" class="imgStageImg" /> </div>
       <div class="quote" v-html="randomQuote" v-show="lastErr <= 0"> </div>
       <div class="intro" v-show="currLevel == 0">
         <span class="firstWord">W</span>elcome to my corner of the web. <br /><br /> 

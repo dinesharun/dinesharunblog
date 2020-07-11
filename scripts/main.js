@@ -143,10 +143,12 @@ function onLoadFn() {
               xhr.onreadystatechange = function() {
                 if(this.readyState == 4) {
                   if((this.status == 200) || (this.status == 304)) {
-                    vueObj.postData = JSON.parse(this.responseText);
-                    if(vueObj.postData.length > 0) {
-                      vueObj.lastErr = 0;
-                      document.title = vueObj.postData[0].title;
+                    var postData = JSON.parse(this.responseText);
+                    if(postData.length > 0) {
+                      postData[0].data = vueObj.formatCodeBlocks(postData[0].data);
+                      vueObj.postData = postData;
+                      vueObj.lastErr  = 0;
+                      document.title  = vueObj.postData[0].title;
                     } else {
                       vueObj.lastErr = 2;
                     }
@@ -160,6 +162,17 @@ function onLoadFn() {
             } else {
               /* Do nothing */
             }
+          },
+          formatCodeBlocks: function(data) {
+            var fcode = data;
+            
+            let re = /<pre(.*?)codeBlock(.*?)>([\s\S]*?)<\/pre>/;
+            let code = re.exec(data);
+            if((code != null) && (code.length == 4)) {
+              fcode = data.replace(re, '<pre' + '$1' + 'codeBlock' + '$2' + '>' + formatCodeBlock(code[3]) + '</pre>');
+            }
+            
+            return fcode;
           }
         },
         computed: {
