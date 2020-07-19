@@ -55,8 +55,8 @@
         <div id="post" class="postDiv" v-if="((dataReq == true) && (lastErr == 0))">
           <div class="vertGradLine"> <br /> </div>
           <div class="postTitle"> {{ postData[0].title }} </div>
-          <div class="vertGradLine"> <br /> </div>
-          <div class="postDate"> {{ getDateTimeStr(postData[0].ts) }} </div> <br />
+          <div class="vertGradLine shortLine"> <br /> </div>
+          <div class="postDate"> {{ getDateTimeStr(postData[0].ts) }} </div>
           <div class="postData"> <span class="firstWord">{{postData[0].data[0]}}</span> <span v-html="postData[0].data.substring(1)"></span> </div> <br />
           <div class="vertGradLine smallLine"> <br /> </div>
           <div class="postKeys"> keywords : {{ postData[0].keys }} </div>
