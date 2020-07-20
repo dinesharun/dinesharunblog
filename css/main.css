@@ -28,24 +28,26 @@ body { font-size: 1.2vmax; margin: 0px auto; background-color: #f0f0f6; font-fam
 .vertGradLine { border: 0px; padding: 0px; margin: 0px; background-image: radial-gradient(circle, rgba(0, 0, 0, 1), rgba(255, 255, 255, 0)); font-size: 9%; margin: 0px; margin-left: 3%; margin-right: 3%; }
 .shortLine { margin-left: 21%; margin-right: 21%; }
 .smallLine { font-size: 3%; margin-left: 9%; margin-right: 9%; }
-.postDiv { padding: 0px; background-color: rgba(180, 180, 210, 0.09); background-image: url('/imgs/btn-bg.png'); border: 3px solid black; border-radius: 9px; border-top: 0px; border-bottom: 0px;  border-image: linear-gradient(rgba(255, 255, 255, 0), rgba(60, 60, 60, 0.03), rgba(30, 30, 30, 0.81), rgba(60, 60, 60, 0.03), rgba(255, 255, 255, 0)) 1; }
-.postTitle { border: 0px; padding: 1%; font-size: 126%; text-align: center; background-image: radial-gradient(circle, rgba(30, 120, 30, 0.12), rgba(66, 210, 66, 0)); color: #333399; font-weight: bold; font-family: 'Dosis'; }
+.postDiv {padding: 0px;background-color: rgba(180, 180, 210, 0.09);background-image: url('/imgs/btn-bg.png');border: 3px solid black;border-radius: 9px;border-top: 0px;border-bottom: 0px;border-image: linear-gradient(rgba(255, 255, 255, 0), rgba(60, 60, 60, 0.03), rgba(30, 30, 30, 0.81), rgba(60, 60, 60, 0.03), rgba(255, 255, 255, 0)) 1;}
+.postTitle {border: 0px;padding: 1%;font-size: 126%;text-align: center;background-image: radial-gradient(circle, rgba(30, 120, 30, 0.12), rgba(66, 210, 66, 0));color: #333399;font-weight: bold;font-family: 'Dosis';position: relative;}
 .postDate { margin: 0px; margin-left: 42%; margin-right: 42%; padding: 3px; border: 1px solid black; border-top: 0px; border-radius: 0 0 100% 100%; text-align: center;  font-size: 81%; font-weight: bold; font-family: 'Dosis'; background-image: radial-gradient(circle, rgba(210, 255, 210, 0), rgba(60, 90, 60, 0.15)); color: #333399; }
 .postData { padding: 0.6%; margin-left: 6%; margin-right: 6%; font-family: 'Baloo Thambi 2', cursive; font-size: 93%; text-align: justify; }
 .postKeys { border: 0px; font-size: 81%; padding: 3px; text-align: center; margin-left: 9%; margin-right: 9%; background-image: radial-gradient(circle, rgba(180, 210, 180, 0.12), rgba(180, 240, 180, 0)); color: #999999; }
-.postLink { float: left; width: 47.1%; margin: 0px; margin-top: 1%; margin-left: 1%; padding: 0.63%; border: 1px solid #909099; border-radius: 9px; box-shadow: 1px 1px #c0c0c0; background-color: rgba(252, 255, 252, 0.45); background-image: url('/imgs/brushed.png'); }
-.postLink:hover { cursor: pointer; background-color: rgba(210, 210, 210, 0.69); box-shadow: 1px 1px #606060; }
+.postLink { float: left; width: 47.1%; margin: 0px; margin-top: 1%; margin-left: 1%; padding: 0.63%; border: 1px solid #909099; border-radius: 9px; box-shadow: 1px 1px #c0c0c0; background-color: rgba(252, 255, 252, 0.45); background-image: url('/imgs/brushed.png'); vertical-align: middle;  }
+.postLink:hover { cursor: pointer; background-color: rgba(210, 210, 210, 0.69); box-shadow: 1px 1px #606060;}
 .postLink:active { cursor: pointer; background-color: rgba(216, 216, 216, 0.69); box-shadow: 0px 1px #606060; }
 .postLinkData { width: 91.2%; padding: 0.3%; }
 .postLinkDate { font-size: 69%; margin: 0px; margin-bottom: 1%; }
 .postLinkCats { font-size: 69%; margin: 0px; margin-top: 1%; }
-.postLinkThumb { float: left; margin-right: 1.2%; width: 9%; height: auto; border: 0px; }
+.postLinkThumb {float: left;margin-right: 1.2%;width: 10%;height: auto;border: 1px solid black;border-radius: 50%;}
+.postThumbDiv {position: absolute;left: 45.5%;bottom: 100%;z-index: -1;overflow: hidden;width: 9%;height: 100%;opacity: 0.69;}
+.postThumb {width: 100%;border: 1px solid black;border-radius: 50% 50% 0 0;margin-bottom: -50%;}
 .errDiv { margin: 0px auto; padding: 6%; text-align: center; color: darkred; }
-.quote { margin: 0.6%; margin-bottom: 1.2%; color: #181818; text-shadow: rgb(255, 255, 255) 0px 1px 1px; text-align: right; font-size: 72%; }
+.quote { margin: 0.6%; margin-bottom: 1.2%; color: #181818; text-shadow: rgb(255, 255, 255) 0px 1px 1px; text-align: right; font-size: 72%; vertical-align: middle; }
 .ImgThumbLink { margin: 1%; width: 18%; height: auto; border: 1px solid black; border-radius: 9px; }
 .ImgThumbLink:hover {cursor: pointer; box-shadow: 1px 1px #606060; }
 .imgStage { position: fixed; top: 0px; left: 0px; width: 90%; height: 100%; padding: 5%; margin: 0px; display: none; background: rgba(33, 33, 33, 0.93); text-align: center; z-index: 9999; }
-.imgStageClose { position: absolute; right: 0.3%; top: 0.3%; width: 3%; font-weight: bold; color: #ffffff; font-size: 2.3vw; font-family: 'Acme'; border-radius: 50%; z-index: 99999; }
+.imgStageClose {position: absolute;right: 0.69%;top: 0.69%;width: 3%;font-weight: bold;color: #ffffff;font-size: 2.3vw;font-family: 'Acme';border-radius: 50%;z-index: 99999;border: 1px solid darkred;}
 .imgStageClose:hover { cursor: pointer; text-decoration: italic; font-size: 2.4vw; color: #ffeeee; }
 .imgStageImg { margin: 0px auto; padding: 0px; height: 87%; width: auto; max-width: 93%; overflow: hidden; border: 1px solid black; border-radius: 9px; }
 .codeBlock { background-color: black; color: #cccccc; border: 1px solid #cccccc; border-radius: 9px; overflow-x: scroll; font-size: 72%; margin: 1%; padding: 0.3%; box-shadow: 1p 1px 3px #fffffff inset; }
