@@ -10,7 +10,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@500&display=swap" rel="stylesheet">
     <script src="/scripts/vue.js"></script>
-    <script src="/scripts/format.js"></script>
     <script src="/scripts/main.js"></script>
     <title> Art & Technology </title>
 </head>
@@ -29,7 +28,13 @@
       </div>
     </div>
     <div class="content">
-      <div id="imgStage" class="imgStage"> <span class="imgStageClose" onclick="hideImage()"> &nbsp;X&nbsp; </span> <img id="imgStageImg" class="imgStageImg" /> </div>
+      <div id="imgStage" class="imgStage">
+        <span id="imgStageName" class="imgStageName"></span>
+        <span id="imgStagePrev" class="imgStagePrev" onclick="showPrevImage()"> &lt; </span>
+        <span id="imgStageNext" class="imgStageNext" onclick="showNextImage()"> &gt; </span>
+        <span class="imgStageClose" onclick="hideImage()"> &nbsp;X&nbsp; </span>
+        <img id="imgStageImg" class="imgStageImg" onclick="hideImage()" />
+      </div>
       <div class="quote" v-html="randomQuote" v-show="lastErr <= 0"> </div>
       <div class="intro" v-show="currLevel == 0">
         <span class="firstWord">W</span>elcome to my corner of the web. <br /><br /> 
@@ -40,7 +45,7 @@
         As a programmer by profession and with a passion for technology, a fascination for nature & history, and an artist by soul,
         I try to find a point where technology and art collide.
       </div>
-      <div>
+      <div id="postWrapper">
         <div id="loader" class="loader" v-show="loading == true"> <br /> </div>
         <div id="list" class="listDiv" v-if="((listReq == true) && (lastErr == 0))">
           <div class="postLink" v-for="post in postList" @click="loadPost(post)">
