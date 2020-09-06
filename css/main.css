@@ -60,3 +60,4 @@ body { font-size: 1.2vmax; margin: 0px auto; background-color: #f0f0f6; font-fam
 .codeBlock { background-color: black; color: #cccccc; border: 1px solid #cccccc; border-radius: 9px; overflow-x: scroll; font-size: 72%; margin: 1%; padding: 0.3%; box-shadow: 1p 1px 3px #fffffff inset; }
 .homeGallery { margin: 0px auto; text-align: center; padding: 0.3%; padding-top: 1%; overflow: hidden; }
 .homGalImg { margin: 0.3%; width: 15%; }
+.galleryImage {margin: 0px;padding: 0px;width: 12%;background-color: #0f0f0f;}

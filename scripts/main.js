@@ -20,7 +20,7 @@ function showImage(imgId) {
 }
 
 function getImageList() {
-  var list = Array.from(document.getElementsByClassName("ImgThumbLink"));
+  var list = Array.from(document.getElementsByClassName("ImgThumbLink")).filter(l => l.style.display != 'none');
   return list.sort();
 }
 

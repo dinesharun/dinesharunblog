@@ -38,15 +38,17 @@
       <div class="quote" v-html="randomQuote" v-show="lastErr <= 0"> </div>
       <div class="intro" v-show="currLevel == 0">
         <span class="firstWord">W</span>elcome to my corner of the web. <br /><br /> 
-        &nbsp; &nbsp; &nbsp; &nbsp; A place dedicated for my pursuit of <span class="InTextLink" @click="loadUrl('art/photo/')"> recording </span> (through photography) or 
-        <span class="InTextLink" @click="loadUrl('art/anim/')"> recreating </span> (through animation) the wonders of the natural world in both it's 
+        &nbsp; &nbsp; &nbsp; &nbsp; A place dedicated for my pursuit of <span class="InTextLink" @click="loadUrl('art/photography/')"> recording </span> (through photography) or 
+        <span class="InTextLink" @click="loadUrl('art/animation/')"> recreating </span> (through animation) the wonders of the natural world in both it's 
         <span class="InTextLink" @click="loadUrl('art/nature/')"> visual </span> form or <span class="InTextLink" @click="loadUrl('art/music/')"> audible </span> form. 
-        Along the lines of the famous quote <span style="color: #cc9999; font-style: italic;"> "Technology Inspires Art, Art Challenges Technology" </span>, my life follows both.
+        As an avid student of <span class="InTextLink" @click="loadUrl('tech/electronics/')"> electronics </span> and <span class="InTextLink" @click="loadUrl('tech/coding/')">
+        programming </span>, I am always inspired by technology that creates art. Along the lines of the famous quote <span style="color: #cc9999; font-style: italic;">
+        "Technology Inspires Art, Art Challenges Technology" </span>, my life follows both.
         As a programmer by profession and with a passion for technology, a fascination for nature & history, and an artist by soul,
         I try to find a point where technology and art collide.
       </div>
       <div class="homeGallery" v-show="currLevel == 0">
-        <img class="ImgThumbLink homGalImg" v-for="(img, index) in galImgList" :id="'randImg' + index" :src="img" name="Random Image" @click="showImage('randImg' + index)" />
+        <img class="ImgThumbLink homGalImg"  v-show="currLevel == 0" v-for="(img, index) in galImgList" :id="'randImg' + index" :src="img" name="Random Image" @click="showImage('randImg' + index)" />
       </div>
       <div id="postWrapper">
         <div id="loader" class="loader" v-show="loading == true"> <br /> </div>
