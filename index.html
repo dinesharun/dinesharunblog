@@ -45,6 +45,9 @@
         As a programmer by profession and with a passion for technology, a fascination for nature & history, and an artist by soul,
         I try to find a point where technology and art collide.
       </div>
+      <div class="homeGallery" v-show="currLevel == 0">
+        <img class="ImgThumbLink homGalImg" v-for="(img, index) in galImgList" :id="'randImg' + index" :src="img" name="Random Image" @click="showImage('randImg' + index)" />
+      </div>
       <div id="postWrapper">
         <div id="loader" class="loader" v-show="loading == true"> <br /> </div>
         <div id="list" class="listDiv" v-if="((listReq == true) && (lastErr == 0))">

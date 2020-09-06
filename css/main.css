@@ -10,7 +10,7 @@ body { font-size: 1.2vmax; margin: 0px auto; background-color: #f0f0f6; font-fam
 .hdrSocial:hover { cursor: pointer; transform: rotate(3deg); }
 .hdrSocial:active:hover { cursor: pointer; transform: rotate(-3deg); }  
 .content { position: absolute; top: 6%; margin: 3%; margin-top: 0.3%; width: 93%; padding: 0.5%; }
-.intro { border: 1px solid #909099; border-radius: 9px; padding: 0.63%; background-color: rgba(252, 255, 252, 0.45); background-image: url('/imgs/brushed.png'); box-shadow: 1px 1px #909099; margin-bottom: 3%; }
+.intro { border: 1px solid #909099; border-radius: 9px; padding: 0.63%; background-color: rgba(252, 255, 252, 0.45); background-image: url('/imgs/brushed.png'); box-shadow: 1px 1px #909099; }
 .firstWord { font-size: 3.6vmax; font-family: 'Dancing Script'; }
 .fotter { position: fixed; top: 97%; left: 0px; right: 0px; bottom: 0px; padding: 0.3%; border: 0px; border-top: 1px solid black; font-size: 0.69vmax; background-color: #e0e0ef; text-align: center; background-image: url('/imgs/tile.png'); z-index: 1000; }
 .maxHImg { width: auto; max-height: 72%; }
@@ -58,3 +58,5 @@ body { font-size: 1.2vmax; margin: 0px auto; background-color: #f0f0f6; font-fam
 .imgStageNext {position: absolute;top: 18%;right: 0.3%;width: 3%;padding-top:15%;padding-bottom: 15%;color: white;font-size: 333%;border: 0px; border-left: 1px solid #333333;}
 .imgStageNext:hover {cursor: pointer;text-shadow: 1px 1px #e0e0e0;background: rgba(30, 30, 30, 0.93);}
 .codeBlock { background-color: black; color: #cccccc; border: 1px solid #cccccc; border-radius: 9px; overflow-x: scroll; font-size: 72%; margin: 1%; padding: 0.3%; box-shadow: 1p 1px 3px #fffffff inset; }
+.homeGallery { margin: 0px auto; text-align: center; padding: 0.3%; padding-top: 1%; overflow: hidden; }
+.homGalImg { margin: 0.3%; width: 15%; }

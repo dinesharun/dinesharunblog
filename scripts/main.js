@@ -59,9 +59,13 @@ function onLoadFn() {
           listReq: false,
           postData: [],
           dataReq: false,
-          lastErr: -1
+          lastErr: -1,
+          galImgList: ['/imgs/gears.png', '/imgs/gears.png', '/imgs/gears.png', '/imgs/gears.png', '/imgs/gears.png', '/imgs/gears.png']
         },
         methods: {
+          showImage: function(imgId) {
+            showImage(imgId);
+          },
           loadUrl: function(url, pushSt=true) {
             /* If the state is to be pushed */
             if(pushSt == true) {
@@ -135,6 +139,19 @@ function onLoadFn() {
             }
             return str;
           },
+          loadGalImgs: function() {
+            var vueObj = this;
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", ("/getRandGalImgs?num=6" ));
+            xhr.onreadystatechange = function() {
+              if(this.readyState == 4) {
+                if((this.status == 200) || (this.status == 304)) {
+                  vueObj.galImgList = JSON.parse(this.responseText);
+                }
+              } 
+            }
+            xhr.send(); 
+          },
           loadData: function() {
             /* load lists */
             if(this.listReq == true) {
@@ -145,6 +162,7 @@ function onLoadFn() {
               this.urlParts.forEach(function(u, i) {
                 filReq += (((i != 0)?(','):('cat=')) + u);
               });
+              if(filReq == "") { this.loadGalImgs(); }
               xhr.open("GET", ("/getPostList?" + filReq));
               xhr.onreadystatechange = function() {
                 if(this.readyState == 4) {
