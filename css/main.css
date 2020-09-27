@@ -38,6 +38,7 @@ body { font-size: 1.2vmax; margin: 0px auto; background-color: #f0f0f6; font-fam
 .postLink:active { cursor: pointer; background-color: rgba(216, 216, 216, 0.69); box-shadow: 0px 1px #606060; }
 .postLinkData { width: 91.2%; padding: 0.3%; }
 .postLinkDate { font-size: 69%; margin: 0px; margin-bottom: 1%; }
+.postLinkTitle { overflow: hidden; white-space: nowrap; }
 .postLinkCats { font-size: 69%; margin: 0px; margin-top: 1%; }
 .postLinkThumb {float: left;margin-right: 1.2%;width: 10%;height: auto;border: 1px solid black;border-radius: 50%;}
 .postThumbDiv {position: absolute;left: 45.5%;bottom: 100%;z-index: -1;overflow: hidden;width: 9%;height: 100%;opacity: 0.69;border-radius: 50% 50% 0 0;}
@@ -58,6 +59,7 @@ body { font-size: 1.2vmax; margin: 0px auto; background-color: #f0f0f6; font-fam
 .imgStageNext {position: absolute;top: 18%;right: 0.3%;width: 3%;padding-top:15%;padding-bottom: 15%;color: white;font-size: 333%;border: 0px; border-left: 1px solid #333333;}
 .imgStageNext:hover {cursor: pointer;text-shadow: 1px 1px #e0e0e0;background: rgba(30, 30, 30, 0.93);}
 .codeBlock { background-color: black; color: #cccccc; border: 1px solid #cccccc; border-radius: 9px; overflow-x: scroll; font-size: 72%; margin: 1%; padding: 0.3%; box-shadow: 1p 1px 3px #fffffff inset; }
-.homeGallery { margin: 0px auto; text-align: center; padding: 0.3%; padding-top: 1%; overflow: hidden; }
-.homGalImg { margin: 0.3%; width: 15%; }
-.galleryImage {margin: 0px;padding: 0px;width: 12%;background-color: #0f0f0f;}
+.defGallery { margin: 0px auto; text-align: center; padding: 0.3%; padding-top: 1%; overflow: hidden; }
+.homeGallery { margin: 0px auto; text-align: center; padding: 0.3%; padding-top: 1%; overflow: hidden; position: relative; height: 6vmax; }
+.homGalImg { margin: 0.3%; height: 96%; width: auto; }
+.galleryImage {margin: 0px;padding: 0px;height: 15vmin;background-color: #0f0f0f;}

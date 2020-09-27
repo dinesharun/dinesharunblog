@@ -57,7 +57,7 @@
             <img class="postLinkThumb" :src="getThumbUrl(post.tmbUrl)" />
             <div class="postLinkData">
               <div class="postLinkDate"> {{ getDateTimeStr(post.ts) }} </div>
-              {{ post.title }}
+              <div class="postLinkTitle"> {{ post.title }} </div>
               <div class="postLinkCats"> {{ post.cats }} </div>
             </div>
           </div>
