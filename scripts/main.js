@@ -169,6 +169,9 @@ function onLoadFn() {
                   if((this.status == 200) || (this.status == 304)) {
                     vueObj.postList = JSON.parse(this.responseText);
                     if(vueObj.postList.length > 0) {
+                      vueObj.postList.sort(function(x, y){
+                          return y.ts - x.ts;
+                      })
                       vueObj.lastErr = 0;
                     } else {
                       vueObj.lastErr = 1;

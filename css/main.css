@@ -33,9 +33,10 @@ body { font-size: 1.2vmax; margin: 0px auto; background-color: #f0f0f6; font-fam
 .postDate { margin: 0px; margin-left: 42%; margin-right: 42%; padding: 3px; border: 1px solid black; border-top: 0px; border-radius: 0 0 100% 100%; text-align: center;  font-size: 81%; font-weight: bold; font-family: 'Dosis'; background-image: radial-gradient(circle, rgba(210, 255, 210, 0), rgba(60, 90, 60, 0.15)); color: #333399; }
 .postData {padding: 0.6%;margin-left: 6%;margin-right: 6%;font-family: 'Baloo Thambi 2', cursive;font-size: 93%;text-align: justify;}
 .postKeys { border: 0px; font-size: 81%; padding: 3px; text-align: center; margin-left: 9%; margin-right: 9%; background-image: radial-gradient(circle, rgba(180, 210, 180, 0.12), rgba(180, 240, 180, 0)); color: #999999; }
-.postLink { float: left; width: 47.1%; margin: 0px; margin-top: 1%; margin-left: 1%; padding: 0.63%; border: 1px solid #909099; border-radius: 9px; box-shadow: 1px 1px #c0c0c0; background-color: rgba(252, 255, 252, 0.45); background-image: url('/imgs/brushed.png'); vertical-align: middle;  }
+.postLink { float: right; width: 46.8%; margin: 0px; margin-top: 1%; margin-left: 1%; padding: 0.63%; border: 1px solid #909099; border-radius: 9px; box-shadow: 1px 1px #c0c0c0; background-color: rgba(252, 255, 252, 0.45); background-image: url('/imgs/brushed.png'); vertical-align: middle;  }
 .postLink:hover { cursor: pointer; background-color: rgba(210, 210, 210, 0.69); box-shadow: 1px 1px #606060;}
 .postLink:active { cursor: pointer; background-color: rgba(216, 216, 216, 0.69); box-shadow: 0px 1px #606060; }
+.postLink:nth-child(odd) { float: left; }
 .postLinkData { width: 91.2%; padding: 0.3%; }
 .postLinkDate { font-size: 69%; margin: 0px; margin-bottom: 1%; }
 .postLinkTitle { overflow: hidden; white-space: nowrap; }
@@ -63,3 +64,4 @@ body { font-size: 1.2vmax; margin: 0px auto; background-color: #f0f0f6; font-fam
 .homeGallery { margin: 0px auto; text-align: center; padding: 0.3%; padding-top: 1%; overflow: hidden; position: relative; height: 6vmax; }
 .homGalImg { margin: 0.3%; height: 96%; width: auto; }
 .galleryImage {margin: 0px;padding: 0px;height: 18vmin;width: auto;background-color: #0f0f0f;}
+.listDiv {  }
