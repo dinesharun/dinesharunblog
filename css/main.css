@@ -62,4 +62,4 @@ body { font-size: 1.2vmax; margin: 0px auto; background-color: #f0f0f6; font-fam
 .defGallery { margin: 0px auto; text-align: center; padding: 0.3%; padding-top: 1%; overflow: hidden; }
 .homeGallery { margin: 0px auto; text-align: center; padding: 0.3%; padding-top: 1%; overflow: hidden; position: relative; height: 6vmax; }
 .homGalImg { margin: 0.3%; height: 96%; width: auto; }
-.galleryImage {margin: 0px;padding: 0px;height: 15vmin;background-color: #0f0f0f;}
+.galleryImage {margin: 0px;padding: 0px;height: 18vmin;width: auto;background-color: #0f0f0f;}
