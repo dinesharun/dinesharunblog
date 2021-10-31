@@ -10,3 +10,4 @@ const insQuotes = [
 ];
 const docTitle = "Art & Technology";
 const homeRandGallery = true;
+const postPreviewCount = 0;
