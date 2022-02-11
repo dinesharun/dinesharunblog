@@ -3,6 +3,7 @@
 /* Import the required modules */
 const express = require('express');
 const admin   = require('./admin/admin.js');
+const utils   = require('./utils/utils.js');
 
 /* Get the express app */
 const app = express();
@@ -14,6 +15,9 @@ app.use("/scripts", express.static(__dirname + '/scripts'));
 
 /* Initialize the admin module */
 admin.initApp(app, express);
+
+/* Initialize the utilities module */
+utils.initApp(app, express, admin);
 
 /* For the favicon */
 app.get('/favicon.ico', (req, res) => {
